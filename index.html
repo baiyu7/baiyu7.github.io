@@ -62,6 +62,99 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-yujiexi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/28/yujiexi/" class="article-date">
+  <time datetime="2019-03-28T12:54:50.287Z" itemprop="datePublished">2019-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/yujiexi/">预解析与作用域链</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天又温习了一下预解析与作用域链的知识，顿时又感觉收获甚多呢！</p>
+<h2 id="作用域链-按n级作用域向上查找变量的值"><a href="#作用域链-按n级作用域向上查找变量的值" class="headerlink" title="作用域链(按n级作用域向上查找变量的值)"></a>作用域链(按n级作用域向上查找变量的值)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  			 <span class="built_in">console</span>.log(x)<span class="comment">//10</span></span><br><span class="line">  			 f2()</span><br><span class="line">	    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    	<span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">	        <span class="built_in">console</span>.log(x)<span class="comment">//20</span></span><br><span class="line">	        f3()</span><br><span class="line">	        <span class="function"><span class="keyword">function</span> <span class="title">f3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	        	<span class="keyword">var</span> x = <span class="number">30</span></span><br><span class="line">	            <span class="built_in">console</span>.log(x)<span class="comment">//30</span></span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   			 f2()</span><br><span class="line">		    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		        f3()</span><br><span class="line">		        <span class="function"><span class="keyword">function</span> <span class="title">f3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		            <span class="built_in">console</span>.log(x)<span class="comment">//10</span></span><br><span class="line">		        &#125;</span><br><span class="line">		    &#125;</span><br><span class="line">		&#125;</span><br><span class="line">		f1()</span><br></pre></td></tr></table></figure>
+<h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><p>说道预解析个人觉得三句话就能够解释</p>
+<p>变量声明提前到当前作用域最前面 只会提升声明不会提升赋值</p>
+<p>函数声明提升到当前作用域最前面 只会提升声明，不会提升调用</p>
+<p>先提升var 在提升function</p>
+<p>下面是一些例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">		f()</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(x);</span><br><span class="line">			<span class="keyword">var</span> x = <span class="number">10</span>   <span class="comment">//undefined</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>改变后的样子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> x;</span><br><span class="line">			<span class="built_in">console</span>.log(x);</span><br><span class="line">			x = <span class="number">10</span>   <span class="comment">//undefined</span></span><br><span class="line">		&#125;</span><br><span class="line">		f()</span><br></pre></td></tr></table></figure>
+<p>第二个例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f()</span><br><span class="line">	<span class="built_in">console</span>.log(b);<span class="comment">//9</span></span><br><span class="line">	<span class="built_in">console</span>.log(c);<span class="comment">//9</span></span><br><span class="line">	<span class="built_in">console</span>.log(a);<span class="comment">//报错</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> a = b =c =<span class="number">9</span></span><br><span class="line">		<span class="built_in">console</span>.log(a);<span class="comment">//9</span></span><br><span class="line">		<span class="built_in">console</span>.log(b);<span class="comment">//9</span></span><br><span class="line">		<span class="built_in">console</span>.log(c);<span class="comment">//9</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>预解析以后</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> a ；</span><br><span class="line">                a=<span class="number">9</span></span><br><span class="line">    			b = <span class="number">9</span><span class="comment">//隐式全局变量，</span></span><br><span class="line">                c =<span class="number">9</span><span class="comment">//隐式全局变量，</span></span><br><span class="line">			<span class="built_in">console</span>.log(a);<span class="comment">//9</span></span><br><span class="line">			<span class="built_in">console</span>.log(b);<span class="comment">//9</span></span><br><span class="line">			<span class="built_in">console</span>.log(c);<span class="comment">//9</span></span><br><span class="line">		&#125;</span><br><span class="line">	f()</span><br><span class="line">		<span class="built_in">console</span>.log(b);<span class="comment">//9</span></span><br><span class="line">		<span class="built_in">console</span>.log(c);<span class="comment">//9</span></span><br><span class="line">		<span class="built_in">console</span>.log(a);<span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<p>第三个例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f()  <span class="comment">//报错</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">9</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>预解析以后</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f ;</span><br><span class="line">f()  <span class="comment">//不能调用var 的f是变量</span></span><br><span class="line">f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">9</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/28/yujiexi/" data-id="cjtso4omg0005ak5d1sdwnxxk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-erfen" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/28/erfen/" class="article-date">
+  <time datetime="2019-03-28T11:45:27.552Z" itemprop="datePublished">2019-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/erfen/">二分查找</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>﻿二分查找</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">""</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		// function erfen(arr,key)&#123;</span></span><br><span class="line"><span class="string">		// 	var low = 0</span></span><br><span class="line"><span class="string">		// 	var heigh = arr.length - 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">		// var 	mid = Math.floor((heigh + low)/2)</span></span><br><span class="line"><span class="string">		// 	while (low &lt;= heigh) &#123;</span></span><br><span class="line"><span class="string">		// 		 if(key == arr[mid])&#123;</span></span><br><span class="line"><span class="string">		// 			return arr[mid]</span></span><br><span class="line"><span class="string">		// 		&#125;</span></span><br><span class="line"><span class="string">		// 		else if(key &gt; arr[mid])&#123;</span></span><br><span class="line"><span class="string">		// 			low = mid+1</span></span><br><span class="line"><span class="string">		// 		&#125;</span></span><br><span class="line"><span class="string">		// 		else if  (key &lt;arr[mid])&#123;</span></span><br><span class="line"><span class="string">		// 			heigh = mid -1</span></span><br><span class="line"><span class="string">		// 		&#125;</span></span><br><span class="line"><span class="string">		// 	&#125;</span></span><br><span class="line"><span class="string">		</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">		// &#125;</span></span><br><span class="line"><span class="string">        //递归实现</span></span><br><span class="line"><span class="string">		function erfen(low ,heigh,key,arr)&#123;</span></span><br><span class="line"><span class="string">			</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			if(low&gt;=heigh)return -1 </span></span><br><span class="line"><span class="string">			var mid = Math.floor((low+heigh)/2)</span></span><br><span class="line"><span class="string">			 if(key == arr[mid])&#123;</span></span><br><span class="line"><span class="string">				return arr[mid]</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">			else if(key&gt;arr[mid])&#123;</span></span><br><span class="line"><span class="string">				return erfen(mid+1,heigh,arr,key)</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">			else if(key&lt; arr[mid])&#123;</span></span><br><span class="line"><span class="string">				return erfen(low,mid-1,key,arr)</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">		var a = erfen(0,4,1,[1,2,5,6,7])</span></span><br><span class="line"><span class="string">		console.log(a);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/28/erfen/" data-id="cjtso4oma0002ak5dsokxcvqa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-kaipai" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/28/kaipai/" class="article-date">
@@ -91,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/kaipai/" data-id="cjtsk94i20002qs5d4c4o9u2k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/kaipai/" data-id="cjtso4omc0003ak5dokvrc0jj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +232,47 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/27/hexo/" data-id="cjtsk94i80003qs5df0k0s80x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/27/hexo/" data-id="cjtso4olw0000ak5dwdzelcpq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/27/JSONP/" class="article-date">
+  <time datetime="2019-03-27T12:12:31.684Z" itemprop="datePublished">2019-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/JSONP/">解决浏览器跨域问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器施加的安全限制。<br>所谓同源是指，域名，协议，端口均相同，不明白没关系，例如：<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.123.com/server.php" target="_blank" rel="noopener">http://www.123.com/server.php</a> （非跨域）<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.456.com/server.php" target="_blank" rel="noopener">http://www.456.com/server.php</a> （主域名不同:123/456，跨域）<br><a href="http://abc.123.com/index.html" target="_blank" rel="noopener">http://abc.123.com/index.html</a> 调用 <a href="http://def.123.com/server.php" target="_blank" rel="noopener">http://def.123.com/server.php</a> （子域名不同:abc/def，跨域）<br><a href="http://www.123.com:8080/index.html" target="_blank" rel="noopener">http://www.123.com:8080/index.html</a> 调用 <a href="http://www.123.com:8081/server.php" target="_blank" rel="noopener">http://www.123.com:8081/server.php</a> （端口不同:8080/8081，跨域）<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="https://www.123.com/server.php" target="_blank" rel="noopener">https://www.123.com/server.php</a> （协议不同:http/https，跨域）<br>案例</p>
+<p>借用豆瓣的接口  <a href="https://api.douban.com/v2/movie/in_theaters" target="_blank" rel="noopener">https://api.douban.com/v2/movie/in_theaters</a></p>
+<h2 id="下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求"><a href="#下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求" class="headerlink" title="下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求"></a>下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;jsonp&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">	&lt;link rel="stylesheet" href=""&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=<span class="string">"div"</span>&gt;</span><br><span class="line">	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		 function foo(res)&#123;</span></span><br><span class="line"><span class="string">			var c = res.subjects</span></span><br><span class="line"><span class="string">			c.forEach(function(item)&#123;</span></span><br><span class="line"><span class="string">				console.log(item.title);</span></span><br><span class="line"><span class="string">			var li = document.createElement("</span>li<span class="string">")</span></span><br><span class="line"><span class="string">			li.innerHTML = item.title</span></span><br><span class="line"><span class="string">			document.getElementById("</span>div<span class="string">").append(li)</span></span><br><span class="line"><span class="string">			&#125;)</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br><span class="line"><span class="string">	&lt;script src="</span>https:<span class="comment">//api.douban.com/v2/movie/in_theaters?callback=foo"&gt;</span></span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="采用jquer的-ajax请求"><a href="#采用jquer的-ajax请求" class="headerlink" title="采用jquer的$.ajax请求"></a>采用jquer的$.ajax请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;title&gt;jsonpp&lt;/title&gt;</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;div&quot;&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script &gt;</span><br><span class="line">		$(document).ready(function()&#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">			url:&apos;https://api.douban.com/v2/movie/in_theaters&apos;,</span><br><span class="line">			dataType:&apos;jsonp&apos;,</span><br><span class="line">			success:function(res)&#123;</span><br><span class="line">				$(res.subjects).each(function(i,item)&#123;</span><br><span class="line">					console.log(item.title);</span><br><span class="line">					$(&apos;#div&apos;).append(`&lt;p&gt;$&#123;item.title&#125;&lt;/p&gt;`)</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/27/JSONP/" data-id="cjtso4om70001ak5d7308vi2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,47 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/27/hexo2/" data-id="cjtsk94cv0000qs5d4ieitije" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/27/JSONP/" class="article-date">
-  <time datetime="2019-03-27T12:12:31.684Z" itemprop="datePublished">2019-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/JSONP/">解决浏览器跨域问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器施加的安全限制。<br>所谓同源是指，域名，协议，端口均相同，不明白没关系，例如：<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.123.com/server.php" target="_blank" rel="noopener">http://www.123.com/server.php</a> （非跨域）<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.456.com/server.php" target="_blank" rel="noopener">http://www.456.com/server.php</a> （主域名不同:123/456，跨域）<br><a href="http://abc.123.com/index.html" target="_blank" rel="noopener">http://abc.123.com/index.html</a> 调用 <a href="http://def.123.com/server.php" target="_blank" rel="noopener">http://def.123.com/server.php</a> （子域名不同:abc/def，跨域）<br><a href="http://www.123.com:8080/index.html" target="_blank" rel="noopener">http://www.123.com:8080/index.html</a> 调用 <a href="http://www.123.com:8081/server.php" target="_blank" rel="noopener">http://www.123.com:8081/server.php</a> （端口不同:8080/8081，跨域）<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="https://www.123.com/server.php" target="_blank" rel="noopener">https://www.123.com/server.php</a> （协议不同:http/https，跨域）<br>案例</p>
-<p>借用豆瓣的接口  <a href="https://api.douban.com/v2/movie/in_theaters" target="_blank" rel="noopener">https://api.douban.com/v2/movie/in_theaters</a></p>
-<h2 id="下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求"><a href="#下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求" class="headerlink" title="下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求"></a>下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;jsonp&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">	&lt;link rel="stylesheet" href=""&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=<span class="string">"div"</span>&gt;</span><br><span class="line">	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		 function foo(res)&#123;</span></span><br><span class="line"><span class="string">			var c = res.subjects</span></span><br><span class="line"><span class="string">			c.forEach(function(item)&#123;</span></span><br><span class="line"><span class="string">				console.log(item.title);</span></span><br><span class="line"><span class="string">			var li = document.createElement("</span>li<span class="string">")</span></span><br><span class="line"><span class="string">			li.innerHTML = item.title</span></span><br><span class="line"><span class="string">			document.getElementById("</span>div<span class="string">").append(li)</span></span><br><span class="line"><span class="string">			&#125;)</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br><span class="line"><span class="string">	&lt;script src="</span>https:<span class="comment">//api.douban.com/v2/movie/in_theaters?callback=foo"&gt;</span></span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="采用jquer的-ajax请求"><a href="#采用jquer的-ajax请求" class="headerlink" title="采用jquer的$.ajax请求"></a>采用jquer的$.ajax请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;title&gt;jsonpp&lt;/title&gt;</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;div&quot;&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script &gt;</span><br><span class="line">		$(document).ready(function()&#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">			url:&apos;https://api.douban.com/v2/movie/in_theaters&apos;,</span><br><span class="line">			dataType:&apos;jsonp&apos;,</span><br><span class="line">			success:function(res)&#123;</span><br><span class="line">				$(res.subjects).each(function(i,item)&#123;</span><br><span class="line">					console.log(item.title);</span><br><span class="line">					$(&apos;#div&apos;).append(`&lt;p&gt;$&#123;item.title&#125;&lt;/p&gt;`)</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/27/JSONP/" data-id="cjtsk94hs0001qs5dku5s4cyo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/27/hexo2/" data-id="cjtso4ome0004ak5dxb15ecse" class="article-share-link">Share</a>
       
       
     </footer>
@@ -276,15 +369,19 @@
       <ul>
         
           <li>
+            <a href="/2019/03/28/yujiexi/">预解析与作用域链</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/28/erfen/">二分查找</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/28/kaipai/">JavaScript 实现快速排序</a>
           </li>
         
           <li>
             <a href="/2019/03/27/hexo/">hexo搭建的个人博客传到github上 以及遇见的错误</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/27/hexo2/">github 上传代码</a>
           </li>
         
           <li>
