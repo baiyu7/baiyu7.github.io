@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>js回调函数 | by</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="何为回调函数，官方解释：当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。 通常将一个函数B传入另一个函数A，并且在 需要的时候再调">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js回调函数">
+<meta property="og:url" content="http://yoursite.com/2019/04/02/callback/index.html">
+<meta property="og:site_name" content="by">
+<meta property="og:description" content="何为回调函数，官方解释：当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。 通常将一个函数B传入另一个函数A，并且在 需要的时候再调">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-02T13:34:54.422Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js回调函数">
+<meta name="twitter:description" content="何为回调函数，官方解释：当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。 通常将一个函数B传入另一个函数A，并且在 需要的时候再调">
+  
+    <link rel="alternate" href="/atom.xml" title="by" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">by</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">List</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-callback" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/02/callback/" class="article-date">
+  <time datetime="2019-04-02T13:33:58.512Z" itemprop="datePublished">2019-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js回调函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>何为回调函数，官方解释：当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。</p>
+<p>通常将一个函数B传入另一个函数A，并且在 需要的时候再调用函数A。</p>
+<p>说白了，回调就是回溯，先定义好将要使用的函数体，然后在使用使再调用这个函数，我们通常把callback作为一个参数传入先定义的那个函数。下面我们先来看一段jquery代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).hide(<span class="number">1000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(<span class="string">"The paragraph is now hidden"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面jquery就是一个回调函数，首先它在执行完hide效果后，接着调用function回调函数。</p>
+<p>我们再来看一段JS代码，看看回调函数是如何实现的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Buy(name,goods1,callback) &#123;</span><br><span class="line">    alert(name+&apos; buy &apos;+goods1);</span><br><span class="line">    if(callback&amp;&amp;typeof(callback)===&quot;function&quot;)</span><br><span class="line">        callback();</span><br><span class="line">&#125;</span><br><span class="line">Buy(&apos;xiaoming&apos;,&apos;apple&apos;,function()&#123;</span><br><span class="line">    alert(&quot;shopping finish&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>一个很简单的代码，一开始不知道要买啥，等到买到东西，立即把之前定义好的函数调用出来，最好加上判断规则，因为一切前提是callback必须是一个函数，输出结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xiaoming buy apple</span><br><span class="line">shopping finish</span><br></pre></td></tr></table></figure>
+<h3 id="闭包与回调"><a href="#闭包与回调" class="headerlink" title="闭包与回调"></a>闭包与回调</h3><p>下面看一道闭包的题目，分别点击第一个和第四个节点，执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var nodes = document.getElementsByTagName(&apos;button&apos;);</span><br><span class="line">for (var i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">    nodes[i].addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;You clicked element #&apos; + i);</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里虽然主要考的是闭包，addEventListener是一个闭包，而匿名函数是一个回调函数，i是在闭包中的变量。在addEventListener的回调执行时，循环已经结束，此时的变量i被赋值为node.length，node.length为总节点数。所以结果就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You clicked element # node.length</span><br></pre></td></tr></table></figure>
+<p>那要怎么改，将其返回值改成函数，既然i变量的值会被释放，那我们就引入i，让每次循环的值都保存在内存中，就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var nodes = document.getElementsByTagName(&apos;button&apos;);</span><br><span class="line">for (var i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">(function(i) &#123;</span><br><span class="line">    nodes[i].addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">        console.log(&apos;You clicked element #&apos; + i);</span><br><span class="line">        &#125;)</span><br><span class="line">       &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/02/callback/" data-id="cjtztrqjl00024o5d0xlk1gr3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/02/center/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于div局中控显示问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/02/callback/">js回调函数</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/center/">关于div局中控显示问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/28/yujiexi/">预解析与作用域链</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/28/erfen/">二分查找</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/28/kaipai/">JavaScript 实现快速排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 by<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">List</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

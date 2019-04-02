@@ -62,6 +62,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-callback" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/02/callback/" class="article-date">
+  <time datetime="2019-04-02T13:33:58.512Z" itemprop="datePublished">2019-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/02/callback/">js回调函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>何为回调函数，官方解释：当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。</p>
+<p>通常将一个函数B传入另一个函数A，并且在 需要的时候再调用函数A。</p>
+<p>说白了，回调就是回溯，先定义好将要使用的函数体，然后在使用使再调用这个函数，我们通常把callback作为一个参数传入先定义的那个函数。下面我们先来看一段jquery代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).hide(<span class="number">1000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(<span class="string">"The paragraph is now hidden"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面jquery就是一个回调函数，首先它在执行完hide效果后，接着调用function回调函数。</p>
+<p>我们再来看一段JS代码，看看回调函数是如何实现的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Buy(name,goods1,callback) &#123;</span><br><span class="line">    alert(name+&apos; buy &apos;+goods1);</span><br><span class="line">    if(callback&amp;&amp;typeof(callback)===&quot;function&quot;)</span><br><span class="line">        callback();</span><br><span class="line">&#125;</span><br><span class="line">Buy(&apos;xiaoming&apos;,&apos;apple&apos;,function()&#123;</span><br><span class="line">    alert(&quot;shopping finish&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>一个很简单的代码，一开始不知道要买啥，等到买到东西，立即把之前定义好的函数调用出来，最好加上判断规则，因为一切前提是callback必须是一个函数，输出结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xiaoming buy apple</span><br><span class="line">shopping finish</span><br></pre></td></tr></table></figure>
+<h3 id="闭包与回调"><a href="#闭包与回调" class="headerlink" title="闭包与回调"></a>闭包与回调</h3><p>下面看一道闭包的题目，分别点击第一个和第四个节点，执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var nodes = document.getElementsByTagName(&apos;button&apos;);</span><br><span class="line">for (var i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">    nodes[i].addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;You clicked element #&apos; + i);</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里虽然主要考的是闭包，addEventListener是一个闭包，而匿名函数是一个回调函数，i是在闭包中的变量。在addEventListener的回调执行时，循环已经结束，此时的变量i被赋值为node.length，node.length为总节点数。所以结果就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You clicked element # node.length</span><br></pre></td></tr></table></figure>
+<p>那要怎么改，将其返回值改成函数，既然i变量的值会被释放，那我们就引入i，让每次循环的值都保存在内存中，就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var nodes = document.getElementsByTagName(&apos;button&apos;);</span><br><span class="line">for (var i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">(function(i) &#123;</span><br><span class="line">    nodes[i].addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">        console.log(&apos;You clicked element #&apos; + i);</span><br><span class="line">        &#125;)</span><br><span class="line">       &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/02/callback/" data-id="cjtztrqjl00024o5d0xlk1gr3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-center" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/02/center/" class="article-date">
@@ -90,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/center/" data-id="cjtzmtnl60002yo5ddbf3519n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/02/center/" data-id="cjtztrqji00014o5dq2czhrbz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/yujiexi/" data-id="cjtzmtnld0006yo5dr47oj5dq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/yujiexi/" data-id="cjtztrqju00074o5d7v7bltg3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/erfen/" data-id="cjtzmtnl30001yo5d2uilnnvw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/erfen/" data-id="cjtztrqjn00034o5dpisv4pfv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/kaipai/" data-id="cjtzmtnlb0005yo5d09ipqnxh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/kaipai/" data-id="cjtztrqjq00054o5d34z2q4y5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/27/hexo/" data-id="cjtzmtnl80003yo5dma6jgzfa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/27/hexo/" data-id="cjtztrqjo00044o5dzwqtmzcq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -310,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/27/JSONP/" data-id="cjtzmtnks0000yo5d1abymkyy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/27/JSONP/" data-id="cjtztrqj800004o5dzsowug74" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/27/hexo2/" data-id="cjtzmtnla0004yo5d6jvtcmmj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/27/hexo2/" data-id="cjtztrqjs00064o5dyb42sxac" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,6 +457,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/02/callback/">js回调函数</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/02/center/">关于div局中控显示问题</a>
           </li>
         
@@ -420,10 +474,6 @@
         
           <li>
             <a href="/2019/03/28/kaipai/">JavaScript 实现快速排序</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/27/hexo/">hexo搭建的个人博客传到github上 以及遇见的错误</a>
           </li>
         
       </ul>
