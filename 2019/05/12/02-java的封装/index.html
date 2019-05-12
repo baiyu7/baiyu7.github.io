@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="JavaScript快速排序基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组， 然后左右数组并没有次序，只需要用地递归在左右数组进行排序 123456789101112131415161718function quickSort(a) &amp;#123;		  if (a.length &amp;lt;= 1) return a;		  var mid = Math.">
+  <meta name="description" content="java的封装思想1、把对象的状态和行为看成一个统一的整体，将二者存放在一个独立的模块中（一个类中）。2、“信息隐藏”：把不需要让外界知道的信息隐藏起来,尽可能隐藏对象功能实现细节，向外暴露方法，保证外界安全（把所有数据信息隐藏起来，尽可能隐藏多的功能，只向外暴露便捷的方法，以供调用）。 封装的好处：1、使调用者正确，方便地使用系统功能防止调用者随意修改系统属性 2、提高组件的重用性3、达到组件之">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 实现快速排序">
-<meta property="og:url" content="http://yoursite.com/2019/03/28/kaipai/index.html">
+<meta property="og:title" content="02_java的封装">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/02-java的封装/index.html">
 <meta property="og:site_name" content="by">
-<meta property="og:description" content="JavaScript快速排序基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组， 然后左右数组并没有次序，只需要用地递归在左右数组进行排序 123456789101112131415161718function quickSort(a) &amp;#123;		  if (a.length &amp;lt;= 1) return a;		  var mid = Math.">
+<meta property="og:description" content="java的封装思想1、把对象的状态和行为看成一个统一的整体，将二者存放在一个独立的模块中（一个类中）。2、“信息隐藏”：把不需要让外界知道的信息隐藏起来,尽可能隐藏对象功能实现细节，向外暴露方法，保证外界安全（把所有数据信息隐藏起来，尽可能隐藏多的功能，只向外暴露便捷的方法，以供调用）。 封装的好处：1、使调用者正确，方便地使用系统功能防止调用者随意修改系统属性 2、提高组件的重用性3、达到组件之">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-28T11:32:36.879Z">
+<meta property="og:updated_time" content="2019-05-12T12:11:30.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 实现快速排序">
-<meta name="twitter:description" content="JavaScript快速排序基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组， 然后左右数组并没有次序，只需要用地递归在左右数组进行排序 123456789101112131415161718function quickSort(a) &amp;#123;		  if (a.length &amp;lt;= 1) return a;		  var mid = Math.">
+<meta name="twitter:title" content="02_java的封装">
+<meta name="twitter:description" content="java的封装思想1、把对象的状态和行为看成一个统一的整体，将二者存放在一个独立的模块中（一个类中）。2、“信息隐藏”：把不需要让外界知道的信息隐藏起来,尽可能隐藏对象功能实现细节，向外暴露方法，保证外界安全（把所有数据信息隐藏起来，尽可能隐藏多的功能，只向外暴露便捷的方法，以供调用）。 封装的好处：1、使调用者正确，方便地使用系统功能防止调用者随意修改系统属性 2、提高组件的重用性3、达到组件之">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/03/28/kaipai/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/02-java的封装/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>JavaScript 实现快速排序 | by</title>
+  <title>02_java的封装 | by</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/kaipai/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/02-java的封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript 实现快速排序
+          <h1 class="post-title" itemprop="name headline">02_java的封装
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-03-28 19:28:53 / 修改时间：19:32:36" itemprop="dateCreated datePublished" datetime="2019-03-28T19:28:53+08:00">2019-03-28</time>
+              <time title="创建时间：2019-05-12 20:09:13 / 修改时间：20:11:30" itemprop="dateCreated datePublished" datetime="2019-05-12T20:09:13+08:00">2019-05-12</time>
             
 
             
@@ -371,9 +371,10 @@
       
 
       
-        <h3 id="JavaScript快速排序"><a href="#JavaScript快速排序" class="headerlink" title="JavaScript快速排序"></a>JavaScript快速排序</h3><p>基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组，</p>
-<p>然后左右数组并没有次序，只需要用地递归在左右数组进行排序</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">		  <span class="keyword">if</span> (a.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> a;</span><br><span class="line">		  <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor(a.length/<span class="number">2</span>)</span><br><span class="line">		    <span class="keyword">var</span>  midItem = a.splice(mid, <span class="number">1</span>)</span><br><span class="line">		    <span class="keyword">var</span>  left = []</span><br><span class="line">		    <span class="keyword">var</span>  right = [];</span><br><span class="line">		  a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">		    <span class="keyword">if</span> (item &lt;= midItem)</span><br><span class="line">		      left.push(item);</span><br><span class="line">		    <span class="keyword">else</span> </span><br><span class="line">		      right.push(item);</span><br><span class="line">		  &#125;);</span><br><span class="line">		  <span class="keyword">var</span> _left = quickSort(left)</span><br><span class="line">		    <span class="keyword">var</span>  _right = quickSort(right);</span><br><span class="line">		  <span class="keyword">return</span> _left.concat(midItem, _right);</span><br><span class="line">&#125;</span><br><span class="line">		<span class="keyword">var</span> a = quickSort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>])</span><br><span class="line">		<span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+        <h2 id="java的封装思想"><a href="#java的封装思想" class="headerlink" title="java的封装思想"></a>java的封装思想</h2><p>1、把对象的状态和行为看成一个统一的整体，将二者存放在一个独立的模块中（一个类中）。<br>2、“信息隐藏”：把不需要让外界知道的信息隐藏起来,尽可能隐藏对象功能实现细节，向外暴露方法，保证外界安全（把所有数据信息隐藏起来，尽可能隐藏多的功能，只向外暴露便捷的方法，以供调用）。</p>
+<h2 id="封装的好处："><a href="#封装的好处：" class="headerlink" title="封装的好处："></a>封装的好处：</h2><p>1、使调用者正确，方便地使用系统功能防止调用者随意修改系统属性</p>
+<p>2、提高组件的重用性<br>3、达到组件之间的低耦合性（当某一个模块实现变化时，只要只要对外暴露 的接口不变，就不会影响到其他模块）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> age;<span class="comment">//只能在本类中使用age变量。</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a&lt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      System.out.println(<span class="string">"年龄不能为负数"</span>);</span><br><span class="line">      <span class="keyword">return</span>;<span class="comment">//表示结束方法</span></span><br><span class="line">    &#125;</span><br><span class="line">    age = a;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//演示封装</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PersonDemo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    Person p = <span class="keyword">new</span> Person();</span><br><span class="line">    p.name = <span class="string">"BaiHe"</span>;</span><br><span class="line">    p.setAge(<span class="number">17</span>);</span><br><span class="line">    Sysyem.out.println(p.name + <span class="string">","</span>+p.age);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -404,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/hexo/" rel="next" title="hexo搭建的个人博客传到github上 以及遇见的错误">
-                <i class="fa fa-chevron-left"></i> hexo搭建的个人博客传到github上 以及遇见的错误
+              <a href="/2019/05/12/00-Hexo配置图片/" rel="next" title="00_Hexo配置图片">
+                <i class="fa fa-chevron-left"></i> 00_Hexo配置图片
               </a>
             
           </div>
@@ -413,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/28/erfen/" rel="prev" title="二分查找">
-                二分查找 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript快速排序"><span class="nav-number">1.</span> <span class="nav-text">JavaScript快速排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java的封装思想"><span class="nav-number">1.</span> <span class="nav-text">java的封装思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装的好处："><span class="nav-number">2.</span> <span class="nav-text">封装的好处：</span></a></li></ol></div>
             
 
           </div>
