@@ -96,17 +96,19 @@
 
 
 
-  <meta name="description" content="12345678910111213141516171819202122232425262728package cn.by.demo2;/* * 公鸡a * 母鸡 b * 小鸡 c *  * */public class Suanfa &amp;#123;	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method">
+  <meta name="description" content="this的作用：区别成员变量与方法中属性重名的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿">
-<meta property="og:url" content="http://yoursite.com/2019/05/12/百钱白鸡问题/index.html">
+<meta property="og:title" content="01_java的this指向">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/01_java的this指向/index.html">
 <meta property="og:site_name" content="by">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728package cn.by.demo2;/* * 公鸡a * 母鸡 b * 小鸡 c *  * */public class Suanfa &amp;#123;	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method">
+<meta property="og:description" content="this的作用：区别成员变量与方法中属性重名的问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T07:50:52.810Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/12/01_java的this指向/TIM截图20190512190220.jpg">
+<meta property="og:updated_time" content="2019-05-12T11:07:22.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728package cn.by.demo2;/* * 公鸡a * 母鸡 b * 小鸡 c *  * */public class Suanfa &amp;#123;	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method">
+<meta name="twitter:title" content="01_java的this指向">
+<meta name="twitter:description" content="this的作用：区别成员变量与方法中属性重名的问题">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/12/01_java的this指向/TIM截图20190512190220.jpg">
 
 
 
@@ -114,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/12/百钱白鸡问题/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/01_java的this指向/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿ | by</title>
+  <title>01_java的this指向 | by</title>
   
 
 
@@ -289,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/百钱白鸡问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/01_java的this指向/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -306,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿
+          <h1 class="post-title" itemprop="name headline">01_java的this指向
 
               
             
@@ -332,7 +334,7 @@
                 
               
 
-              <time title="创建时间：2019-05-12 15:39:24 / 修改时间：15:50:52" itemprop="dateCreated datePublished" datetime="2019-05-12T15:39:24+08:00">2019-05-12</time>
+              <time title="创建时间：2019-05-12 19:05:31 / 修改时间：19:07:22" itemprop="dateCreated datePublished" datetime="2019-05-12T19:05:31+08:00">2019-05-12</time>
             
 
             
@@ -371,7 +373,8 @@
       
 
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.by.demo2;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 公鸡a</span></span><br><span class="line"><span class="comment"> * 母鸡 b</span></span><br><span class="line"><span class="comment"> * 小鸡 c</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Suanfa</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Suan_N2();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	时间复杂度为O(N2)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Suan_N2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> a = <span class="number">1</span> ; a &lt; <span class="number">20</span> ; a++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">1</span> ; b &lt; <span class="number">33</span> ; b++) &#123;</span><br><span class="line">				<span class="keyword">int</span> c = <span class="number">100</span> - a -b;</span><br><span class="line">				<span class="keyword">if</span>((c%<span class="number">3</span> == <span class="number">0</span>) &amp;&amp; (<span class="number">5</span>*a + <span class="number">3</span>*b + c/<span class="number">3</span>) == <span class="number">100</span>) &#123;</span><br><span class="line">					System.out.println(<span class="string">"公鸡"</span>+ a +<span class="string">"母鸡"</span> + b+<span class="string">"小鸡"</span> + c);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>this的作用：区别成员变量与方法中属性重名的问题</p>
+<p> <img src="/2019/05/12/01_java的this指向/TIM截图20190512190220.jpg" alt="没显示出来"></p>
 
       
     </div>
@@ -402,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/js原生实现事件委托/" rel="next" title="js实现事件委托">
-                <i class="fa fa-chevron-left"></i> js实现事件委托
+              <a href="/2019/05/12/Hexo配置图片-md/" rel="next" title="Hexo配置图片.md">
+                <i class="fa fa-chevron-left"></i> Hexo配置图片.md
               </a>
             
           </div>
@@ -411,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/12/Hexo配置图片-md/" rel="prev" title="Hexo配置图片.md">
-                Hexo配置图片.md <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
