@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果； 1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能 2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定 1234567891011121314151617181920212223242526272829303132">
+  <meta name="description" content="final修饰局部变量final修饰局部变量时，局部变量视为常量 final修饰成员方法final修饰成员方法时，方法不能被重写 final修饰成员变量final修饰成员变量时，成员变量必须对其进行初始化，或者在构造函数中赋值，有多个构造函数要在每个构造函数中进行赋值。 final修饰类final修饰类时，该类不能被继承 final修饰的静态成员必须在定义时初始化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js实现事件委托">
-<meta property="og:url" content="http://yoursite.com/2019/04/06/js原生实现事件委托/index.html">
+<meta property="og:title" content="final关键字">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/05-final关键字/index.html">
 <meta property="og:site_name" content="by">
-<meta property="og:description" content="事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果； 1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能 2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定 1234567891011121314151617181920212223242526272829303132">
+<meta property="og:description" content="final修饰局部变量final修饰局部变量时，局部变量视为常量 final修饰成员方法final修饰成员方法时，方法不能被重写 final修饰成员变量final修饰成员变量时，成员变量必须对其进行初始化，或者在构造函数中赋值，有多个构造函数要在每个构造函数中进行赋值。 final修饰类final修饰类时，该类不能被继承 final修饰的静态成员必须在定义时初始化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-06T06:04:29.927Z">
+<meta property="og:updated_time" content="2019-05-24T12:12:15.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js实现事件委托">
-<meta name="twitter:description" content="事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果； 1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能 2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定 1234567891011121314151617181920212223242526272829303132">
+<meta name="twitter:title" content="final关键字">
+<meta name="twitter:description" content="final修饰局部变量final修饰局部变量时，局部变量视为常量 final修饰成员方法final修饰成员方法时，方法不能被重写 final修饰成员变量final修饰成员变量时，成员变量必须对其进行初始化，或者在构造函数中赋值，有多个构造函数要在每个构造函数中进行赋值。 final修饰类final修饰类时，该类不能被继承 final修饰的静态成员必须在定义时初始化">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/06/js原生实现事件委托/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/05-final关键字/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>js实现事件委托 | by</title>
+  <title>final关键字 | by</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/js原生实现事件委托/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/05-final关键字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js实现事件委托
+          <h1 class="post-title" itemprop="name headline">final关键字
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-04-06 14:01:13 / 修改时间：14:04:29" itemprop="dateCreated datePublished" datetime="2019-04-06T14:01:13+08:00">2019-04-06</time>
+              <time title="创建时间：2019-05-24 20:05:47 / 修改时间：20:12:15" itemprop="dateCreated datePublished" datetime="2019-05-24T20:05:47+08:00">2019-05-24</time>
             
 
             
@@ -371,10 +371,11 @@
       
 
       
-        <p>事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果；</p>
-<p>1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能</p>
-<p>2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">""</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">	&lt;input type="button" name="" value="添加" id="btn"&gt;	</span></span><br><span class="line"><span class="regexp">	&lt;div id="di"&gt;</span></span><br><span class="line"><span class="regexp">		&lt;div&gt;</span></span><br><span class="line"><span class="regexp">			12</span></span><br><span class="line"><span class="regexp">		&lt;/</span>div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			<span class="number">34</span></span><br><span class="line">		&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	</span><br><span class="line">			<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>)</span><br><span class="line"></span><br><span class="line">			btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> objdiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"di"</span>).appendChild(objdiv)</span><br><span class="line">				objdiv.innerHTML=<span class="string">"你好"</span></span><br><span class="line">			&#125;</span><br><span class="line">				<span class="keyword">var</span> s = <span class="built_in">document</span>.getElementById(<span class="string">"di"</span>)</span><br><span class="line">				s.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">					event = <span class="built_in">window</span>.event||e</span><br><span class="line">					<span class="keyword">var</span> target = event.target</span><br><span class="line">					<span class="built_in">console</span>.log(target);</span><br><span class="line">					<span class="keyword">if</span>(target.nodeName  == <span class="string">"DIV"</span>)&#123;</span><br><span class="line">						alert(<span class="string">"nihao "</span>)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="final修饰局部变量"><a href="#final修饰局部变量" class="headerlink" title="final修饰局部变量"></a>final修饰局部变量</h2><p>final修饰局部变量时，局部变量视为常量</p>
+<h2 id="final修饰成员方法"><a href="#final修饰成员方法" class="headerlink" title="final修饰成员方法"></a>final修饰成员方法</h2><p>final修饰成员方法时，方法不能被重写</p>
+<h2 id="final修饰成员变量"><a href="#final修饰成员变量" class="headerlink" title="final修饰成员变量"></a>final修饰成员变量</h2><p>final修饰成员变量时，成员变量必须对其进行初始化，或者在构造函数中赋值，有多个构造函数要在每个构造函数中进行赋值。</p>
+<h2 id="final修饰类"><a href="#final修饰类" class="headerlink" title="final修饰类"></a>final修饰类</h2><p>final修饰类时，该类不能被继承</p>
+<h2 id="final修饰的静态成员"><a href="#final修饰的静态成员" class="headerlink" title="final修饰的静态成员"></a>final修饰的静态成员</h2><p>必须在定义时初始化</p>
 
       
     </div>
@@ -405,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/03/post/" rel="next" title="表单的post请求">
-                <i class="fa fa-chevron-left"></i> 表单的post请求
+              <a href="/2019/05/22/04-java一个小案例/" rel="next" title="java一个小案例">
+                <i class="fa fa-chevron-left"></i> java一个小案例
               </a>
             
           </div>
@@ -414,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/12/百钱白鸡问题/" rel="prev" title="公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿">
-                公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,6 +514,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰局部变量"><span class="nav-number">1.</span> <span class="nav-text">final修饰局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰成员方法"><span class="nav-number">2.</span> <span class="nav-text">final修饰成员方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰成员变量"><span class="nav-number">3.</span> <span class="nav-text">final修饰成员变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰类"><span class="nav-number">4.</span> <span class="nav-text">final修饰类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰的静态成员"><span class="nav-number">5.</span> <span class="nav-text">final修饰的静态成员</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
