@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="JavaScript快速排序基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组， 然后左右数组并没有次序，只需要用地递归在左右数组进行排序 123456789101112131415161718function quickSort(a) &amp;#123;		  if (a.length &amp;lt;= 1) return a;		  var mid = Math.">
+  <meta name="description" content="字符串的比较1234例1：常量池的使用 String s0 = &quot;abc&quot;; String s1 = &quot;abc&quot;; System.out.println(s0==s1);   //true 123456例2：String中 == 与equals的区别 String s0 =new String (&quot;abc&quot;); String s1 =new String (&quot;abc&quot;); 							Syste">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 实现快速排序">
-<meta property="og:url" content="http://yoursite.com/2019/03/28/kaipai/index.html">
+<meta property="og:title" content="String练习">
+<meta property="og:url" content="http://yoursite.com/2019/05/26/06-String练习/index.html">
 <meta property="og:site_name" content="by">
-<meta property="og:description" content="JavaScript快速排序基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组， 然后左右数组并没有次序，只需要用地递归在左右数组进行排序 123456789101112131415161718function quickSort(a) &amp;#123;		  if (a.length &amp;lt;= 1) return a;		  var mid = Math.">
+<meta property="og:description" content="字符串的比较1234例1：常量池的使用 String s0 = &quot;abc&quot;; String s1 = &quot;abc&quot;; System.out.println(s0==s1);   //true 123456例2：String中 == 与equals的区别 String s0 =new String (&quot;abc&quot;); String s1 =new String (&quot;abc&quot;); 							Syste">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-28T11:32:36.879Z">
+<meta property="og:updated_time" content="2019-05-26T03:13:13.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 实现快速排序">
-<meta name="twitter:description" content="JavaScript快速排序基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组， 然后左右数组并没有次序，只需要用地递归在左右数组进行排序 123456789101112131415161718function quickSort(a) &amp;#123;		  if (a.length &amp;lt;= 1) return a;		  var mid = Math.">
+<meta name="twitter:title" content="String练习">
+<meta name="twitter:description" content="字符串的比较1234例1：常量池的使用 String s0 = &quot;abc&quot;; String s1 = &quot;abc&quot;; System.out.println(s0==s1);   //true 123456例2：String中 == 与equals的区别 String s0 =new String (&quot;abc&quot;); String s1 =new String (&quot;abc&quot;); 							Syste">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/03/28/kaipai/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/26/06-String练习/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>JavaScript 实现快速排序 | by</title>
+  <title>String练习 | by</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/kaipai/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/06-String练习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript 实现快速排序
+          <h1 class="post-title" itemprop="name headline">String练习
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-03-28 19:28:53 / 修改时间：19:32:36" itemprop="dateCreated datePublished" datetime="2019-03-28T19:28:53+08:00">2019-03-28</time>
+              <time title="创建时间：2019-05-26 11:10:05 / 修改时间：11:13:13" itemprop="dateCreated datePublished" datetime="2019-05-26T11:10:05+08:00">2019-05-26</time>
             
 
             
@@ -371,9 +371,13 @@
       
 
       
-        <h3 id="JavaScript快速排序"><a href="#JavaScript快速排序" class="headerlink" title="JavaScript快速排序"></a>JavaScript快速排序</h3><p>基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组，</p>
-<p>然后左右数组并没有次序，只需要用地递归在左右数组进行排序</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">		  <span class="keyword">if</span> (a.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> a;</span><br><span class="line">		  <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor(a.length/<span class="number">2</span>)</span><br><span class="line">		    <span class="keyword">var</span>  midItem = a.splice(mid, <span class="number">1</span>)</span><br><span class="line">		    <span class="keyword">var</span>  left = []</span><br><span class="line">		    <span class="keyword">var</span>  right = [];</span><br><span class="line">		  a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">		    <span class="keyword">if</span> (item &lt;= midItem)</span><br><span class="line">		      left.push(item);</span><br><span class="line">		    <span class="keyword">else</span> </span><br><span class="line">		      right.push(item);</span><br><span class="line">		  &#125;);</span><br><span class="line">		  <span class="keyword">var</span> _left = quickSort(left)</span><br><span class="line">		    <span class="keyword">var</span>  _right = quickSort(right);</span><br><span class="line">		  <span class="keyword">return</span> _left.concat(midItem, _right);</span><br><span class="line">&#125;</span><br><span class="line">		<span class="keyword">var</span> a = quickSort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>])</span><br><span class="line">		<span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+        <h3 id="字符串的比较"><a href="#字符串的比较" class="headerlink" title="字符串的比较"></a>字符串的比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">1</span>：常量池的使用 </span><br><span class="line">String s0 = <span class="string">"abc"</span>; </span><br><span class="line">String s1 = <span class="string">"abc"</span>; </span><br><span class="line">System.out.println(s0==s1);   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">2</span>：String中 == 与equals的区别 </span><br><span class="line">String s0 =<span class="keyword">new</span> String (<span class="string">"abc"</span>); </span><br><span class="line">String s1 =<span class="keyword">new</span> String (<span class="string">"abc"</span>); </span><br><span class="line">							</span><br><span class="line">System.out.println(s0==s1);  <span class="comment">//false </span></span><br><span class="line">System.out.println(s0.equals(s1));  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">3</span>：编译期确定</span><br><span class="line">String s0=<span class="string">"helloworld"</span>; </span><br><span class="line">String s1=<span class="string">"helloworld"</span>; </span><br><span class="line">String s2=<span class="string">"hello"</span> + <span class="string">"world"</span>;  </span><br><span class="line">System.out.println( s0==s1 );   <span class="comment">//true</span></span><br><span class="line">System.out.println( s0==s2 );    <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">4</span>：编译期无法确定</span><br><span class="line">String s0=<span class="string">"helloworld"</span>; </span><br><span class="line">String s1=<span class="keyword">new</span> String(<span class="string">"helloworld"</span>); </span><br><span class="line">String s2=<span class="string">"hello"</span> + <span class="keyword">new</span> String(<span class="string">"world"</span>);  </span><br><span class="line">					</span><br><span class="line">System.out.println( s0==s1 );  <span class="comment">//false </span></span><br><span class="line">System.out.println( s0==s2 );  <span class="comment">//false</span></span><br><span class="line">System.out.println( s1==s2 );  <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">5</span>：编译期优化</span><br><span class="line">String s0 = <span class="string">"a1"</span>; </span><br><span class="line">String s1 = <span class="string">"a"</span> + <span class="number">1</span>; </span><br><span class="line">System.out.println((s0 == s1));<span class="comment">//true</span></span><br><span class="line">String s2 = <span class="string">"atrue"</span>; </span><br><span class="line">String s3= <span class="string">"a"</span> + <span class="keyword">true</span>; </span><br><span class="line">System.out.println((s2 == s3)) <span class="comment">//true</span></span><br><span class="line">		 </span><br><span class="line">String s4 = <span class="string">"a3.4"</span>; </span><br><span class="line">String s5 = <span class="string">"a"</span> + <span class="number">3.4</span>; </span><br><span class="line">System.out.println((s4 == s5)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">6</span> 编译期无法确定</span><br><span class="line">String s0 = <span class="string">"ab"</span>; </span><br><span class="line">String s1 = <span class="string">"b"</span>; </span><br><span class="line">String s2 = <span class="string">"a"</span> + s1; </span><br><span class="line">System.out.println((s0 == s2));  <span class="comment">//false</span></span><br><span class="line">					</span><br><span class="line"> 例<span class="number">7</span>：编译期确定</span><br><span class="line"> String s0 = <span class="string">"ab"</span>; </span><br><span class="line"><span class="keyword">final</span> String s1 = <span class="string">"b"</span>;   </span><br><span class="line">String s2 = <span class="string">"a"</span> + s1;  </span><br><span class="line">System.out.println((s0 == s2));	 <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">回忆 : </span><br><span class="line">		</span><br><span class="line"><span class="keyword">byte</span> a=<span class="number">10</span>;</span><br><span class="line"> <span class="keyword">byte</span> b= <span class="number">20</span>;</span><br><span class="line">		   </span><br><span class="line"><span class="keyword">byte</span> c=a+b; <span class="comment">//编译出错 </span></span><br><span class="line">		   </span><br><span class="line">可以将上面的声明全用 finall</span><br><span class="line"><span class="keyword">final</span>  <span class="keyword">byte</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span> b= <span class="number">20</span>;</span><br><span class="line"> <span class="keyword">byte</span> c=a+b; <span class="comment">//OK</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -404,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/hexo/" rel="next" title="hexo搭建的个人博客传到github上 以及遇见的错误">
-                <i class="fa fa-chevron-left"></i> hexo搭建的个人博客传到github上 以及遇见的错误
+              <a href="/2019/05/24/05-final关键字/" rel="next" title="final关键字">
+                <i class="fa fa-chevron-left"></i> final关键字
               </a>
             
           </div>
@@ -413,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/28/erfen/" rel="prev" title="二分查找">
-                二分查找 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript快速排序"><span class="nav-number">1.</span> <span class="nav-text">JavaScript快速排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的比较"><span class="nav-number">1.</span> <span class="nav-text">字符串的比较</span></a></li></ol></div>
             
 
           </div>
