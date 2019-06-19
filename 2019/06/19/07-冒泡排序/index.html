@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="二分查找 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;	&amp;lt;meta http-equiv=&quot;X-U">
+  <meta name="description" content="基本思想 比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  代码实现​1234567891011121314151617public class 冒泡 &amp;#123;	publi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分查找">
-<meta property="og:url" content="http://yoursite.com/2019/03/28/erfen/index.html">
+<meta property="og:title" content="冒泡排序">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/07-冒泡排序/index.html">
 <meta property="og:site_name" content="by">
-<meta property="og:description" content="二分查找 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;	&amp;lt;meta http-equiv=&quot;X-U">
+<meta property="og:description" content="基本思想 比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  代码实现​1234567891011121314151617public class 冒泡 &amp;#123;	publi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-28T11:46:59.574Z">
+<meta property="og:updated_time" content="2019-06-19T03:27:56.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二分查找">
-<meta name="twitter:description" content="二分查找 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;	&amp;lt;meta http-equiv=&quot;X-U">
+<meta name="twitter:title" content="冒泡排序">
+<meta name="twitter:description" content="基本思想 比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  代码实现​1234567891011121314151617public class 冒泡 &amp;#123;	publi">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/03/28/erfen/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/19/07-冒泡排序/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>二分查找 | by</title>
+  <title>冒泡排序 | by</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/erfen/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/07-冒泡排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二分查找
+          <h1 class="post-title" itemprop="name headline">冒泡排序
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-03-28 19:45:27 / 修改时间：19:46:59" itemprop="dateCreated datePublished" datetime="2019-03-28T19:45:27+08:00">2019-03-28</time>
+              <time title="创建时间：2019-06-19 11:25:35 / 修改时间：11:27:56" itemprop="dateCreated datePublished" datetime="2019-06-19T11:25:35+08:00">2019-06-19</time>
             
 
             
@@ -371,8 +371,13 @@
       
 
       
-        <p>﻿二分查找</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">""</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		// function erfen(arr,key)&#123;</span></span><br><span class="line"><span class="string">		// 	var low = 0</span></span><br><span class="line"><span class="string">		// 	var heigh = arr.length - 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">		// var 	mid = Math.floor((heigh + low)/2)</span></span><br><span class="line"><span class="string">		// 	while (low &lt;= heigh) &#123;</span></span><br><span class="line"><span class="string">		// 		 if(key == arr[mid])&#123;</span></span><br><span class="line"><span class="string">		// 			return arr[mid]</span></span><br><span class="line"><span class="string">		// 		&#125;</span></span><br><span class="line"><span class="string">		// 		else if(key &gt; arr[mid])&#123;</span></span><br><span class="line"><span class="string">		// 			low = mid+1</span></span><br><span class="line"><span class="string">		// 		&#125;</span></span><br><span class="line"><span class="string">		// 		else if  (key &lt;arr[mid])&#123;</span></span><br><span class="line"><span class="string">		// 			heigh = mid -1</span></span><br><span class="line"><span class="string">		// 		&#125;</span></span><br><span class="line"><span class="string">		// 	&#125;</span></span><br><span class="line"><span class="string">		</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">		// &#125;</span></span><br><span class="line"><span class="string">        //递归实现</span></span><br><span class="line"><span class="string">		function erfen(low ,heigh,key,arr)&#123;</span></span><br><span class="line"><span class="string">			</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			if(low&gt;=heigh)return -1 </span></span><br><span class="line"><span class="string">			var mid = Math.floor((low+heigh)/2)</span></span><br><span class="line"><span class="string">			 if(key == arr[mid])&#123;</span></span><br><span class="line"><span class="string">				return arr[mid]</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">			else if(key&gt;arr[mid])&#123;</span></span><br><span class="line"><span class="string">				return erfen(mid+1,heigh,arr,key)</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">			else if(key&lt; arr[mid])&#123;</span></span><br><span class="line"><span class="string">				return erfen(low,mid-1,key,arr)</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">		var a = erfen(0,4,1,[1,2,5,6,7])</span></span><br><span class="line"><span class="string">		console.log(a);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 冒泡 </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> [] arr = &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">83</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length-<span class="number">1</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length-i-<span class="number">1</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">int</span> temp = arr[j+<span class="number">1</span>];</span><br><span class="line">					arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">					arr[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		System.out.println(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -403,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/28/kaipai/" rel="next" title="JavaScript 实现快速排序">
-                <i class="fa fa-chevron-left"></i> JavaScript 实现快速排序
+              <a href="/2019/05/26/06-String练习/" rel="next" title="String练习">
+                <i class="fa fa-chevron-left"></i> String练习
               </a>
             
           </div>
@@ -413,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/28/yujiexi/" rel="prev" title="预解析与作用域链">
-                预解析与作用域链 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/19/08-快速排序/" rel="prev" title="08-快速排序">
+                08-快速排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -459,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -506,6 +520,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本思想"><span class="nav-number">1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
