@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="by">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果； 1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能 2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定 1234567891011121314151617181920212223242526272829303132">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js实现事件委托">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/js原生实现事件委托/index.html">
 <meta property="og:site_name" content="by">
+<meta property="og:description" content="事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果； 1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能 2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定 1234567891011121314151617181920212223242526272829303132">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-27T08:20:53.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="by">
+<meta name="twitter:title" content="js实现事件委托">
+<meta name="twitter:description" content="事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果； 1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能 2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定 1234567891011121314151617181920212223242526272829303132">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/page/3/">
+  <link rel="canonical" href="http://yoursite.com/2018/05/19/js原生实现事件委托/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>by</title>
+  <title>js实现事件委托 | by</title>
   
 
 
@@ -168,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -320,9 +323,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -337,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/JSONP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/js原生实现事件委托/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -354,10 +357,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/27/JSONP/" class="post-title-link" itemprop="url">解决浏览器跨域问题</a>
+          <h1 class="post-title" itemprop="name headline">js实现事件委托
+
               
             
           </h1>
@@ -382,16 +383,46 @@
                 
               
 
-              <time title="创建时间：2019-03-27 20:12:31 / 修改时间：20:33:20" itemprop="dateCreated datePublished" datetime="2019-03-27T20:12:31+08:00">2019-03-27</time>
+              <time title="创建时间：2018-05-19 11:30:29" itemprop="dateCreated datePublished" datetime="2018-05-19T11:30:29+08:00">2018-05-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-27 16:20:53" itemprop="dateModified" datetime="2019-06-27T16:20:53+08:00">2019-06-27</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -421,15 +452,11 @@
       
 
       
-        
-          
-            <h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器施加的安全限制。<br>所谓同源是指，域名，协议，端口均相同，不明白没关系，例如：<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.123.com/server.php" target="_blank" rel="noopener">http://www.123.com/server.php</a> （非跨域）<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.456.com/server.php" target="_blank" rel="noopener">http://www.456.com/server.php</a> （主域名不同:123/456，跨域）<br><a href="http://abc.123.com/index.html" target="_blank" rel="noopener">http://abc.123.com/index.html</a> 调用 <a href="http://def.123.com/server.php" target="_blank" rel="noopener">http://def.123.com/server.php</a> （子域名不同:abc/def，跨域）<br><a href="http://www.123.com:8080/index.html" target="_blank" rel="noopener">http://www.123.com:8080/index.html</a> 调用 <a href="http://www.123.com:8081/server.php" target="_blank" rel="noopener">http://www.123.com:8081/server.php</a> （端口不同:8080/8081，跨域）<br><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="https://www.123.com/server.php" target="_blank" rel="noopener">https://www.123.com/server.php</a> （协议不同:http/https，跨域）<br>案例</p>
-<p>借用豆瓣的接口  <a href="https://api.douban.com/v2/movie/in_theaters" target="_blank" rel="noopener">https://api.douban.com/v2/movie/in_theaters</a></p>
-<h2 id="下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求"><a href="#下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求" class="headerlink" title="下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求"></a>下面采用原生js处理jsonP解决跨域前提是后台允许jsonp请求</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;jsonp&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">	&lt;link rel="stylesheet" href=""&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=<span class="string">"div"</span>&gt;</span><br><span class="line">	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">		 function foo(res)&#123;</span></span><br><span class="line"><span class="string">			var c = res.subjects</span></span><br><span class="line"><span class="string">			c.forEach(function(item)&#123;</span></span><br><span class="line"><span class="string">				console.log(item.title);</span></span><br><span class="line"><span class="string">			var li = document.createElement("</span>li<span class="string">")</span></span><br><span class="line"><span class="string">			li.innerHTML = item.title</span></span><br><span class="line"><span class="string">			document.getElementById("</span>div<span class="string">").append(li)</span></span><br><span class="line"><span class="string">			&#125;)</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br><span class="line"><span class="string">	&lt;script src="</span>https:<span class="comment">//api.douban.com/v2/movie/in_theaters?callback=foo"&gt;</span></span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="采用jquer的-ajax请求"><a href="#采用jquer的-ajax请求" class="headerlink" title="采用jquer的$.ajax请求"></a>采用jquer的$.ajax请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;title&gt;jsonpp&lt;/title&gt;</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;div&quot;&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script &gt;</span><br><span class="line">		$(document).ready(function()&#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">			url:&apos;https://api.douban.com/v2/movie/in_theaters&apos;,</span><br><span class="line">			dataType:&apos;jsonp&apos;,</span><br><span class="line">			success:function(res)&#123;</span><br><span class="line">				$(res.subjects).each(function(i,item)&#123;</span><br><span class="line">					console.log(item.title);</span><br><span class="line">					$(&apos;#div&apos;).append(`&lt;p&gt;$&#123;item.title&#125;&lt;/p&gt;`)</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <p>事件委托就是利用冒泡原理，将事件绑定到节点的父级节点上，从而触发这些节点执行代码中编写的效果；</p>
+<p>1.减少页面绑定事件数量，由于页面事件绑定数量越多，页面执行性能越差，所以事件委托可以提高页面的性能</p>
+<p>2.事件委托可以灵活的处理子节点动态变化的场景，无论子节点增加还是减少，事件都无需重新绑定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">""</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">	&lt;input type="button" name="" value="添加" id="btn"&gt;	</span></span><br><span class="line"><span class="regexp">	&lt;div id="di"&gt;</span></span><br><span class="line"><span class="regexp">		&lt;div&gt;</span></span><br><span class="line"><span class="regexp">			12</span></span><br><span class="line"><span class="regexp">		&lt;/</span>div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			<span class="number">34</span></span><br><span class="line">		&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	</span><br><span class="line">			<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>)</span><br><span class="line"></span><br><span class="line">			btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> objdiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"di"</span>).appendChild(objdiv)</span><br><span class="line">				objdiv.innerHTML=<span class="string">"你好"</span></span><br><span class="line">			&#125;</span><br><span class="line">				<span class="keyword">var</span> s = <span class="built_in">document</span>.getElementById(<span class="string">"di"</span>)</span><br><span class="line">				s.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">					event = <span class="built_in">window</span>.event||e</span><br><span class="line">					<span class="keyword">var</span> target = event.target</span><br><span class="line">					<span class="built_in">console</span>.log(target);</span><br><span class="line">					<span class="keyword">if</span>(target.nodeName  == <span class="string">"DIV"</span>)&#123;</span><br><span class="line">						alert(<span class="string">"nihao "</span>)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
@@ -452,12 +479,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/yujiexi/" rel="prev" title="预解析与作用域链">
+                预解析与作用域链 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -467,18 +510,15 @@
   </article>
 
 
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -514,7 +554,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -537,7 +577,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -694,6 +736,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -709,6 +755,8 @@
 
   
 
+
+  
 
 
   
