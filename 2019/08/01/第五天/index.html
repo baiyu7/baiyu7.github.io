@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 二维数组123456789String[] x=&amp;#123;&quot;a&quot;,&quot;b&quot;,&quot;3&quot;,null&amp;#125;;   //ok基本数据类型不可以有null这个值int a=null;double b=null;float c=null;boolean f=null;int[] x=&amp;#123;3,null&amp;#125;; 都是错误的 12345 二维数组定义int[][] array=new int[">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习第五天">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/第五天/index.html">
+<meta property="og:site_name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+<meta property="og:description" content="1 二维数组123456789String[] x=&amp;#123;&quot;a&quot;,&quot;b&quot;,&quot;3&quot;,null&amp;#125;;   //ok基本数据类型不可以有null这个值int a=null;double b=null;float c=null;boolean f=null;int[] x=&amp;#123;3,null&amp;#125;; 都是错误的 12345 二维数组定义int[][] array=new int[">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-01T10:51:46.755Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习第五天">
+<meta name="twitter:description" content="1 二维数组123456789String[] x=&amp;#123;&quot;a&quot;,&quot;b&quot;,&quot;3&quot;,null&amp;#125;;   //ok基本数据类型不可以有null这个值int a=null;double b=null;float c=null;boolean f=null;int[] x=&amp;#123;3,null&amp;#125;; 都是错误的 12345 二维数组定义int[][] array=new int[">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/第五天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java学习第五天 | 一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/第五天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java学习第五天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-01 18:49:23 / 修改时间：18:51:46" itemprop="dateCreated datePublished" datetime="2019-08-01T18:49:23+08:00">2019-08-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-二维数组"><a href="#1-二维数组" class="headerlink" title="1 二维数组"></a>1 二维数组</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String[] x=&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"3"</span>,<span class="keyword">null</span>&#125;;   <span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line">基本数据类型不可以有<span class="keyword">null</span>这个值</span><br><span class="line"><span class="keyword">int</span> a=<span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">double</span> b=<span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">float</span> c=<span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">boolean</span> f=<span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">int</span>[] x=&#123;<span class="number">3</span>,<span class="keyword">null</span>&#125;; </span><br><span class="line">都是错误的</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> 二维数组定义</span><br><span class="line"><span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>][<span class="number">4</span>];  <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>][];  <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span> array[][]=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>][];  <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span>[] array[]=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>][<span class="number">4</span>];  <span class="comment">//ok</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误写法</span><br><span class="line"><span class="keyword">int</span>[<span class="number">2</span>][] array=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>][<span class="number">4</span>];  <span class="comment">//error</span></span><br><span class="line"><span class="keyword">int</span>[][<span class="number">2</span>] array=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>][<span class="number">4</span>];  <span class="comment">//error</span></span><br><span class="line"><span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[][<span class="number">4</span>];  <span class="comment">//error</span></span><br><span class="line"><span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[][];  <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//例子 对相应位置赋值</span></span><br><span class="line">  <span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>&#125;&#125;;</span><br><span class="line">  array[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">100</span>;</span><br><span class="line">  array[<span class="number">2</span>][<span class="number">1</span>]=<span class="number">500</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//例子 遍历二维数组</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">2</span>,<span class="number">2</span>&#125;,&#123;<span class="number">1</span>,<span class="number">3</span>&#125;&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;array[i].length;j++)&#123;</span><br><span class="line">			System.out.println(<span class="string">"("</span>+i+<span class="string">","</span>+j+<span class="string">")"</span>+array[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">//例子 定义方法把二维数组中每一行的内容求合,并把值为偶数的存到某个一维数组中返回</span></span><br><span class="line">  <span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">2</span>,<span class="number">2</span>&#125;,&#123;<span class="number">1</span>,<span class="number">3</span>&#125;&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[][] array=<span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">2</span>,<span class="number">2</span>&#125;,&#123;<span class="number">1</span>,<span class="number">3</span>&#125;&#125;;</span><br><span class="line">		<span class="keyword">int</span>[] a=getArray(array);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">			System.out.print(a[i]+<span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getArray(<span class="keyword">int</span>[][] array)&#123;</span><br><span class="line">		<span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">			<span class="keyword">int</span> sumtemp=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;array[i].length;j++)&#123;</span><br><span class="line">				sumtemp+=array[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(sumtemp%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">				index++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span>[] newArray=<span class="keyword">new</span> <span class="keyword">int</span>[index];</span><br><span class="line">		<span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">			<span class="keyword">int</span> sumtemp=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;array[i].length;j++)&#123;</span><br><span class="line">				sumtemp+=array[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(sumtemp%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">				newArray[c]=sumtemp;</span><br><span class="line">				c++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> newArray;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="number">1</span>)</span><br><span class="line"> <span class="keyword">char</span>[] x=&#123;<span class="string">'A'</span>,<span class="string">'3'</span>,<span class="number">3</span>&#125;;  <span class="comment">//可以</span></span><br><span class="line"> <span class="keyword">int</span>[] x=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="string">'a'</span>,<span class="string">'b'</span>&#125;;  <span class="comment">//可以</span></span><br><span class="line"><span class="number">2</span>)</span><br><span class="line">  <span class="keyword">char</span>[] array=&#123;<span class="string">'A'</span>,<span class="string">'B'</span>&#125;;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">  System.out.println(array[i++]); <span class="comment">//A</span></span><br><span class="line">  <span class="comment">//System.out.println(array[++i]); //B</span></span><br></pre></td></tr></table></figure>
+<p>​     </p>
+<h1 id="2-类与对象"><a href="#2-类与对象" class="headerlink" title="2 类与对象"></a>2 类与对象</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">面向对象?.......</span><br><span class="line"></span><br><span class="line">类: 对实现事物中某些事物的抽象描述</span><br><span class="line">对象:就是本类中事物的一个具体的存在</span><br><span class="line"></span><br><span class="line"><span class="comment">//类中有两种对象</span></span><br><span class="line"><span class="number">1</span>.字段(属性,成员变量,实例变量)</span><br><span class="line"><span class="number">2</span>.方法(函数,成员方法,实例方法)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		String name;</span><br><span class="line">		<span class="keyword">int</span> age;</span><br><span class="line">		String sex;</span><br><span class="line">		String school;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">study</span><span class="params">()</span></span>&#123;</span><br><span class="line">			System.out.println(name+<span class="string">","</span>+age+<span class="string">","</span>+sex+<span class="string">","</span>+school+<span class="string">",学习能力超强"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shangKe</span><span class="params">()</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"认真上课"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//System.out.println("认真上课");  错误,类中不能直接写输出语句,暂时认为只能有属性和方法</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//类名 对象名=new 类名();</span></span><br><span class="line">		Student stu=<span class="keyword">new</span> Student();</span><br><span class="line">		stu.name=<span class="string">"张三"</span>;</span><br><span class="line">		stu.age=<span class="number">18</span>;</span><br><span class="line">		stu.sex=<span class="string">"男"</span>;</span><br><span class="line">		stu.school=<span class="string">"远东"</span>;</span><br><span class="line">		</span><br><span class="line">		stu.study();</span><br><span class="line">		</span><br><span class="line">		stu.shangKe();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 设计一个Cat(猫)类,并使用</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String nickName;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	String home;</span><br><span class="line">	String ownerName;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">catchMouse</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"逮到一个老鼠"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"喵........"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">ziWoJieShao</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我的名字叫:"</span>+nickName);</span><br><span class="line">		System.out.println(<span class="string">"我的年龄是:"</span>+age);</span><br><span class="line">		System.out.println(<span class="string">"我的家在哪里:"</span>+home);</span><br><span class="line">		System.out.println(<span class="string">"我的主人名字是:"</span>+ownerName);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Cat cat=<span class="keyword">new</span> Cat();</span><br><span class="line">	</span><br><span class="line">	cat.nickName=<span class="string">"加菲猫"</span>;</span><br><span class="line">	cat.age=<span class="number">5</span>;</span><br><span class="line">	cat.home=<span class="string">"东北"</span>;</span><br><span class="line">	cat.ownerName=<span class="string">"李四"</span>;</span><br><span class="line">	</span><br><span class="line">	cat.ziWoJieShao();</span><br><span class="line">	</span><br><span class="line">	cat.catchMouse();</span><br><span class="line">	</span><br><span class="line">	cat.shout();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calc</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> width;</span><br><span class="line">	<span class="keyword">int</span> hight;</span><br><span class="line">	String color;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">jia</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a+b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">cheng</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a*b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"这是一台世界上没有的计算器,非常的厉害,只能做两个数计算,并且只能算加和成"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Calc c=<span class="keyword">new</span> Calc();</span><br><span class="line">		c.width=<span class="number">500</span>;</span><br><span class="line">		c.hight=<span class="number">1000</span>;</span><br><span class="line">		c.color=<span class="string">"黑色"</span>;</span><br><span class="line">		c.show();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> jresult=c.jia(<span class="number">3</span>, <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">int</span> cresult=c.cheng(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">		System.out.println(jresult+<span class="string">","</span>+cresult);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 写一个银行卡类,能取钱,存钱,查询余额</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 银行卡 </span>&#123;</span><br><span class="line">		String 银行卡名;</span><br><span class="line">		<span class="keyword">int</span> 余额;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> 取钱(<span class="keyword">int</span> money)&#123;</span><br><span class="line">			<span class="keyword">if</span>(余额&gt;=money)&#123;</span><br><span class="line">				余额-=money;</span><br><span class="line">				<span class="keyword">return</span> money;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"余额不足"</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">void</span> 存钱(<span class="keyword">int</span> money)&#123;</span><br><span class="line">			余额+=money;</span><br><span class="line">			System.out.println(<span class="string">"存钱成功!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">void</span> 查询余额()&#123;</span><br><span class="line">			System.out.println(银行卡名+<span class="string">"的银行卡余额为:"</span>+余额);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	银行卡 卡=<span class="keyword">new</span> 银行卡();</span><br><span class="line">	卡.银行卡名=<span class="string">"道外邮政"</span>;</span><br><span class="line">	</span><br><span class="line">	卡.查询余额();</span><br><span class="line">	</span><br><span class="line">	卡.存钱(<span class="number">500</span>);</span><br><span class="line">	</span><br><span class="line">	卡.查询余额();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> resultMoney=卡.取钱(<span class="number">400</span>);</span><br><span class="line">	System.out.println(resultMoney);</span><br><span class="line">	</span><br><span class="line">	卡.查询余额();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        </p>
+<h1 id="3-对象与内存空间"><a href="#3-对象与内存空间" class="headerlink" title="3 对象与内存空间"></a>3 对象与内存空间</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span>出来的对象,是有默认初始值的</span><br><span class="line"><span class="keyword">int</span>  <span class="number">0</span></span><br><span class="line"><span class="keyword">boolean</span>  <span class="keyword">false</span></span><br><span class="line">String <span class="keyword">null</span>  附:因为String是一个类,初始值是<span class="keyword">null</span>,可以证明所有引用数据类型初始值都是<span class="keyword">null</span></span><br><span class="line"><span class="keyword">double</span> <span class="number">0.0</span></span><br><span class="line"><span class="keyword">float</span> <span class="number">0.0f</span></span><br><span class="line"><span class="keyword">char</span> \u0000</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Student stu=<span class="keyword">new</span> Student();</span><br><span class="line">当遇到stu=<span class="keyword">null</span>这句话时,<span class="keyword">new</span> 出来的实体对象将会变成垃圾,等待垃圾回收器(集)进行回收</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 对象作为函数形参</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Robot r=<span class="keyword">new</span> Robot();</span><br><span class="line">		干活(r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> 干活(Robot r)&#123;  <span class="comment">// Robot r=r;</span></span><br><span class="line">		r.锄草();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Robot</span></span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 锄草()&#123;</span><br><span class="line">		System.out.println(<span class="string">"机器人把草地打扫的干干净净"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//干活(new Robot());  //匿名对象</span></span><br><span class="line">		Robot r=<span class="keyword">new</span> Robot();</span><br><span class="line">		干活(r);</span><br><span class="line">		干活(r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> 干活(Robot r)&#123;  <span class="comment">// Robot r=r;</span></span><br><span class="line">		r.锄草();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Robot</span></span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 锄草()&#123;</span><br><span class="line">		System.out.println(<span class="string">"机器人把草地打扫的干干净净"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​<br>​        </p>
+<h1 id="4-封装"><a href="#4-封装" class="headerlink" title="4 封装"></a>4 封装</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">面向对象编程有三个特征:封装 继承 多态</span><br><span class="line"></span><br><span class="line">封装有两层含义</span><br><span class="line"><span class="number">1</span>)就是把复杂的操作封装成方法,对外公布,这样,外界只知道这些公布的方法,而不知道方法里的具体细节</span><br><span class="line"><span class="number">2</span>)就是把类中的属性进行私有化,不能被外界直接访问,可以间接访问</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calc</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">int</span> width;  <span class="comment">//封装</span></span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">int</span> hight;</span><br><span class="line">		<span class="keyword">private</span> String color;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">jia</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> a+b;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">cheng</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> a*b;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"这是一台世界上没有的计算器,非常的厉害,只能做两个数计算,并且只能算加和成"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//提供get set方法</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">int</span> width)</span></span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.width=width;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWidth</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.width;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHight</span><span class="params">(<span class="keyword">int</span> hight)</span></span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.hight=hight;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getHight</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> hight;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(String color)</span></span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.color=color;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> color;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Calc c=<span class="keyword">new</span> Calc();</span><br><span class="line">		c.setWidth(<span class="number">500</span>);</span><br><span class="line">		c.setHight(<span class="number">1000</span>);</span><br><span class="line">		c.setColor(<span class="string">"黑色"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">		System.out.println(<span class="string">"宽"</span>+c.getWidth());</span><br><span class="line">		System.out.println(<span class="string">"高"</span>+c.getHight());</span><br><span class="line">		System.out.println(<span class="string">"颜色"</span>+c.getColor());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/第四天/" rel="next" title="java学习第四天">
+                <i class="fa fa-chevron-left"></i> java学习第四天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/01/第六天/" rel="prev" title="java学习第六天">
+                java学习第六天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-二维数组"><span class="nav-number">1.</span> <span class="nav-text">1 二维数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-类与对象"><span class="nav-number">2.</span> <span class="nav-text">2 类与对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-对象与内存空间"><span class="nav-number">3.</span> <span class="nav-text">3 对象与内存空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-封装"><span class="nav-number">4.</span> <span class="nav-text">4 封装</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

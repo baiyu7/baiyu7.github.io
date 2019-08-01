@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 while循环​         while(条件表达式){   //执行后一定返回boolean类型  ,别加;;;;;;;;     //循环体 }  public static void main(String[] args) {     int day=1;     while(day&amp;lt;=10){         System.out.println(&amp;quot;学习了:&amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习第三天">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/第三天/index.html">
+<meta property="og:site_name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+<meta property="og:description" content="1 while循环​         while(条件表达式){   //执行后一定返回boolean类型  ,别加;;;;;;;;     //循环体 }  public static void main(String[] args) {     int day=1;     while(day&amp;lt;=10){         System.out.println(&amp;quot;学习了:&amp;quo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-01T10:45:34.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习第三天">
+<meta name="twitter:description" content="1 while循环​         while(条件表达式){   //执行后一定返回boolean类型  ,别加;;;;;;;;     //循环体 }  public static void main(String[] args) {     int day=1;     while(day&amp;lt;=10){         System.out.println(&amp;quot;学习了:&amp;quo">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/第三天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java学习第三天 | 一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/第三天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java学习第三天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-01 18:41:46 / 修改时间：18:45:34" itemprop="dateCreated datePublished" datetime="2019-08-01T18:41:46+08:00">2019-08-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-while循环"><a href="#1-while循环" class="headerlink" title="1 while循环"></a>1 while循环</h1><p>​        </p>
+<pre><code>while(条件表达式){   //执行后一定返回boolean类型  ,别加;;;;;;;;
+    //循环体
+}
+
+public static void main(String[] args) {
+    int day=1;
+    while(day&lt;=10){
+        System.out.println(&quot;学习了:&quot;+day+&quot;天&quot;);
+        day++; //++day
+    }
+}
+
+//例子 输入一个数字,这个数字8888,就结束,否则不是,就把这个值打印出来,继续输入
+public static void main(String[] args) {
+    Scanner scan=new Scanner(System.in);
+    System.out.println(&quot;输入一个数字&quot;);
+    int num=scan.nextInt();
+    while(num!=8888){
+        System.out.println(&quot;输入:&quot;+num);
+        num=scan.nextInt();
+    }
+    System.out.println(&quot;输入正确,程序结束&quot;);
+    scan.close();
+}
+
+//死循环
+while(true){
+    System.out.println(&quot;嘿嘿&quot;);
+}
+System.out.println(&quot;呵呵&quot;);  //报错,不会执行
+
+
+while(1==1){
+    System.out.println(&quot;嘿嘿&quot;);
+}
+System.out.println(&quot;呵呵&quot;);  //报错,不会执行
+
+
+int a=1;
+while(a==1){  //编译器在编译期不认识变量a,所以不确定,认识常量
+    System.out.println(&quot;嘿嘿&quot;);
+}
+System.out.println(&quot;呵呵&quot;);  //会执行
+</code></pre><h1 id="2-do-while"><a href="#2-do-while" class="headerlink" title="2 do while"></a>2 do while</h1><p>​        </p>
+<pre><code>do{
+    //循环体
+}while(条件表达式);  //别忘记这个 ;;;;;;;;
+
+while和do  while区别:
+do...while不管三七二十一先执行一遍循环体
+
+//例子
+public static void main(String[] args) {
+    int a=1;
+    do{
+        System.out.println(&quot;a=&quot;+a);  //1~9
+        a++;
+    }while(a&lt;10);
+    System.out.println(&quot;a=====&quot;+a); //10
+}
+
+//例子 输入一个数字,这个数字8888,就结束,否则不是,就把这个值打印出来,继续输入
+public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println(&quot;请输入一个数字&quot;);
+        int num=0;
+        do{
+            num=scan.nextInt();
+            if(num!=8888){
+                System.out.println(&quot;你输入的不正确:&quot;+num);
+            }
+
+        }while(num!=8888);
+        System.out.println(&quot;输入正确&quot;);
+        scan.close();
+}
+
+//例子 随机生成10个数,在0-9之间,并把最大的挑出来
+1) 随机生成数字的方式
+        /*double a=Math.random();  第一种  这个在  java.lang包下,用的时候,不需要导包
+          System.out.println(a);  //0~1(不包含)
+        */        
+                Random r=new Random();  //第二种  这个在java.util包下,用的时候,需要导包
+                System.out.println(r.nextBoolean());
+                System.out.println(r.nextDouble());
+                System.out.println(r.nextFloat());  //...
+                System.out.println(r.nextInt());   //生成int范围中的随机数
+                System.out.println(r.nextInt(10));  //生成0-9之间的数
+
+        int a=(int)(Math.random()*10);
+        System.out.println(a);  //0~10(不包含)
+
+2) 本题
+    public static void main(String[] args) {
+        int i=0;
+        int max=0;
+        do{
+            int num=(int)(Math.random()*10);
+            System.out.println(&quot;生成第&quot;+(i+1)+&quot;个数:&quot;+num);
+            if(i==0){  //这时候max才是10个数当中的任意一个
+                max=num;
+            }
+            if(max&lt;num){
+                max=num;
+            }
+            i++;
+        }while(i&lt;10);
+        System.out.println(&quot;最大值:&quot;+max);
+
+    }
+</code></pre><h1 id="3-for循环"><a href="#3-for循环" class="headerlink" title="3 for循环"></a>3 for循环</h1><p>​        </p>
+<pre><code>for(初始化表达式;条件表达式;循环后操作的表达式){
+    //循环体
+}
+
+
+for(int i=0;i&lt;3;i++){
+    System.out.println(&quot;这就是for循环&quot;);
+}
+这就是for循环
+这就是for循环
+这就是for循环
+
+int i=0;
+for(i=0;i&lt;3;i++){
+    System.out.println(&quot;这就是for循环&quot;);
+}
+System.out.println(i);  //3
+
+
+public static void main(String[] args) {
+    int i=0;
+    for(System.out.println(&quot;哈哈,我就这么初始化了&quot;);i&lt;3;System.out.println(&quot;这就是循环之后做的事情&quot;)){
+        System.out.println(&quot;for循环&quot;);
+        i++;
+    }
+    /**
+     * 哈哈,我就这么初始化了
+     * for循环
+     * 这就是循环之后做的事情
+     * for循
+     * 这就是循环之后做的事情
+     * for循环
+     * 这就是循环之后做的事情
+     * 
+     */
+}
+
+for(System.out.println(&quot;哈哈,我就这么初始化了&quot;);System.out.println(&quot;哈哈,我就这么初始化了&quot;);System.out.println(&quot;这就是循环之后做的事情&quot;)){
+        System.out.println(&quot;for循环&quot;);
+        i++;
+    }
+
+//编译报错
+
+//死循环
+for(;;){
+    //死循环
+}
+
+//例子
+求1+2+3...+100的和
+
+int s=0;
+for(int i=1;i&lt;=100;i++){
+    s+=i;
+}
+System.out.println(s);
+
+//例子 求0-10000之间所有能被888整除的数,打印出来,并且统计个数
+int count=0;
+for(int i=0;i&lt;=10000;i++){
+    if(i%888==0){
+        System.out.println(i);
+        count++;
+    }
+}
+System.out.println(&quot;count:&quot;+count);
+</code></pre><h1 id="4-双层循环"><a href="#4-双层循环" class="headerlink" title="4 双层循环"></a>4 双层循环</h1><p>​        </p>
+<pre><code>while(1==1){
+  while(2==2){
+  }
+}
+//不会报错,因为都含有意义
+
+//例子
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+
+for(int i=0;i&lt;5;i++){
+    for(int j=0;j&lt;=9;j++){
+        System.out.print(j+&quot; &quot;);
+    }
+    System.out.println();
+}
+</code></pre><p>​<br>​<br>​<br>​<br>​<br>        //例子 打印如下图像<br>        <strong>*#<em>**</em></strong><br>        <strong>*#<em>**</em></strong><br>        <strong>*#<em>**</em></strong><br>        <strong>*#<em>**</em></strong><br>        <strong>*#<em>**</em></strong><br>        <strong>*#<em>**</em></strong></p>
+<pre><code>for(int j=0;j&lt;=5;j++){
+    for(int i=1;i&lt;=10;i++){
+        System.out.print(&quot;*&quot;);
+    }
+    System.out.println();
+}
+
+
+//例子
+##########
+#########
+########
+#######
+######
+#####
+####
+###
+##
+#
+
+public static void main(String[] args) {
+    int count=10;
+    for(int j=1;j&lt;=10;j++){
+        for(int i=1;i&lt;=count;i++){
+            System.out.print(&quot;#&quot;);
+        }
+        count--;
+        System.out.println();
+    }
+}
+</code></pre><h1 id="5-break-和-continue"><a href="#5-break-和-continue" class="headerlink" title="5 break 和 continue"></a>5 break 和 continue</h1><p>​        </p>
+<pre><code>    break用于结束循环体
+
+    //判断1-10000之间能被99整除的数是不是超过了20个
+    public static void main(String[] args) {
+    int count=0;
+    for(int i=1;i&lt;=10000;i++){
+        if(i%99==0){
+            count++;
+            if(count&gt;20){
+                System.out.println(&quot;超过20个&quot;+i);  
+                break;  //结束当前循环体
+            }
+        }
+    }
+    if(count&lt;20){
+        System.out.println(&quot;没超过20个&quot;);
+    }
+
+}
+
+
+//此例子演示break结束的离他最近的循环    
+for(int i=0;i&lt;5;i++){
+        for(int j=0;j&lt;10;j++){
+            System.out.print(j+&quot; &quot;);
+            if(j&gt;6){
+                break;
+            }
+        }
+        System.out.println();
+    }    
+
+//标号的使用
+public static void main(String[] args) {
+    AAA:for(int i=0;i&lt;5;i++){
+        BBB:for(int j=0;j&lt;10;j++){
+            System.out.print(j+&quot; &quot;);
+            if(j&gt;6){
+                break AAA;  //结束名字为AAA的循环体
+            }
+        }
+        System.out.println();
+    }
+
+}
+
+// continue的使用
+
+for(int i=0;i&lt;=20;i++){
+        if(i%5!=0){
+            continue;  //结束当前这层循环,继续下一层次的循环,循环体不会像break一样结束
+        }
+        System.out.println(i);
+}
+</code></pre><h1 id="6-函数"><a href="#6-函数" class="headerlink" title="6 函数"></a>6 函数</h1><p>​        </p>
+<pre><code>什么是函数?
+    函数就是定义在  类中   的具有  特定功能 的一段   独立的程序,函数也称为方法
+
+函数的格式:
+
+    修饰符  返回值类型 函数名称(参数类型 形式参数1,参数类型 形式参数2......){
+        函数体
+        return 返回值  //可以省略
+    }
+
+返回值类型:函数运行后的结果的数据数据类型,和返回值的类型有绝对关系
+参数类型:是形式参数的数据类型
+形式参数:是一个变量,用来存储调用函数时传递给函数的实际参数
+实际参数:传递给函数的真实哪个参数
+return: 结束函数体
+返回值:改值会返回给调用者
+
+
+返回值类型:有返回值  基本数据类型  引用数据类型
+           无返回值  void
+</code></pre><p>​<br>    public static void main(String[] args) {<br>        int a=1;<br>        int b=2;<br>        int c=add(a, b);<br>        System.out.println(c);<br>    }</p>
+<pre><code>public static int add(int a,int b){
+    int c=a+b;
+    return c;
+}
+</code></pre><p>​<br>​<br>    public static void main(String[] args) {<br>        Scanner scan=new Scanner(System.in);<br>        System.out.println(“请输入第一个数”);<br>        int num1=scan.nextInt();<br>        System.out.println(“请输入第二个数”);<br>        int num2=scan.nextInt();<br>        System.out.println(“请输入符号”);<br>        String str=scan.next();<br>        char ch=str.charAt(0);<br>        int result=jiSuanQi(num1,num2,ch);<br>        System.out.println(result);<br>    }</p>
+<pre><code>public static int jiSuanQi(int num1,int num2,char ch){
+    int result=0;
+    switch (ch) { 
+    case &apos;+&apos;:
+        result=num1+num2;
+        break;
+    case &apos;-&apos;:
+        result=num1-num2;
+        break;
+    case &apos;*&apos;:
+        result=num1*num2;
+        break;
+    case &apos;/&apos;:
+        result=num1/num2;
+        break;
+    default:
+        System.out.println(&quot;您输入的符号有误&quot;);
+        break;
+  }
+    return result;
+}
+
+
+//例子
+public static void main(String[] args) {
+    System.out.println(&quot;找一个会铺地板的师傅&quot;);
+    int a=10;
+    int b=20;
+    铺地板(a,b);
+
+    int money=计算工钱(a,b,7);
+    System.out.println(&quot;最后钱数:&quot;+money);
+
+}
+
+public static void 铺地板(int a,int b){
+    for(int i=0;i&lt;a;i++){
+        for(int j=0;j&lt;b;j++){
+            System.out.print(&quot;#&quot;);
+        }
+        System.out.println();
+    }
+}
+
+public static int 计算工钱(int a,int b,int money){
+    return a*b*money;
+}
+</code></pre><p>​        </p>
+<h1 id="7-重载函数"><a href="#7-重载函数" class="headerlink" title="7 重载函数"></a>7 重载函数</h1><p>​        </p>
+<pre><code>在一个类中,可以存在名称相同,但是函数的参数个数,或者参数类型不同的方法,这样的函数称为重载
+函数重不重载,不看返回值类型
+
+以下和  void  a(int a,char b,String c) 是重载
+
+void a(int a,char y,String z)  //不是,和原函数一模一样
+int a(int a,String b,char c);  //是重载
+void a(int a,String b,String c)  //是重载
+int a(int a,String b)  //是
+int a()    //是
+boolean a(int a,char b,String name)  //不是
+</code></pre><p>​    </p>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  求s=a+aa+aaa+aaaa+aa...a的值，其中a是一个数字。例如<span class="number">5</span>+<span class="number">55</span>+<span class="number">555</span>+<span class="number">5555</span>+<span class="number">55555</span>(此时共有<span class="number">5</span>个数相加)，几个数相加由键盘控制。</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一个数字"</span>);</span><br><span class="line">	<span class="keyword">int</span> num=scan.nextInt();<span class="comment">//3   3+33+333</span></span><br><span class="line">	<span class="keyword">int</span> total=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> number=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">		number=number*<span class="number">10</span>+num;</span><br><span class="line">		System.out.println(number);</span><br><span class="line">		total+=number;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"和:"</span>+total);</span><br><span class="line"> 从键盘输入两个数,再输入一个符号(+ -  * /),然后根据这个符号,对这两个数字进行运算 用<span class="keyword">if</span> <span class="keyword">else</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入第一个数字"</span>);</span><br><span class="line">	<span class="keyword">int</span> num1=scan.nextInt();</span><br><span class="line">	System.out.println(<span class="string">"请输入第二个数字"</span>);</span><br><span class="line">	<span class="keyword">int</span> num2=scan.nextInt();</span><br><span class="line">	System.out.println(<span class="string">"请输入符号"</span>);</span><br><span class="line">	String strCh=scan.next();</span><br><span class="line">	<span class="keyword">if</span>(strCh.equals(<span class="string">"+"</span>))&#123;</span><br><span class="line">		System.out.println(num1+<span class="string">"+"</span>+num2+<span class="string">"="</span>+(num1+num2));</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(strCh.equals(<span class="string">"-"</span>))&#123;</span><br><span class="line">		System.out.println(num1+<span class="string">"-"</span>+num2+<span class="string">"="</span>+(num1-num2));</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"> <span class="number">6</span> 评成绩,输入一个成绩,输出属于第几等   A B C D E    <span class="number">90</span>分以上 A, <span class="number">80</span>-<span class="number">90</span> B,<span class="number">70</span>-<span class="number">80</span> C <span class="number">60</span>-<span class="number">70</span>  D , <span class="number">60</span>- E</span><br><span class="line">	score=键盘输入</span><br><span class="line">	<span class="keyword">if</span>(score&gt;=<span class="number">90</span>)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(score&gt;=<span class="number">80</span> &amp;&amp; score&lt;=<span class="number">90</span>)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"> 要求用户输入一个<span class="number">0</span>到<span class="number">2</span>之间的整数， </span><br><span class="line">	如果用户输入<span class="number">0</span>输出“你出的是石头”， </span><br><span class="line">	如果用户输入<span class="number">1</span>就输出“你出的是剪刀”， </span><br><span class="line">	如果用户输入的是<span class="number">2</span>就输出“你出的是布”， </span><br><span class="line">	然后再问是否要继续出拳， </span><br><span class="line">	如果回答“y”就重复以上过程， </span><br><span class="line">	否则结束程序。</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">for</span> (;;) &#123;</span><br><span class="line">	System.out.println(<span class="string">"请输入一个数字"</span>);</span><br><span class="line">	<span class="keyword">int</span> num = scan.nextInt();</span><br><span class="line">	<span class="keyword">if</span> (num &gt;= <span class="number">0</span> &amp;&amp; num &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">switch</span> (num) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">				System.out.println(<span class="string">"你出的是石头"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				System.out.println(<span class="string">"你出的是剪刀"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				System.out.println(<span class="string">"你出的是布"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"是否继续在出拳?(y/Y)"</span>);</span><br><span class="line">		String change=scan.next();</span><br><span class="line">		<span class="keyword">if</span>(change.equals(<span class="string">"y"</span>) || change.equals(<span class="string">"Y"</span>))&#123;<span class="comment">// change.equalsIgnoreCase("y")</span></span><br><span class="line">			</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">"输入的范围不正确"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">计算<span class="number">2000</span>年<span class="number">1</span>月<span class="number">1</span>日到<span class="number">2018</span>年<span class="number">1</span>月<span class="number">1</span>日相距多少小时。（注意闰年）</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> day=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2000</span>;i&lt;<span class="number">2018</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>((i%<span class="number">4</span>==<span class="number">0</span> &amp;&amp; i%<span class="number">100</span>!=<span class="number">0</span>) || i%<span class="number">400</span>==<span class="number">0</span>)&#123;</span><br><span class="line">				day=<span class="number">366</span>;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				day=<span class="number">365</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			sum+=day;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"=="</span>+(sum*<span class="number">24</span>));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">从控台输入一个数num与之前定义的数n进行比较，如果num==n提示”找到了”并跳出循环，如果num&lt;n提示”小了”，</span><br><span class="line">如果num&gt;n提示”大了”，并让其重新输入，如果<span class="number">4</span>次都没有猜对，则提示”抱歉，已经没有机会了”。</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n=(<span class="keyword">int</span>)(Math.random()*<span class="number">100</span>);</span><br><span class="line">		System.out.println(<span class="string">"输入一个数"</span>);</span><br><span class="line">		<span class="keyword">boolean</span> b=<span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">int</span> num=scan.nextInt();</span><br><span class="line">			<span class="keyword">if</span>(num&gt;n)&#123;</span><br><span class="line">				System.out.println(<span class="string">"大了,请输入"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num&lt;n)&#123;</span><br><span class="line">				System.out.println(<span class="string">"小了,请输入"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"相等"</span>);</span><br><span class="line">				b=<span class="keyword">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="keyword">false</span>)&#123;</span><br><span class="line">			System.out.println(<span class="string">"没有机会了"</span>);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">做两个双重循环的例子</span><br><span class="line">			      *                                 </span><br><span class="line">				  ***</span><br><span class="line">				  *****</span><br><span class="line">				  *******</span><br><span class="line">				  *********</span><br><span class="line">				  </span><br><span class="line">				  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">2</span>*i-<span class="number">1</span>;j++)&#123;</span><br><span class="line">							System.out.print(<span class="string">"*"</span>);</span><br><span class="line">						&#125;</span><br><span class="line">						System.out.println();</span><br><span class="line">					&#125;</span><br><span class="line">				 &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/29/第二天/" rel="next" title="java学习第二天">
+                <i class="fa fa-chevron-left"></i> java学习第二天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/01/第四天/" rel="prev" title="java学习第四天">
+                java学习第四天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-while循环"><span class="nav-number">1.</span> <span class="nav-text">1 while循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-do-while"><span class="nav-number">2.</span> <span class="nav-text">2 do while</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-for循环"><span class="nav-number">3.</span> <span class="nav-text">3 for循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-双层循环"><span class="nav-number">4.</span> <span class="nav-text">4 双层循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-break-和-continue"><span class="nav-number">5.</span> <span class="nav-text">5 break 和 continue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-函数"><span class="nav-number">6.</span> <span class="nav-text">6 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-重载函数"><span class="nav-number">7.</span> <span class="nav-text">7 重载函数</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

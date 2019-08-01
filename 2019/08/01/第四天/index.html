@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 数组1234567891011121314151617181920212223242526272829303132333435int a=40;int b=10;if(a&amp;gt;b)&amp;#123;	int temp=a;  //temp=40	a=b;  //a=10	b=temp;  //b=40;&amp;#125;System.out.println(a);System.out.println(b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习第四天">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/第四天/index.html">
+<meta property="og:site_name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+<meta property="og:description" content="1 数组1234567891011121314151617181920212223242526272829303132333435int a=40;int b=10;if(a&amp;gt;b)&amp;#123;	int temp=a;  //temp=40	a=b;  //a=10	b=temp;  //b=40;&amp;#125;System.out.println(a);System.out.println(b">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-01T10:49:12.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习第四天">
+<meta name="twitter:description" content="1 数组1234567891011121314151617181920212223242526272829303132333435int a=40;int b=10;if(a&amp;gt;b)&amp;#123;	int temp=a;  //temp=40	a=b;  //a=10	b=temp;  //b=40;&amp;#125;System.out.println(a);System.out.println(b">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/第四天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java学习第四天 | 一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/第四天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java学习第四天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-01 18:45:50 / 修改时间：18:49:12" itemprop="dateCreated datePublished" datetime="2019-08-01T18:45:50+08:00">2019-08-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-数组"><a href="#1-数组" class="headerlink" title="1 数组"></a>1 数组</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">40</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;b)&#123;</span><br><span class="line">	<span class="keyword">int</span> temp=a;  <span class="comment">//temp=40</span></span><br><span class="line">	a=b;  <span class="comment">//a=10</span></span><br><span class="line">	b=temp;  <span class="comment">//b=40;</span></span><br><span class="line">&#125;</span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//面试题:如何不通过第三个变量实现两个数交换位置</span></span><br><span class="line"><span class="keyword">int</span> a=<span class="number">40</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">10</span>;</span><br><span class="line">a=a+b;  <span class="comment">//a=50</span></span><br><span class="line">b=a-b;  <span class="comment">//b=40;</span></span><br><span class="line">a=a-b;  <span class="comment">//a=10</span></span><br><span class="line">System.out.println(a+<span class="string">","</span>+b);</span><br><span class="line"></span><br><span class="line">^  异或</span><br><span class="line">一个数连着异或同一个数两边,会得到原来的数</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">40</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">10</span>;</span><br><span class="line">	a=a^b;  </span><br><span class="line">	b=a^b;  <span class="comment">//b=40;</span></span><br><span class="line">	a=a^b;  <span class="comment">//a=10</span></span><br><span class="line">	System.out.println(a+<span class="string">":"</span>+b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">就是一个容器,这个容器中存放的都是同一类别的元素,对其中每一个元素可以使用下标的形式进行访问</span><br><span class="line">下标就是索引,从<span class="number">0</span>开始,</span><br><span class="line"></span><br><span class="line">特点:数组创建后,大小不可改变</span><br><span class="line">	 数组中的元素,都是同一种类型</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">数组的定义:</span><br><span class="line">	<span class="comment">// 元素类型[]  数组名称=new 元素类型[元素个数];  (常用)</span></span><br><span class="line">	<span class="comment">// 元素类型 数组名称[]=new 元素类型[元素个数];</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span>[] array=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];  <span class="comment">//ok</span></span><br><span class="line">	<span class="comment">//array是数组名字,是什么类型   引用数据类型</span></span><br><span class="line">	</span><br><span class="line">	注意:数组创建之后都有默认初始值,<span class="keyword">int</span>类型为<span class="number">0</span></span><br><span class="line">	</span><br><span class="line">	====以上是创建一个数组=======</span><br><span class="line">	</span><br><span class="line">	====以下是创建一个数组,并且初始化========</span><br><span class="line">	<span class="keyword">int</span>[] array=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;  <span class="comment">//创建数组,并直接初始化</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span>[] array=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;  <span class="comment">//error</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span>[] array=&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;  <span class="comment">//创建数组,并直接初始化</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span>[] x=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">	x=&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;  <span class="comment">//error  只能在定义的同时初始化</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span>[<span class="number">3</span>] x=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];  <span class="comment">//error  前面的[]里面不许有数字</span></span><br></pre></td></tr></table></figure>
+<p>​            </p>
+<h1 id="2-数组的特性"><a href="#2-数组的特性" class="headerlink" title="2 数组的特性"></a>2 数组的特性</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>)		</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">			<span class="keyword">int</span>[] b=a;</span><br><span class="line">			</span><br><span class="line">			a[<span class="number">1</span>]=<span class="number">555</span>;  <span class="comment">//改变数组中第2个元素,变成555</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">				System.out.println(a[i]);  <span class="comment">//2 555 4</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b.length;i++)&#123;  <span class="comment">//上面的操作几乎和b没有任何关系,但是发现此时打印会出现 2 555 4</span></span><br><span class="line">				System.out.println(b[i]);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	注意:数组中的length不是方法,而是数组的属性</span><br><span class="line">	</span><br><span class="line"><span class="number">2</span>) 角标越界异常</span><br><span class="line">	访问数组中不存在的下标时会引发异常</span><br><span class="line">	<span class="keyword">int</span>[] a=&#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=a.length;i++)&#123;</span><br><span class="line">		System.out.println(a[i]);  java.lang.ArrayIndexOutOfBoundsException: <span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="number">3</span>) 空指针异常</span><br><span class="line">	是引用数据类型特有的</span><br><span class="line">	访问一个值为<span class="keyword">null</span>的对象时,会出现这个异常</span><br><span class="line">	<span class="keyword">int</span>[] a=&#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	a=<span class="keyword">null</span>;</span><br><span class="line">	System.out.println(a.length);  <span class="comment">//java.lang.NullPointerException</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-堆内存和栈内存"><a href="#3-堆内存和栈内存" class="headerlink" title="3 堆内存和栈内存"></a>3 堆内存和栈内存</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">java程序在运行的时候,要分配内存空间,为了提升效率,java对内存进行了分类管理</span><br><span class="line"></span><br><span class="line">== 栈内存</span><br><span class="line">	用来存储局部变量,变量用完,内存回收</span><br><span class="line">	</span><br><span class="line">	java中的函数,在运行的时候,会在内存中申请到一块内存空间,然后,这个函数中声明的局部变量,就会从这</span><br><span class="line">	块空间中分配空间,函数运行结束,这个函数申请到的这块空间就会回收,这个函数中所有的变量也就消失了</span><br><span class="line">	它们占的内存当然也会释放</span><br><span class="line">		</span><br><span class="line">== 堆内存</span><br><span class="line">   数组和对象,用<span class="keyword">new</span>关键字创建出来实体,都放在堆内存上</span><br><span class="line">   每一个实体,都有一个能被引用的内存地址值</span><br><span class="line">   实体中的变量,都会有默认的初始值</span><br><span class="line">   当实体不再被引用的时候,会在某个不确定的时刻,被垃圾回收器回收</span><br></pre></td></tr></table></figure>
+<h1 id="4-数组的小练习"><a href="#4-数组的小练习" class="headerlink" title="4 数组的小练习"></a>4 数组的小练习</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例一 打印出数组中所有元素和倒序打印</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String[] strArrays=<span class="keyword">new</span> String[]&#123;<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>,<span class="string">"赵六"</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;strArrays.length;i++)&#123;</span><br><span class="line">			System.out.println(strArrays[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"=================="</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=strArrays.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">			System.out.println(strArrays[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"=================="</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;strArrays.length;i++)&#123;</span><br><span class="line">			System.out.println(strArrays[strArrays.length-<span class="number">1</span>-i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//例二 把数组中的元素求和</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">float</span>[] array=&#123;<span class="number">3.14f</span>,<span class="number">24</span>,<span class="number">25.5f</span>,<span class="number">66.88f</span>&#125;;</span><br><span class="line">	<span class="keyword">float</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">		sum+=array[i];</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//例三 把数组中的元素,拼成字符串返回</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] x=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		String str=test(x,<span class="string">"_"</span>);</span><br><span class="line">		System.out.println(str);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">test</span><span class="params">(<span class="keyword">int</span>[] x,String chStr)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">		String str=<span class="string">""</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;x.length;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==x.length-<span class="number">1</span>)&#123;</span><br><span class="line">				str+=x[i];</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				str+=x[i]+chStr;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> str;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//例四 写一个方法,求数组中最大值</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] x=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>,-<span class="number">3</span>,-<span class="number">5</span>,-<span class="number">7</span>,-<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> max=test(x);</span><br><span class="line">		System.out.println(max);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span>[] x)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> max=x[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;x.length;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x[i]&gt;max)&#123;</span><br><span class="line">				max=x[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="5-数组的排序"><a href="#5-数组的排序" class="headerlink" title="5 数组的排序"></a>5 数组的排序</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">	=====冒泡排序</span><br><span class="line">	<span class="keyword">int</span>[] a=&#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] a=&#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;a.length-i-<span class="number">1</span>;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">					<span class="keyword">int</span> temp=a[j];</span><br><span class="line">					a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">					a[j+<span class="number">1</span>]=temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">			System.out.print(a[i]+<span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   =====封装成方法</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] a=&#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>&#125;;</span><br><span class="line">		System.out.print(<span class="string">"排序之前="</span>);</span><br><span class="line">		show(a);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.print(<span class="string">"排序之后="</span>);</span><br><span class="line">		sort(a);</span><br><span class="line">		show(a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//排序</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;  </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;a.length-i-<span class="number">1</span>;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">					<span class="keyword">int</span> temp=a[j];</span><br><span class="line">					a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">					a[j+<span class="number">1</span>]=temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//展示</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">			System.out.print(a[i]+<span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">=====选择排序</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">int</span>[] a=&#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>&#125;;</span><br><span class="line">			System.out.print(<span class="string">"排序之前="</span>);</span><br><span class="line">			show(a);</span><br><span class="line">			System.out.println();</span><br><span class="line">			System.out.print(<span class="string">"排序之后="</span>);</span><br><span class="line">			sort(a);</span><br><span class="line">			show(a);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//排序</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;  </span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;a.length;j++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(a[i]&gt;a[j])&#123;</span><br><span class="line">						<span class="keyword">int</span> temp=a[i];</span><br><span class="line">						a[i]=a[j];</span><br><span class="line">						a[j]=temp;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//展示</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">				System.out.print(a[i]+<span class="string">" "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> =====快速排序</span><br><span class="line"> 思想分治法   (分而治之)</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span>[] a=&#123;<span class="number">32</span>,<span class="number">6</span>,<span class="number">45</span>,<span class="number">28</span>,<span class="number">89</span>&#125;;</span><br><span class="line">	quick(a,<span class="number">0</span>,a.length-<span class="number">1</span>);</span><br><span class="line">	show(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//32,6,45,28,89</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quick</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(left&lt;right)&#123;</span><br><span class="line">		<span class="keyword">int</span> i=left;</span><br><span class="line">		<span class="keyword">int</span> j=right;</span><br><span class="line">		<span class="keyword">int</span> temp=arr[left];  <span class="comment">//32</span></span><br><span class="line">		<span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">			<span class="keyword">while</span>(i&lt;j &amp;&amp; arr[j]&gt;temp)&#123;</span><br><span class="line">				j--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(i&lt;j)&#123;  <span class="comment">//找到小于temp的.并把他填入第一个坑中 i++;</span></span><br><span class="line">				arr[i]=arr[j];</span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span>(i&lt;j &amp;&amp; arr[i]&lt;temp)&#123; <span class="comment">//找到大于temp的,并把它填入上一个坑位置,j++</span></span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(i&lt;j)&#123;</span><br><span class="line">				arr[j]=arr[i];</span><br><span class="line">				j--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[i]=temp;  <span class="comment">//把第一基准数填回最后一个坑位置</span></span><br><span class="line">		quick(arr,left,i-<span class="number">1</span>);  <span class="comment">//递归 把左边做相同的操作</span></span><br><span class="line">		quick(arr,i+<span class="number">1</span>,right);<span class="comment">//把右边做相同的操作</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//展示</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">		System.out.print(a[i]+<span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子 jdk提供的数组排序算法</span></span><br><span class="line">	<span class="keyword">int</span>[] a=&#123;<span class="number">32</span>,<span class="number">6</span>,<span class="number">45</span>,<span class="number">28</span>,<span class="number">89</span>&#125;;</span><br><span class="line">	java.util.Arrays.sort(a);  <span class="comment">//正序排序</span></span><br><span class="line">	show(a);</span><br></pre></td></tr></table></figure>
+<h1 id="6-数组的copy"><a href="#6-数组的copy" class="headerlink" title="6 数组的copy"></a>6 数组的copy</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) 用循环复制</span><br><span class="line">	<span class="keyword">int</span>[] a=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span>[] b=<span class="keyword">new</span> <span class="keyword">int</span>[a.length];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">		b[i]=a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	a[<span class="number">0</span>]=<span class="number">6</span>;  <span class="comment">//并不会影响b,所以是复制,不是赋值</span></span><br><span class="line">	show(b);</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>) jdk提供的类</span><br><span class="line">	</span><br><span class="line">	===java.util.Arrays.copyOf()</span><br><span class="line">		<span class="keyword">int</span>[] a=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span>[] b=java.util.Arrays.copyOf(a, a.length);</span><br><span class="line">		a[<span class="number">0</span>]=<span class="number">6</span>;</span><br><span class="line">		show(b);</span><br><span class="line">		</span><br><span class="line">	===System.arraycopy(Object src,   <span class="comment">//源数组</span></span><br><span class="line">						<span class="keyword">int</span> srcPos,   <span class="comment">//从源数组中第几个开始</span></span><br><span class="line">						Object dest,  <span class="comment">//目标数组</span></span><br><span class="line">						<span class="keyword">int</span> destPos,  <span class="comment">//从目标数组中第几个元素开始</span></span><br><span class="line">						<span class="keyword">int</span> length)   <span class="comment">//要复制几个元素</span></span><br><span class="line">						</span><br><span class="line">		<span class="keyword">int</span>[] a=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span>[] b=<span class="keyword">new</span> <span class="keyword">int</span>[a.length];</span><br><span class="line">		System.arraycopy(a, <span class="number">0</span>, b, <span class="number">0</span>, a.length);</span><br><span class="line">		a[<span class="number">0</span>]=<span class="number">6</span>;</span><br><span class="line">		show(b);</span><br></pre></td></tr></table></figure>
+<p># </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/第三天/" rel="next" title="java学习第三天">
+                <i class="fa fa-chevron-left"></i> java学习第三天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/01/第五天/" rel="prev" title="java学习第五天">
+                java学习第五天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数组"><span class="nav-number">1.</span> <span class="nav-text">1 数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-数组的特性"><span class="nav-number">2.</span> <span class="nav-text">2 数组的特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-堆内存和栈内存"><span class="nav-number">3.</span> <span class="nav-text">3 堆内存和栈内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-数组的小练习"><span class="nav-number">4.</span> <span class="nav-text">4 数组的小练习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-数组的排序"><span class="nav-number">5.</span> <span class="nav-text">5 数组的排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-数组的copy"><span class="nav-number">6.</span> <span class="nav-text">6 数组的copy</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

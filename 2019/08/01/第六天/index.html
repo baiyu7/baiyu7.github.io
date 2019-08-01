@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 构造函数12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788格式/*修饰符 类名(参数列表)&amp;#123;  //p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习第六天">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/第六天/index.html">
+<meta property="og:site_name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+<meta property="og:description" content="1 构造函数12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788格式/*修饰符 类名(参数列表)&amp;#123;  //p">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-01T10:55:52.865Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习第六天">
+<meta name="twitter:description" content="1 构造函数12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788格式/*修饰符 类名(参数列表)&amp;#123;  //p">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/第六天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java学习第六天 | 一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/第六天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java学习第六天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-01 18:51:57 / 修改时间：18:55:52" itemprop="dateCreated datePublished" datetime="2019-08-01T18:51:57+08:00">2019-08-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1 构造函数"></a>1 构造函数</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">格式</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">修饰符 类名(参数列表)&#123;  //public default private 保护修饰符</span></span><br><span class="line"><span class="comment">	方法体</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">参数列表 可以写可以不写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">特点:</span><br><span class="line"><span class="number">1</span>) 构造函数的名称和类名相同</span><br><span class="line"><span class="number">2</span>) 没有返回值,连<span class="keyword">void</span>都不可以</span><br><span class="line"><span class="number">3</span>) 构造函数不能手动的调用</span><br><span class="line"><span class="number">4</span>) 在对象创建的时候执行,而且只执行一遍</span><br><span class="line"><span class="number">5</span>) 可以重载,但是不可以重写</span><br><span class="line"><span class="number">6</span>) 如果设计一个类的时候,没有设计构造器,系统将会生成一个无参的构造函数</span><br><span class="line"><span class="number">7</span>) 如果自己定义一个类的时候,定义了构造器,那么系统的无参构造器将不会存在</span><br><span class="line"><span class="number">8</span>) 构造函数的作用是什么?为了给我们创建对象用的</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"构造方法"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"学生姓名:"</span>+name);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"学生姓名:"</span>+name+<span class="string">",年龄:"</span>+age);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"我是普通的方法"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">			</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//类名 对象名=new 构造方法();</span></span><br><span class="line">		Student stu1=<span class="keyword">new</span> Student();  <span class="comment">//调用无参构造器</span></span><br><span class="line">		Student stu1=<span class="keyword">new</span> Student(<span class="string">"张三"</span>);  <span class="comment">//调用一个参构造器</span></span><br><span class="line">		Student stu1=<span class="keyword">new</span> Student(<span class="string">"李思思"</span>,<span class="number">20</span>); <span class="comment">//调用二个参构造器</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//例子 使用构造函数传参</span></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">			<span class="keyword">private</span> String name;</span><br><span class="line">			<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"构造方法"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.name=name;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.name=name;</span><br><span class="line">				<span class="keyword">this</span>.age=age;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"我是普通的方法"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				<span class="keyword">return</span> name;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.name = name;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				<span class="keyword">return</span> age;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.age = age;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//类名 对象名=new 构造方法();</span></span><br><span class="line">		<span class="comment">/*Student stu1=new Student();</span></span><br><span class="line"><span class="comment">		System.out.println(stu1.getName());  //null  引用数据类型的初始值是 null</span></span><br><span class="line"><span class="comment">		System.out.println(stu1.getAge());  //0  </span></span><br><span class="line"><span class="comment">		 */</span>	</span><br><span class="line">		Student stu2=<span class="keyword">new</span> Student(<span class="string">"李四"</span>);</span><br><span class="line">		System.out.println(stu2.getName());  <span class="comment">//李四</span></span><br><span class="line">		</span><br><span class="line">		Student stu3=<span class="keyword">new</span> Student(<span class="string">"王五"</span>, <span class="number">1</span>);</span><br><span class="line">		System.out.println(stu3.getName()+<span class="string">","</span>+stu3.getAge());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//练习  创建一个电视,电视有名字,品牌,颜色,有打开方法,关闭方法</span></span><br><span class="line"><span class="comment">//创建时候就要含有初始值,并使用尝试</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> String color;</span><br><span class="line">	<span class="keyword">private</span> String pinPai;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TV</span><span class="params">(String name,String color,String pinPai)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=name;</span><br><span class="line">		<span class="keyword">this</span>.pinPai=pinPai;</span><br><span class="line">		<span class="keyword">this</span>.color=color;</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnOn</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(name+<span class="string">","</span>+color+<span class="string">","</span>+pinPai+<span class="string">",打开了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnOff</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(name+<span class="string">","</span>+color+<span class="string">","</span>+pinPai+<span class="string">",关闭了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//类名 对象名=new 构造方法();</span></span><br><span class="line">	TV tv=<span class="keyword">new</span> TV(<span class="string">"熊猫"</span>, <span class="string">"黑色"</span>, <span class="string">"联想"</span>);</span><br><span class="line">	tv.turnOn();</span><br><span class="line">	tv.turnOff();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​            </p>
+<h1 id="2-this关键字"><a href="#2-this关键字" class="headerlink" title="2 this关键字"></a>2 this关键字</h1><p>​            </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>代表当前类中 本类对象</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>可以调用本类的属性和方法</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TV</span><span class="params">(String name,String color,String pinPai)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=name;</span><br><span class="line">		<span class="keyword">this</span>.pinPai=pinPai;</span><br><span class="line">		<span class="keyword">this</span>.color=color;  <span class="comment">//this.属性</span></span><br><span class="line">		<span class="keyword">this</span>.turnOn();  <span class="comment">//this.方法()</span></span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line"><span class="keyword">this</span>(参数列表)可以调用构造函数</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TV</span><span class="params">(String name,String color,String pinPai)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(pinPai);  <span class="comment">//调用一个参数构造器,必须放在构造方法的第一行</span></span><br><span class="line">		System.out.println(<span class="string">"我是二个参数的"</span>);</span><br><span class="line">		<span class="keyword">this</span>.name=name;</span><br><span class="line">		<span class="keyword">this</span>.color=color;  <span class="comment">//this.属性</span></span><br><span class="line">	&#125; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TV</span><span class="params">(String pinPai)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>();</span><br><span class="line">		System.out.println(<span class="string">"我是一个参数的"</span>);</span><br><span class="line">		<span class="keyword">this</span>.pinPai=pinPai;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TV</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"无参构造器"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-对象做为参数传递"><a href="#3-对象做为参数传递" class="headerlink" title="3 对象做为参数传递"></a>3 对象做为参数传递</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) 基本数据类型作为函数的形参  (值传递)</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a=<span class="number">20</span>;</span><br><span class="line">		change(a);</span><br><span class="line">		System.out.println(a);  <span class="comment">//20  基本数据类型作为形参,叫值传递,对形参的改变,不会影响实参</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> score)</span></span>&#123;</span><br><span class="line">		score=<span class="number">750</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"> <span class="number">2</span>) 引用数据类型作为形参  (引用传递)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person p=<span class="keyword">new</span> Person();</span><br><span class="line">		p.setName(<span class="string">"张三"</span>);</span><br><span class="line">		p.setSex(<span class="string">"男人"</span>);</span><br><span class="line">		System.out.println(<span class="string">"做了很严重的违法事情"</span>);</span><br><span class="line">		</span><br><span class="line">		变性(p);</span><br><span class="line">		</span><br><span class="line">		System.out.println(p.getName()+<span class="string">","</span>+p.getSex());  <span class="comment">//张三三,女人  引用数据类型作为形参,对形参的改变,影响实参</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> 变性(Person p)&#123;  <span class="comment">//Person p=p;</span></span><br><span class="line">		p.setName(<span class="string">"张三三"</span>);</span><br><span class="line">		p.setSex(<span class="string">"女人"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4-static-关键字"><a href="#4-static-关键字" class="headerlink" title="4 static 关键字"></a>4 static 关键字</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">是静态的意思</span><br><span class="line"></span><br><span class="line"><span class="comment">//需求:记录用户创建实体对象的多少?</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span></span>&#123;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Cat c1=<span class="keyword">new</span> Cat();</span><br><span class="line">	Cat c2=<span class="keyword">new</span> Cat();</span><br><span class="line">	Cat c3=<span class="keyword">new</span> Cat();</span><br><span class="line">	System.out.println(c1.count);  <span class="comment">//3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">特点</span><br><span class="line"><span class="number">1</span>) 多个对象,共享一份数据,此时数据存放的位置就是静态区(在方法区中,方法区在堆中)</span><br><span class="line"><span class="number">2</span>) 它修饰的成员,在类加载的时候同时加载,并且只初始化一次</span><br><span class="line"><span class="number">3</span>) 它可以修饰属性和方法,被它修饰的成员,可以直接使用 类名.属性   类名.方法()  访问</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Cat c1=<span class="keyword">new</span> Cat();</span><br><span class="line">		Cat c2=<span class="keyword">new</span> Cat();</span><br><span class="line">		Cat c3=<span class="keyword">new</span> Cat();</span><br><span class="line">		System.out.println(Cat.count);  <span class="comment">//类名.属性  推荐</span></span><br><span class="line">		Cat.test();  <span class="comment">//类名.方法()</span></span><br><span class="line">		System.out.println(c1.count);  <span class="comment">//不推荐</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="number">4</span>) 无法从静态上下文访问非静态上下文,可以从非静态上下文,访问静态上下文</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;  <span class="comment">//java 类名 参数1,参数2......</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;args.length;i++)&#123;</span><br><span class="line">		System.out.println(args[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"> 切记: 静态成员不会依赖对象而存在,会和类是先加载到内存的方法区中</span><br><span class="line">	非静态成员依赖对象而存在,会根据创建对象 <span class="keyword">new</span> Cat() 时才会起到意义,并且是在堆中</span><br></pre></td></tr></table></figure></p>
+<h1 id="5-构造代码块和静态代码块"><a href="#5-构造代码块和静态代码块" class="headerlink" title="5 构造代码块和静态代码块"></a>5 构造代码块和静态代码块</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">类成员:成员变量和成员方法</span><br><span class="line"></span><br><span class="line">成员变量:实例变量和类变量,用<span class="keyword">static</span>修饰的变量,就是类变量</span><br><span class="line">成员方法:实例方法和类方法,用<span class="keyword">static</span>修饰的方法,就是类方法</span><br><span class="line"></span><br><span class="line">静态代码块和构造代码块:它们独立于类成员,里面的变量都是局部变量</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//构造代码块</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造代码块"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	Cat()&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造函数"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"静态代码块"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Cat c1=<span class="keyword">new</span> Cat();</span><br><span class="line">	Cat c2=<span class="keyword">new</span> Cat();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​<br>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">	Cat()&#123;</span><br><span class="line">		System.out.println(<span class="string">"a"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	Cat(<span class="keyword">int</span> x)&#123;</span><br><span class="line">		System.out.println(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//构造代码块</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"c"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"b"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test01</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">new</span> Cat(<span class="number">9999</span>);</span><br><span class="line">		<span class="keyword">new</span> Cat();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">"b"</span></span><br><span class="line"><span class="string">"c"</span></span><br><span class="line"><span class="number">9999</span></span><br><span class="line"><span class="string">"c"</span></span><br><span class="line"><span class="string">"a"</span></span><br><span class="line"></span><br><span class="line">附:构造代码块用途还可以,但是静态代码块非常常用,可以写入一些想预先加载的事情</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-类的加载和执行顺序"><a href="#6-类的加载和执行顺序" class="headerlink" title="6 类的加载和执行顺序"></a>6 类的加载和执行顺序</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> age=<span class="number">90</span>;</span><br><span class="line">	String name=<span class="string">"tom"</span>;</span><br><span class="line">	<span class="keyword">static</span> String home=<span class="string">"张三家"</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造函数"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"喵"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造代码块"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test01</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Cat c=<span class="keyword">new</span> Cat();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) 先检查内存中是否存在此字节码文件,没有进行加载  Cat.class</span><br><span class="line"><span class="number">2</span>) 静态成员先加载,并得到初始值,String类型是就是<span class="keyword">null</span>,home=<span class="keyword">null</span> ,然后在 home=<span class="string">"张三家"</span></span><br><span class="line"><span class="number">3</span>) 静态代码块在执行,也就是<span class="keyword">static</span>成员谁在上面谁先加载</span><br><span class="line"><span class="number">4</span>) 当执行<span class="keyword">new</span> Cat();的时候 ,并在堆中开辟空间</span><br><span class="line"><span class="number">5</span>) 会找到相应的构造函数,但是不会直接执行</span><br><span class="line"><span class="number">6</span>) 先把实例变量进行初始值,在初始化  <span class="keyword">int</span> age=<span class="number">0</span>  age=<span class="number">90</span>;</span><br><span class="line"><span class="number">7</span>) 找到构造代码块</span><br><span class="line"><span class="number">8</span>) 进入构造函数,执行函数体</span><br><span class="line"><span class="number">9</span>) 在栈中创建引用指向堆中的实例</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">.计算字符串 <span class="string">"abcdefgsfsdasgasafaf"</span>中的 <span class="string">"s"</span> 出现的次数</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String str=<span class="string">"abcdefgsfsdasgasafaf"</span>;</span><br><span class="line">		<span class="comment">/*char[] charArray=str.toCharArray();</span></span><br><span class="line"><span class="comment">		int count=0;</span></span><br><span class="line"><span class="comment">		for(int i=0;i&lt;charArray.length;i++)&#123;</span></span><br><span class="line"><span class="comment">			if(charArray[i]=='s')&#123;</span></span><br><span class="line"><span class="comment">				count++;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		System.out.println(count);*/</span></span><br><span class="line">		<span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();i++)&#123;</span><br><span class="line">			<span class="keyword">char</span> ch=str.charAt(i);</span><br><span class="line">			<span class="keyword">if</span>(ch==<span class="string">'s'</span>)&#123;</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(count);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">.将字符串 <span class="string">"abcdefgsfsdasgasaaf"</span> 翻转过来</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			String str=<span class="string">"abcdefgsfsdasgasafaf"</span>;</span><br><span class="line">			<span class="comment">/*char[] charArray=str.toCharArray();</span></span><br><span class="line"><span class="comment">			String temp="";</span></span><br><span class="line"><span class="comment">			for(int i=charArray.length-1;i&gt;=0;i--)&#123;</span></span><br><span class="line"><span class="comment">				temp+=charArray[i];</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			System.out.println(temp);*/</span></span><br><span class="line">			String temp=<span class="string">""</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=str.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">				<span class="keyword">char</span> ch=str.charAt(i);</span><br><span class="line">				temp+=ch;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(temp);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/第五天/" rel="next" title="java学习第五天">
+                <i class="fa fa-chevron-left"></i> java学习第五天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/01/第七天/" rel="prev" title="java学习第七天">
+                java学习第七天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-构造函数"><span class="nav-number">1.</span> <span class="nav-text">1 构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-this关键字"><span class="nav-number">2.</span> <span class="nav-text">2 this关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-对象做为参数传递"><span class="nav-number">3.</span> <span class="nav-text">3 对象做为参数传递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-static-关键字"><span class="nav-number">4.</span> <span class="nav-text">4 static 关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-构造代码块和静态代码块"><span class="nav-number">5.</span> <span class="nav-text">5 构造代码块和静态代码块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-类的加载和执行顺序"><span class="nav-number">6.</span> <span class="nav-text">6 类的加载和执行顺序</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
