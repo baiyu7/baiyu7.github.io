@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 泛型​             1234567891011121314151617181920212223242526272829303132public static void main(String[] args) &amp;#123;	List&amp;lt;String&amp;gt; list=new ArrayList&amp;lt;String&amp;gt;();	list.add(&quot;张三&quot;);	list.add(&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第十二天">
+<meta property="og:url" content="http://yoursite.com/2019/08/02/第十二天/index.html">
+<meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
+<meta property="og:description" content="1 泛型​             1234567891011121314151617181920212223242526272829303132public static void main(String[] args) &amp;#123;	List&amp;lt;String&amp;gt; list=new ArrayList&amp;lt;String&amp;gt;();	list.add(&quot;张三&quot;);	list.add(&quot;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-02T11:10:30.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第十二天">
+<meta name="twitter:description" content="1 泛型​             1234567891011121314151617181920212223242526272829303132public static void main(String[] args) &amp;#123;	List&amp;lt;String&amp;gt; list=new ArrayList&amp;lt;String&amp;gt;();	list.add(&quot;张三&quot;);	list.add(&quot;">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/02/第十二天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>第十二天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">生活不止眼前的苟且，还有诗和远方。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/第十二天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第十二天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-02 19:05:31 / 修改时间：19:10:30" itemprop="dateCreated datePublished" datetime="2019-08-02T19:05:31+08:00">2019-08-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-泛型"><a href="#1-泛型" class="headerlink" title="1 泛型"></a>1 泛型</h1><p>​            </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">	list.add(<span class="string">"张三"</span>);</span><br><span class="line">	list.add(<span class="string">"aaa"</span>);</span><br><span class="line">	list.add(<span class="string">"bbb"</span>);</span><br><span class="line">	list.add(<span class="number">10</span>);  <span class="comment">//报错</span></span><br><span class="line">	</span><br><span class="line">	Iterator&lt;String&gt; it=list.iterator();</span><br><span class="line">	<span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">		System.out.println(it.next().length());  <span class="comment">//返回的就是String对象,不在是Object了</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">好处:</span><br><span class="line">泛型是<span class="number">1.5</span>出现的</span><br><span class="line"><span class="number">1</span>) 省去了强转</span><br><span class="line"><span class="number">2</span>) 把运行期可能出现的异常转接到编译期就可以发现</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 字符串排序</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Set&lt;String&gt; s=<span class="keyword">new</span> TreeSet&lt;String&gt;(<span class="keyword">new</span> Comparator&lt;String&gt;() &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String o1, String o2)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> o1.length()-o2.length();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	s.add(<span class="string">"aaa"</span>);</span><br><span class="line">	s.add(<span class="string">"aaa"</span>);</span><br><span class="line">	s.add(<span class="string">"aaa"</span>);</span><br><span class="line">	System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line">发现,自定义比较器也可以指定泛型,当指定泛型之后,方法的参数将会变成相应类型,省去了强转</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义泛型类</span></span><br><span class="line"></span><br><span class="line">泛型类,在定义类的时候,声明泛型,例如</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">以后在类体中任何位置(静态变量,静态方法,代码块除外),就可以把T当作一个类型去使用</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Dog&lt;String&gt; g=<span class="keyword">new</span> Dog&lt;String&gt;();</span><br><span class="line">		g.test(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">		g.test(<span class="number">10</span>, <span class="string">""</span>); <span class="comment">//错误,因为泛型为String类型</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(T t1,T t2)</span></span>&#123;</span><br><span class="line">		System.out.println(t1+<span class="string">","</span>+t2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子 可以使用多个泛型</span></span><br><span class="line">注意:泛型只能用引用类型,基本数据类型不可以,可以用它们的包装类</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Dog&lt;String,Integer,Cat&lt;Double,Boolean&gt;&gt; g=<span class="keyword">new</span> Dog&lt;String,Integer,Cat&lt;Double,Boolean&gt;&gt;();</span><br><span class="line">		g.test(<span class="string">""</span>, <span class="number">10</span>, <span class="keyword">new</span> Cat&lt;Double,Boolean&gt;());</span><br><span class="line">		g.test(<span class="string">""</span>, <span class="number">10</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>&lt;<span class="title">T</span>,<span class="title">E</span>,<span class="title">S</span>&gt;</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(T t1,E e1,S s1)</span></span>&#123;</span><br><span class="line">		System.out.println(t1+<span class="string">","</span>+e1+<span class="string">","</span>+s1);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(T t1,E e1)</span></span>&#123;</span><br><span class="line">		System.out.println(t1+<span class="string">","</span>+e1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>&lt;<span class="title">T</span>,<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型方法</span></span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">		<span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(T t)</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//泛型接口</span></span><br><span class="line">	<span class="class"><span class="keyword">interface</span> <span class="title">UserDao</span>&lt;<span class="title">T</span>,<span class="title">E</span>,<span class="title">U</span>&gt;</span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> U <span class="title">quetyObj</span><span class="params">(T t,E e)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">UserDaoImpl</span> <span class="keyword">implements</span> <span class="title">UserDao</span>&lt;<span class="title">String</span>, <span class="title">String</span>, <span class="title">User</span>&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> User <span class="title">quetyObj</span><span class="params">(String t, String e)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//泛型限定</span></span><br><span class="line">	<span class="number">1</span>) 泛型限定上限 &lt;? extends T&gt;  <span class="comment">//表示能接受T或者T的子类型</span></span><br><span class="line">	<span class="number">2</span>) 泛型限定下限 &lt;? <span class="keyword">super</span> T&gt;   <span class="comment">//表示能接受T或者T的父类型</span></span><br><span class="line">	<span class="number">3</span>) ?  <span class="comment">//表示所有类型</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子 1) 泛型限定上限 &lt;? extends T&gt;</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;Person&gt; list1=<span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">		List&lt;Student&gt; list2=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">		List&lt;Object&gt; list3=<span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">		test(list1);</span><br><span class="line">		test(list2);</span><br><span class="line">		test(list3);  <span class="comment">//不可以,因为Object并不是Person的子类</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(List&lt;? extends Person&gt; list)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 2) 泛型限定下限 &lt;? super T&gt; </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;Person&gt; list1=<span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">		List&lt;Student&gt; list2=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">		List&lt;Object&gt; list3=<span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">		test(list1);</span><br><span class="line">		test(list2); <span class="comment">//不可以,因为Student是Person的子类,只能放Person的父类</span></span><br><span class="line">		test(list3);  </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(List&lt;? <span class="keyword">super</span> Person&gt; list)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 3) ?</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;Person&gt; list1=<span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">		List&lt;Student&gt; list2=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">		List&lt;Object&gt; list3=<span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">		test(list1);</span><br><span class="line">		test(list2); </span><br><span class="line">		test(list3);  </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(List&lt;?&gt; list)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-Map集合"><a href="#2-Map集合" class="headerlink" title="2 Map集合"></a>2 Map集合</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	Map接口  (双列集合的跟接口)</span><br><span class="line">	</span><br><span class="line">|		|		|			|</span><br><span class="line">HashMap  TreeMap  Hashtable    LinkedHashMap</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">声眀</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">	</span><br><span class="line">Map 集合是无序,不可以有重复的key(,后出现的key会把前面的覆盖掉),可以有重复的value</span><br><span class="line"></span><br><span class="line">--HashMap (基于哈希表,也叫散列表) <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">Serializable</span></span></span><br><span class="line"><span class="class">--<span class="title">TreeMap</span> (有序的(<span class="title">key</span>有序),自然顺序,底层是红黑树实现的(红黑树就是平衡的二叉排序树))</span></span><br><span class="line"><span class="class">--<span class="title">Hashtable</span> (基于哈希表,也叫散列表)和<span class="title">HashMap</span>基本一样 <span class="title">public</span> <span class="title">class</span> <span class="title">Hashtable</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">Dictionary</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class">--<span class="title">LinkedHashMap</span> (有序的,存的顺序,链表特性)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">HashMap</span>和<span class="title">Hashtable</span>区别?</span></span><br><span class="line"><span class="class">1) 它们都是<span class="title">Map</span>的子类,都实现了<span class="title">Map</span>接口,但是继承子不同类</span></span><br><span class="line"><span class="class">2) <span class="title">HashMap</span>可以存<span class="title">null</span>值和<span class="title">null</span>键,<span class="title">Hashtable</span>不可以</span></span><br><span class="line"><span class="class">3) <span class="title">Hashtable</span>比较古老,从1.0出现的,线程安全,<span class="title">HashMap</span>线程不安全</span></span><br><span class="line">附:线程安全的map实现类还有一个叫ConcurrentHashMap,并发性更好,效率更好,线程安全</span><br><span class="line">	</span><br><span class="line">	它会锁住当前的桶子,别的位置都不会锁住,所以并发性就强,</span><br><span class="line">	而且,他在对表做修改类操作时,会锁住,做查询,并不会</span><br><span class="line">	原因是变量使用的是<span class="keyword">volatile</span>修饰的</span><br><span class="line">	只能修饰变量</span><br><span class="line">	用它修饰的变量特点:对变量的修改强制改变主存,这时候缓存将无效</span><br><span class="line"></span><br><span class="line">HashMap 默认容量<span class="number">16</span>    加载因子<span class="number">0.75</span>,每次扩展 <span class="number">1</span> 倍</span><br><span class="line">Hashtable 默认容量是<span class="number">11</span>,加载因子<span class="number">0.75</span>,扩容:<span class="number">2</span>*原容量+<span class="number">1</span>     (不太重要)  </span><br><span class="line"></span><br><span class="line">	 Map中的方法</span><br><span class="line">	  <span class="function">V <span class="title">put</span><span class="params">(K key, V value)</span> <span class="comment">//往map集合里放数据 </span></span></span><br><span class="line"><span class="function">	  <span class="keyword">void</span> <span class="title">putAll</span><span class="params">(Map&lt;? extends K,? extends V&gt; m)</span> </span></span><br><span class="line"><span class="function">	  V <span class="title">remove</span><span class="params">(Object key)</span> <span class="comment">//根据key ,移除一个元素 </span></span></span><br><span class="line"><span class="function">	  <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> <span class="comment">//查看集合中一共有多少组元素 V</span></span></span><br><span class="line"><span class="function">	  <span class="title">get</span><span class="params">(Object key)</span> <span class="comment">//根据key 取 value </span></span></span><br><span class="line"><span class="function">	  <span class="keyword">boolean</span> <span class="title">containsKey</span><span class="params">(Object key)</span>判断是不是包含一个key </span></span><br><span class="line"><span class="function">	  <span class="keyword">boolean</span> <span class="title">containsValue</span><span class="params">(Object value)</span> <span class="comment">//判断是不是包含一个value</span></span></span><br><span class="line"><span class="function">	  Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span> <span class="comment">//取所有的key, 以Set方式返回</span></span></span><br><span class="line"><span class="function">	  Collection&lt;V&gt; <span class="title">values</span><span class="params">()</span> <span class="comment">//取所有的value 以Collection 形式返回 </span></span></span><br><span class="line"><span class="function">	  <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> <span class="comment">//判断是不是空 </span></span></span><br><span class="line"><span class="function">	  <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> <span class="comment">//清除</span></span></span><br><span class="line"><span class="function">	  Set&lt;Map.Entry&lt;K,V&gt; <span class="title">entrySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	  </span></span><br><span class="line"><span class="function">	  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			Map&lt;String,String&gt; map=<span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">			map.put(<span class="string">"01"</span>, <span class="string">"一号罪犯"</span>);</span><br><span class="line">			map.put(<span class="string">"02"</span>, <span class="string">"二号罪犯"</span>);</span><br><span class="line">			map.put(<span class="string">"03"</span>, <span class="string">"三号罪犯"</span>);</span><br><span class="line">			map.put(<span class="string">"04"</span>, <span class="string">"四号罪犯"</span>);</span><br><span class="line">			System.out.println(map);</span><br><span class="line">			System.out.println(map.size());  <span class="comment">//4</span></span><br><span class="line">			</span><br><span class="line">			System.out.println(map.containsKey(<span class="string">"01"</span>)); <span class="comment">//true</span></span><br><span class="line">			System.out.println(map.containsValue(<span class="string">"二号罪犯"</span>)); <span class="comment">//true</span></span><br><span class="line">			System.out.println(map.get(<span class="string">"02"</span>)); <span class="comment">//二号罪犯</span></span><br><span class="line">			String value=map.remove(<span class="string">"04"</span>);</span><br><span class="line">			System.out.println(<span class="string">"移除了:"</span>+value);</span><br><span class="line">			</span><br><span class="line">			Map&lt;String,String&gt; map1=<span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">			map1.put(<span class="string">"05"</span>, <span class="string">"新进来的"</span>);</span><br><span class="line">			</span><br><span class="line">			map.putAll(map1);</span><br><span class="line">			System.out.println(map);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">"是否为空:"</span>+map.isEmpty());</span><br><span class="line">			</span><br><span class="line">			map.clear();  <span class="comment">//只是清空了里面的内容,并不是说关闭销毁对象</span></span><br><span class="line">			System.out.println(map.isEmpty()); <span class="comment">//true</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//什么是哈希表</span></span><br><span class="line">哈希表就是一种数据结构,数组+链表</span><br><span class="line">数组:查询块,添加,删除慢</span><br><span class="line">链表:添加,删除快,查询慢</span><br><span class="line">哈希表:把两个优点进行结合,操作起来就特别快了</span><br><span class="line"></span><br><span class="line">比如:HashMap  用哈希表实现的</span><br><span class="line">默认容量<span class="number">16</span></span><br><span class="line">容量会根据情况扩容,这里不考虑扩容</span><br><span class="line"></span><br><span class="line">数组</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span>    <span class="string">"aaa"</span>----&gt;<span class="string">"bbb"</span>        链表</span><br><span class="line">....</span><br><span class="line">...</span><br><span class="line"><span class="number">15</span></span><br><span class="line"></span><br><span class="line">首先map.put(<span class="number">1</span>,<span class="string">"aaa"</span>),让key求哈希值,发现是<span class="number">1</span></span><br><span class="line">会存在数组的<span class="number">1</span>位置</span><br><span class="line">然后当在存储(<span class="number">33</span>,<span class="string">"bbb"</span>),会让key%<span class="number">16</span>求哈希值,发现还是<span class="number">1</span>的位置</span><br><span class="line">这时候会产生叫做 <span class="string">"哈希冲突"</span> 的情况,然后为了解决,使用了链表模式</span><br><span class="line"></span><br><span class="line">注意:在jdk1.8之前,HashMap底层是哈希表(数组+链表)</span><br><span class="line">	 在jdk1.8之后,HashMap底层(数组+链表+红黑树)</span><br><span class="line">	 为什么会这样,原因是当哈西冲突太多的时候,链表满足不了快速的特性,这时候,链表就会自动变成红黑树实现</span><br><span class="line">	 哈西冲突太多到达阀值(默认<span class="number">8</span>)情况,会使用红黑树实现</span><br></pre></td></tr></table></figure>
+<h1 id="3-Map集合的遍历"><a href="#3-Map集合的遍历" class="headerlink" title="3 Map集合的遍历"></a>3 Map集合的遍历</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Map&lt;String,String&gt; map=<span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">		map.put(<span class="string">"01"</span>, <span class="string">"一号罪犯"</span>);</span><br><span class="line">		map.put(<span class="string">"02"</span>, <span class="string">"二号罪犯"</span>);</span><br><span class="line">		map.put(<span class="string">"03"</span>, <span class="string">"三号罪犯"</span>);</span><br><span class="line">		map.put(<span class="string">"04"</span>, <span class="string">"四号罪犯"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//方式一  迭代器+keyset方式迭代</span></span><br><span class="line">		Set&lt;String&gt; keySet=map.keySet();</span><br><span class="line">		Iterator&lt;String&gt; it=keySet.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">			String key=it.next();</span><br><span class="line">			System.out.println(key+<span class="string">"--&gt;"</span>+map.get(key));</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"==========================="</span>);</span><br><span class="line">		<span class="comment">//方式二 增强for+keyset方式迭代</span></span><br><span class="line">		<span class="keyword">for</span>(String key:map.keySet())&#123;</span><br><span class="line">			System.out.println(key+<span class="string">"--&gt;"</span>+map.get(key));</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"============================="</span>);</span><br><span class="line">		<span class="comment">//方式三 迭代器+map.entry 迭代</span></span><br><span class="line">		Set&lt;Map.Entry&lt;String, String&gt;&gt; entrySet=map.entrySet(); <span class="comment">//Map.Entry是一个接口,代表映射项,key_value</span></span><br><span class="line">		Iterator&lt;Map.Entry&lt;String, String&gt;&gt; item=entrySet.iterator();</span><br><span class="line">		<span class="keyword">while</span>(item.hasNext())&#123;</span><br><span class="line">			Map.Entry&lt;String, String&gt; e=item.next();</span><br><span class="line">			System.out.println(e.getKey()+<span class="string">"--&gt;"</span>+e.getValue());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"==============================="</span>);</span><br><span class="line">		<span class="comment">//方式四 增强for+map.entry 迭代</span></span><br><span class="line">		<span class="keyword">for</span>(Map.Entry&lt;String, String&gt; em:map.entrySet())&#123;</span><br><span class="line">			System.out.println(em.getKey()+<span class="string">"----&gt;"</span>+em.getValue());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"==============================="</span>);</span><br><span class="line">		<span class="comment">//方式五 使用values()方法  只能得到value,并不能得到key</span></span><br><span class="line">		<span class="keyword">for</span>(String str:map.values())&#123;</span><br><span class="line">			System.out.println(str);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">上面严格来说,前四种是遍历map集合的方式,最后一种,只能得到value,实际不算map遍历</span><br><span class="line"></span><br><span class="line">迭代器+keyset方式迭代:<span class="number">94</span></span><br><span class="line">增强<span class="keyword">for</span>+keyset方式迭代:<span class="number">313</span></span><br><span class="line">迭代器+map.entry 迭代:<span class="number">62</span></span><br><span class="line">增强<span class="keyword">for</span>+map.entry 迭代:<span class="number">47</span></span><br><span class="line"></span><br><span class="line">迭代器+keyset方式迭代:<span class="number">218</span></span><br><span class="line">增强<span class="keyword">for</span>+keyset方式迭代:<span class="number">78</span></span><br><span class="line">迭代器+map.entry 迭代:<span class="number">79</span></span><br><span class="line">增强<span class="keyword">for</span>+map.entry 迭代:<span class="number">78</span></span><br><span class="line"></span><br><span class="line">迭代器+keyset方式迭代:<span class="number">125</span></span><br><span class="line">增强<span class="keyword">for</span>+keyset方式迭代:<span class="number">78</span></span><br><span class="line">迭代器+map.entry 迭代:<span class="number">172</span></span><br><span class="line">增强<span class="keyword">for</span>+map.entry 迭代:<span class="number">78</span></span><br><span class="line"></span><br><span class="line">通过测试用例,推荐使用 增强<span class="keyword">for</span>+map.entry 方式</span><br></pre></td></tr></table></figure>
+<p>​            </p>
+<h1 id="4-Map集合中存放自定义对象"><a href="#4-Map集合中存放自定义对象" class="headerlink" title="4 Map集合中存放自定义对象"></a>4 Map集合中存放自定义对象</h1><p>​        需求: 定义一个犯人类,创建几个犯人,往集合中放,然后遍历,分别调用自己的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Map&lt;String,Japan&gt; map=<span class="keyword">new</span> HashMap&lt;String,Japan&gt;();</span><br><span class="line">		Japan j1=<span class="keyword">new</span> Japan(<span class="string">"安培晋三"</span>, <span class="string">"001"</span>, <span class="string">"不当人当狗"</span>);</span><br><span class="line">		Japan j2=<span class="keyword">new</span> Japan(<span class="string">"特朗普"</span>, <span class="string">"002"</span>, <span class="string">"养狗"</span>);</span><br><span class="line">		map.put(j1.cardId, j1);</span><br><span class="line">		map.put(j2.cardId, j2);</span><br><span class="line">		</span><br><span class="line">		Set&lt;Map.Entry&lt;String,Japan&gt;&gt;  item=map.entrySet();</span><br><span class="line">		Iterator&lt;Map.Entry&lt;String,Japan&gt;&gt; e=item.iterator();</span><br><span class="line">		<span class="keyword">while</span>(e.hasNext())&#123;</span><br><span class="line">			Map.Entry&lt;String,Japan&gt; em=e.next();</span><br><span class="line">			System.out.println(<span class="string">"编号:"</span>+em.getKey());</span><br><span class="line">			System.out.println(<span class="string">"拖出去枪毙"</span>);</span><br><span class="line">			em.getValue().kill();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Japan</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	<span class="keyword">public</span> String cardId;</span><br><span class="line">	<span class="keyword">public</span> String zuiXing;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Japan</span><span class="params">(String name, String cardId, String zuiXing)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.cardId = cardId;</span><br><span class="line">		<span class="keyword">this</span>.zuiXing = zuiXing;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">kill</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是犯人:"</span>+<span class="keyword">this</span>.name+<span class="string">",我的罪行是:"</span>+<span class="keyword">this</span>.zuiXing);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">注意:集合在遍历的时候需要注意的问题</span><br><span class="line">	 </span><br><span class="line">	 以List集合为例</span><br><span class="line">	 </span><br><span class="line">	 普通<span class="keyword">for</span>循环</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">			list.add(<span class="string">"a"</span>);</span><br><span class="line">			list.add(<span class="string">"b"</span>);</span><br><span class="line">			list.add(<span class="string">"c"</span>);</span><br><span class="line">			list.add(<span class="string">"d"</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">				<span class="comment">//删除</span></span><br><span class="line">				<span class="comment">//list.remove(i);  //[b, d] 每次都会影响for的条件,所以会少循环</span></span><br><span class="line">				<span class="comment">//添加</span></span><br><span class="line">				<span class="comment">//list.add("e");  //死循环,直到内存溢出</span></span><br><span class="line">				<span class="comment">//修改</span></span><br><span class="line">				list.set(i, list.get(i)+list.get(i)); <span class="comment">//[aa, bb, cc, dd]</span></span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	增强<span class="keyword">for</span>循环</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">			list.add(<span class="string">"a"</span>);</span><br><span class="line">			list.add(<span class="string">"b"</span>);</span><br><span class="line">			list.add(<span class="string">"c"</span>);</span><br><span class="line">			list.add(<span class="string">"d"</span>);</span><br><span class="line">			<span class="keyword">for</span>(String li:list)&#123;</span><br><span class="line">				<span class="comment">//删除</span></span><br><span class="line">				<span class="comment">//list.remove(li);  java.util.ConcurrentModificationException</span></span><br><span class="line">				<span class="comment">//添加</span></span><br><span class="line">				<span class="comment">//list.add("e"); java.util.ConcurrentModificationException</span></span><br><span class="line">				<span class="comment">//修改</span></span><br><span class="line">				list.set(list.indexOf(li),li+li);  <span class="comment">//[aa, bb, cc, dd]</span></span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	迭代器</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">				List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">				list.add(<span class="string">"a"</span>);</span><br><span class="line">				list.add(<span class="string">"b"</span>);</span><br><span class="line">				list.add(<span class="string">"c"</span>);</span><br><span class="line">				list.add(<span class="string">"d"</span>);</span><br><span class="line">				Iterator&lt;String&gt; it=list.iterator();</span><br><span class="line">				<span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">					<span class="comment">//删除</span></span><br><span class="line">					<span class="comment">//list.remove(it.next()); //java.util.ConcurrentModificationException</span></span><br><span class="line">					<span class="comment">//添加</span></span><br><span class="line">					<span class="comment">/*it.next();</span></span><br><span class="line"><span class="comment">					list.add("e");  //java.util.ConcurrentModificationException*/</span></span><br><span class="line">					<span class="comment">//修改</span></span><br><span class="line">					String key=it.next();</span><br><span class="line">					list.set(list.indexOf(key), key+key); <span class="comment">//[aa, bb, cc, dd]</span></span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(list);</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">总结:在使用迭代器和增强<span class="keyword">for</span>时,对集合的操作,比如删除和添加,只要是改变集合大小的操作</span><br><span class="line">	 都会出现java.util.ConcurrentModificationException  并发修改异常</span><br><span class="line">	 </span><br><span class="line">	 附:增强<span class="keyword">for</span>循环的内部使用的就是迭代器</span><br><span class="line">	 </span><br><span class="line">	 为什么会出现java.util.ConcurrentModificationException 异常呢?</span><br><span class="line">	 上面出现的异常,并不是对集合操作出现的异常,而是对迭代器操作出现的 ,就是 it.next()</span><br><span class="line">	 </span><br><span class="line">	 跟进源码:发现</span><br><span class="line">	 当创建迭代器对象时,首先执行</span><br><span class="line">	 <span class="keyword">int</span> expectedModCount = modCount;</span><br><span class="line">	 也就是起始值相同</span><br><span class="line">	 当我们在迭代时,对集合进行了添加,删除操作时,会影响modCount自增</span><br><span class="line">	 所以当执行checkForComodification();方法时</span><br><span class="line">	 <span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">checkForComodification</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (modCount != expectedModCount)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">	  &#125;</span><br><span class="line">	  会出现异常</span><br><span class="line">	  </span><br><span class="line">	如果就想在迭代时,删除元素,可以使用迭代器的方法,别操作集合  !!!!</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">				List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">				list.add(<span class="string">"a"</span>);</span><br><span class="line">				list.add(<span class="string">"b"</span>);</span><br><span class="line">				list.add(<span class="string">"c"</span>);</span><br><span class="line">				list.add(<span class="string">"d"</span>);</span><br><span class="line">				Iterator&lt;String&gt; it=list.iterator();</span><br><span class="line">				<span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">					it.next();</span><br><span class="line">					it.remove();</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(list);</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+<p>​                </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/02/第十一天/" rel="next" title="第十一天">
+                <i class="fa fa-chevron-left"></i> 第十一天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/02/第十四天/" rel="prev" title="第十四天">
+                第十四天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-泛型"><span class="nav-number">1.</span> <span class="nav-text">1 泛型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Map集合"><span class="nav-number">2.</span> <span class="nav-text">2 Map集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Map集合的遍历"><span class="nav-number">3.</span> <span class="nav-text">3 Map集合的遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Map集合中存放自定义对象"><span class="nav-number">4.</span> <span class="nav-text">4 Map集合中存放自定义对象</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

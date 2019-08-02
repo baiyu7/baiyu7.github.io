@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 数据查询​         123456float和DECIMAL以及NUMERIC区别它们都能表示小数DECIMAL以及NUMERIC没什么区别float是近视值DECIMAL以及NUMERIC是精确值float比DECIMAL和NUMERIC效率高 ​1234567891011121314151617CREATE TABLE `t_employee` (  `fnumber` varcha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql第二天">
+<meta property="og:url" content="http://yoursite.com/2019/08/02/mysql第二天/index.html">
+<meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
+<meta property="og:description" content="1 数据查询​         123456float和DECIMAL以及NUMERIC区别它们都能表示小数DECIMAL以及NUMERIC没什么区别float是近视值DECIMAL以及NUMERIC是精确值float比DECIMAL和NUMERIC效率高 ​1234567891011121314151617CREATE TABLE `t_employee` (  `fnumber` varcha">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-02T11:50:42.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql第二天">
+<meta name="twitter:description" content="1 数据查询​         123456float和DECIMAL以及NUMERIC区别它们都能表示小数DECIMAL以及NUMERIC没什么区别float是近视值DECIMAL以及NUMERIC是精确值float比DECIMAL和NUMERIC效率高 ​1234567891011121314151617CREATE TABLE `t_employee` (  `fnumber` varcha">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/02/mysql第二天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>mysql第二天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">生活不止眼前的苟且，还有诗和远方。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/mysql第二天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mysql第二天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-02 19:48:22 / 修改时间：19:50:42" itemprop="dateCreated datePublished" datetime="2019-08-02T19:48:22+08:00">2019-08-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-数据查询"><a href="#1-数据查询" class="headerlink" title="1 数据查询"></a>1 数据查询</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">float和DECIMAL以及NUMERIC区别</span><br><span class="line">它们都能表示小数</span><br><span class="line">DECIMAL以及NUMERIC没什么区别</span><br><span class="line">float是近视值</span><br><span class="line">DECIMAL以及NUMERIC是精确值</span><br><span class="line">float比DECIMAL和NUMERIC效率高</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `t_employee` (</span><br><span class="line">  `fnumber` varchar(20) NOT NULL default &apos;&apos;,</span><br><span class="line">  `fname` varchar(20) default NULL,</span><br><span class="line">  `fage` int(11) default NULL,</span><br><span class="line">  `fsalary` decimal(10,2) default NULL,</span><br><span class="line">  `company` varchar(20) default NULL,</span><br><span class="line">  `employee` varchar(20) default NULL,</span><br><span class="line">  PRIMARY KEY  (`fnumber`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br><span class="line"></span><br><span class="line">插入数据</span><br><span class="line">	</span><br><span class="line">insert into t_employee(fnumber,fname,fage,fsalary,company,employee) VALUES(&apos;DEV001&apos;,&apos;张三&apos;,25,8300,&apos;腾讯&apos;,&apos;测试部&apos;);</span><br><span class="line">insert into t_employee(fnumber,fname,fage,fsalary,company,employee) VALUES(&apos;DEV002&apos;,&apos;李四&apos;,28,2300.80,&apos;华为&apos;,&apos;前端开发部&apos;);</span><br><span class="line">insert into t_employee(fnumber,fname,fage,fsalary,company,employee) VALUES(&apos;DEV003&apos;,&apos;王五&apos;,23,5000,&apos;微软&apos;,&apos;后端开发部&apos;);</span><br><span class="line">insert into t_employee(fnumber,fname,fage,fsalary,company,employee) VALUES(&apos;DEV004&apos;,&apos;赵六&apos;,28,6200,&apos;万达&apos;,&apos;测试部&apos;);</span><br><span class="line">insert into t_employee(fnumber,fname,fage,fsalary,company,employee) VALUES(&apos;DEV005&apos;,&apos;田七&apos;,22,1200,&apos;腾讯&apos;,&apos;后端开发部&apos;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">===简单的数据查询</span><br><span class="line">	select * from t_employee;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">===只检索需要的列</span><br><span class="line">	select fname as &apos;姓名&apos;,fsalary as &apos;工资&apos; from t_employee</span><br><span class="line">	</span><br><span class="line">	select fname  &apos;姓名&apos;,fsalary  &apos;工资&apos; from t_employee</span><br><span class="line">	</span><br><span class="line">=== 可以检索不与任何表字段关联的列</span><br><span class="line">	select 1+1</span><br><span class="line">	select NOW()</span><br><span class="line">	select &apos;中国&apos; as &apos;国家&apos;</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">===聚合函数</span><br><span class="line">	Max()   //取最大值</span><br><span class="line">	Min()   //取最小值</span><br><span class="line">	Avg()   //平均值</span><br><span class="line">	Count()  //求数据的条数</span><br><span class="line">	sum()    //求合</span><br><span class="line">	</span><br><span class="line">//切记 where后面不许跟聚合函数</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">求  大于25岁的员工最高工资</span><br><span class="line">	select max(fsalary) from t_employee where fage&gt;25</span><br><span class="line">	</span><br><span class="line">求  员工表中的最高工资,最低工资和平均工资</span><br><span class="line">	select max(fsalary),min(fsalary),avg(fsalary) from t_employee</span><br><span class="line">	</span><br><span class="line">求  工资总和</span><br><span class="line">	select sum(fsalary) from t_employee</span><br><span class="line">	</span><br><span class="line">求  有多少个大于25岁的员工</span><br><span class="line">	select count(fage) from t_employee where fage&gt;25</span><br><span class="line">	select count(*) from t_employee where fage&gt;25</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意: count(*) 不许有空格 count (*)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">=====数据排序</span><br><span class="line">	 </span><br><span class="line">	 order by 子句,一般用于select语句的最后,可以指定用一个列或者多个列</span><br><span class="line">	 可以升序(ASC) 或者降序 (DESC)</span><br><span class="line">	 </span><br><span class="line">	 select * from t_employee order by fsalary ASC  --工资的升序,默认就是升序</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from t_employee order by fsalary DESC  --降序</span><br><span class="line"></span><br><span class="line">select * from t_employee order by fsalary DESC,fage ASC --先比较工资,工资一样,在比较年龄</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">=====通配符</span><br><span class="line">	</span><br><span class="line">	使用like关键字匹配进行查询</span><br><span class="line">	叫模糊查询</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_ 匹配单个字符</span><br><span class="line">	</span><br><span class="line">	例子</span><br><span class="line">	张_  只会匹配以张开头,并且名字后只有一个字符的人  张三  可以   张三三 不可以</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">% 匹配多个字符</span><br><span class="line">	</span><br><span class="line">	例子</span><br><span class="line">	张%	只要以张开头就行  张fefsdasdasdaafa  可以  dasfafdasa张fasfafafa  不可以</span><br><span class="line">	%张% 只要含有张就可以  张fefsdasdasdaafa 可以  dasfafdasa张fasfafafa  可以</span><br><span class="line">	%张  张必须结尾		safdasfafaf张  可以</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//查询姓张的人</span><br><span class="line">select * from t_employee where fname like &apos;张%&apos;;</span><br><span class="line"></span><br><span class="line">//查询姓张的,是两个字的名字</span><br><span class="line">select * from t_employee where fname like &apos;张_&apos;;</span><br><span class="line"></span><br><span class="line">//三个字的</span><br><span class="line">select * from t_employee where fname like &apos;张__&apos;;  //两个下划线</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">=====空值的处理</span><br><span class="line">数据库中,如果有一个列的值没有指定,它的值就是Null,表示不知道</span><br><span class="line">查询数据库中,所有test不为Null的人</span><br><span class="line"></span><br><span class="line">select * from t_employee where test!=null   不可以</span><br><span class="line">select * from t_employee where test&lt;&gt;null	不可以</span><br><span class="line">select * from t_employee where test is not NULL 可以</span><br><span class="line"></span><br><span class="line">select * from t_employee where test is NULL //查询为null</span><br><span class="line"></span><br><span class="line">所以千万注意,对于null值,不能用 = &gt; &lt; != &lt;&gt; 等,查出来的不准确</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">=====多值匹配</span><br><span class="line"></span><br><span class="line">查询年龄23 25 28 的人</span><br><span class="line">select * from t_employee where fage=25 or fage=23 or fage=28</span><br><span class="line">select * from t_employee where fage in(23,25,28)</span><br><span class="line"></span><br><span class="line">查询年龄在 &gt;=23 &lt;=25 的人</span><br><span class="line">select * from t_employee where fage&gt;=23 and fage&lt;=25</span><br><span class="line">select * from t_employee where fage between 23 and 25  //包含前后区间</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> ====分组查询</span><br><span class="line">  分组是把查询出的数据,进行一个分组, 用group by</span><br><span class="line">  例如</span><br><span class="line">		公司   人数</span><br><span class="line">		腾讯	2</span><br><span class="line">		华为	1</span><br><span class="line">		阿里	1</span><br><span class="line">		</span><br><span class="line">1) 每个公司有多少人	</span><br><span class="line">  SELECT company &apos;公司&apos;,count(fnumber) &apos;人数&apos; from t_employee GROUP BY company</span><br><span class="line">  </span><br><span class="line">2) 每个公司的平均工资是多少?</span><br><span class="line">	select avg(fsalary),company from t_employee GROUP BY company</span><br><span class="line">	</span><br><span class="line">3) 每个公司员工的总工资</span><br><span class="line">	select company,sum(fsalary) from t_employee GROUP BY company</span><br><span class="line">	</span><br><span class="line">4) 查询各公司各部门的总工资</span><br><span class="line">	select company,employee,sum(fsalary) from t_employee GROUP BY company,employee</span><br></pre></td></tr></table></figure>
+<pre><code>小技巧:如果查询后面跟着聚合函数和非聚合函数,那么就需要用到分组,分组的后面是非聚合函数,即可
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">====having</span><br><span class="line">	对分组后的数据,进行过滤,不能用where,要用having</span><br><span class="line">	</span><br><span class="line">1) 查询总工资大于4k的公司</span><br><span class="line">	select sum(fsalary),company from t_employee GROUP BY company having sum(fsalary)&gt;4000</span><br><span class="line">	</span><br><span class="line">2) 查询数据库,查询平均年龄在20到30的公司</span><br><span class="line">	select avg(fage),company from t_employee GROUP BY company having avg(fage) between 20 and 30</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">====去重复</span><br><span class="line">distinct  //这个关键字可以对结果集去重</span><br><span class="line"></span><br><span class="line">select count(DISTINCT company) from t_employee</span><br><span class="line">不可以</span><br><span class="line">select DISTINCT count(company) from t_employee  结果将不准确</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select DISTINCT company,employee from t_employee   只有当公司和部门都一致的时候,才会去重,证明是整个结果集去重</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">====限制结果集</span><br><span class="line">	查询前两条记录</span><br><span class="line">	</span><br><span class="line">	select top 2 * from t_employee  //sql server可以</span><br><span class="line">	</span><br><span class="line">	在mysql中</span><br><span class="line">	select * from t_employee LIMIT 2</span><br><span class="line">	select * from t_employee LIMIT 0,2   //从0开始,2两条数据</span><br><span class="line">	select * from t_employee LIMIT 2,2   //从第2条记录开始查询,</span><br><span class="line">	</span><br><span class="line">====联合结果集</span><br><span class="line">	</span><br><span class="line">	union  和 union all</span><br><span class="line">	</span><br><span class="line">	create table t_tempemployee(</span><br><span class="line">		idnumber VARCHAR(20),</span><br><span class="line">		fname VARCHAR(20),</span><br><span class="line">		fage int,</span><br><span class="line">		PRIMARY key(idnumber)</span><br><span class="line">	)</span><br><span class="line">	</span><br><span class="line">INSERT INTO T_TempEmployee(idnumber,FName,FAge) VALUES(&apos;1234567890121&apos;,&apos;Sarani&apos;,33);</span><br><span class="line">INSERT INTO T_TempEmployee(idnumber,FName,FAge) VALUES(&apos;1234567890122&apos;,&apos;Tom&apos;,26);</span><br><span class="line">INSERT INTO T_TempEmployee(idnumber,FName,FAge) VALUES(&apos;1234567890123&apos;,&apos;Yalaha&apos;,38);</span><br><span class="line">INSERT INTO T_TempEmployee(idnumber,FName,FAge) VALUES(&apos;1234567890124&apos;,&apos;Tina&apos;,26);</span><br><span class="line">INSERT INTO T_TempEmployee(idnumber,FName,FAge) VALUES(&apos;1234567890125&apos;,&apos;Konkaya&apos;,29);</span><br><span class="line">INSERT INTO T_TempEmployee(idnumber,FName,FAge) VALUES(&apos;1234567890126&apos;,&apos;Fotifa&apos;,46);	</span><br><span class="line"></span><br><span class="line">//例子 查询所有员工(正式,临时)的编号,名字,年龄</span><br><span class="line">select fnumber,fname,fage from t_employee</span><br><span class="line">UNION</span><br><span class="line">select * from t_tempemployee  //* 必须和上面的列保持一致,类型对应上就不会报错</span><br><span class="line"></span><br><span class="line">//附:UNION语句对于多个表查询速度非常快,速度越快,越不容易引起表的死锁,越慢越容易</span><br><span class="line"></span><br><span class="line">基本原则:每个结果集的列数必须相同,每个对应的列,类型必须兼容</span><br><span class="line"></span><br><span class="line">//可以使用 与列名无关的字符串,进行联合</span><br><span class="line">select fname,fnumber,fage,fsalary from t_employee</span><br><span class="line">UNION</span><br><span class="line">select *,&apos;&apos; from t_tempemployee</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">union all 不去重复,效率高</span><br><span class="line"></span><br><span class="line">例子 查询员工的最高年龄和最低年龄,临时工的最高年龄和最低年龄</span><br><span class="line"></span><br><span class="line">	 结果</span><br><span class="line">		 正式员工最高年龄	28</span><br><span class="line">		 正式员工最低年龄	22</span><br><span class="line">		 临时员工最高年龄	46</span><br><span class="line">		 临时员工最低年龄	25</span><br><span class="line"></span><br><span class="line">select &apos;正式员工的最高年龄&apos;,max(fage) from t_employee</span><br><span class="line">UNION</span><br><span class="line">select &apos;正式员工的最低年龄&apos;,min(fage) from t_employee</span><br><span class="line">union</span><br><span class="line">select &apos;临时员工的最高年龄&apos;,max(fage) from t_tempemployee</span><br><span class="line">UNION</span><br><span class="line">select &apos;临时员工的最低年龄&apos;,min(fage) from t_tempemployee</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">如果觉得表头不好</span><br><span class="line">	select temp.n1 as &apos;员工年龄&apos;,temp.age as &apos;年龄&apos; from(</span><br><span class="line">		select &apos;正式员工的最高年龄&apos; as n1,max(fage)as age from t_employee</span><br><span class="line">		UNION</span><br><span class="line">		select &apos;正式员工的最低年龄&apos; as n1,min(fage)as age from t_employee</span><br><span class="line">		union</span><br><span class="line">		select &apos;临时员工的最高年龄&apos; as n1,max(fage)as age from t_tempemployee</span><br><span class="line">		UNION</span><br><span class="line">		select &apos;临时员工的最低年龄&apos; as n1,min(fage)as age from t_tempemployee</span><br><span class="line">	) as temp</span><br><span class="line">	</span><br><span class="line">//例子 查询每个正式员工的信息,工号,工资,在最后一行计算出工资总和</span><br><span class="line">	结果:</span><br><span class="line">			工号     工资</span><br><span class="line">			....      ...</span><br><span class="line">			工资总和  ****</span><br><span class="line">			</span><br><span class="line">	select fnumber &apos;工号&apos;,fsalary &apos;工资&apos; from t_employee</span><br><span class="line">	UNION ALL</span><br><span class="line">	select &apos;工资总和&apos;,sum(fsalary) from t_employee</span><br></pre></td></tr></table></figure>
+<p>​        </p>
+<h1 id="2-函数"><a href="#2-函数" class="headerlink" title="2 函数"></a>2 函数</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">	函数能少用就少用,容易造成数据不兼容</span><br><span class="line">	</span><br><span class="line">====数字函数</span><br><span class="line">  select abs(-1)  //绝对值</span><br><span class="line">  select ceiling(3.2)   //4  返回比括号中数值大的最小整数</span><br><span class="line">  select FLOOR(3.2)     //3  返回比括号中数值小的最大整数</span><br><span class="line">  select ROUND(4.5)    //5  四舍五入</span><br><span class="line">  select ROUND(3.1415926,3)  //3.142</span><br><span class="line">  </span><br><span class="line">====字符串的操作</span><br><span class="line"> select CHAR_LENGTH(&apos;123456&apos;)  //6</span><br><span class="line"> select CHAR_LENGTH(NULL)   //求长度的字段的值是null时,查询返回也为null</span><br><span class="line"> select LOWER(&apos;AAABBBxccc&apos;)   //aaabbbxccc   变小写</span><br><span class="line"> select UPPER(&apos;AAABBBxccc&apos;)   //AAABBBXCCC</span><br><span class="line"> select UPPER(fname) from t_tempemployee  //查询的名字返回出来都是大写的</span><br><span class="line"> select trim(&apos;      我的两边有空格       &apos;) //去两边空格</span><br><span class="line"> select CONCAT(&apos;qwe&apos;,&apos;rty&apos;)</span><br><span class="line"> 或者select CONCAT(&apos;qwe&apos;,&apos;rty&apos;,&apos;uio&apos;)//里面可以连接很多字符串</span><br><span class="line"> select SUBSTRING(&apos;123456&apos; ,1,3) //得到123 </span><br><span class="line"> </span><br><span class="line"> ====日期函数</span><br><span class="line">	select now()  //当前时间</span><br><span class="line">	select HOUR(now())  //当前小时</span><br><span class="line">	select MINUTE(now())  //当前分钟</span><br><span class="line">	select month(now())  //当前月份</span><br><span class="line">	select QUARTER(now())  //季度</span><br><span class="line">	</span><br><span class="line"> ====其他</span><br><span class="line">	ifnull(arg1,arg2)  //如果第一个表达式arg1的值为null,则结果为第二个表达式arg2,否则结果为第一个arg1表达式</span><br><span class="line">			例如	select IFNULL(test,0) from t_employee</span><br><span class="line">			</span><br><span class="line">	select database()  //获取当前数据库</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//练习</span><br><span class="line"></span><br><span class="line">//今天</span><br><span class="line">select * from 表名 where to_days(时间字段)=to_days(now())</span><br><span class="line"></span><br><span class="line">//昨天</span><br><span class="line">select * from 表名 where to_days(时间字段)=to_days(now())-1</span><br><span class="line"></span><br><span class="line">//近7天</span><br><span class="line">select * from 表名 where date_sub(CURDATE(),INTERVAL 7 day)&lt;=data(时间字段) 2019-08-01</span><br><span class="line"></span><br><span class="line">//本月</span><br><span class="line">select * from 表名 where DATE_FORMAT(时间字段,&apos;%Y%m&apos;)=DATE_FORMAT(CURDATE(),&apos;%Y%m&apos;)</span><br><span class="line"></span><br><span class="line">//上一个月</span><br><span class="line">select * from 表名 where DATE_FORMAT(时间字段,&apos;%Y%m&apos;)=DATE_FORMAT(CURDATE(),&apos;%Y%m&apos;)-1</span><br><span class="line"></span><br><span class="line">//上一年的数据</span><br><span class="line">select * from 表名 where year(时间字段)=year(now())-1</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//例子 员工考勤查询</span><br><span class="line">select sname,min(time) as &apos;上班&apos;,max(time) as &apos;下班&apos; </span><br><span class="line">from t_user</span><br><span class="line">where CURDATE()=&apos;2019-08-01&apos;</span><br><span class="line">GROUP BY sname</span><br></pre></td></tr></table></figure>
+<h1 id="3-CASE-语句"><a href="#3-CASE-语句" class="headerlink" title="3 CASE 语句"></a>3 CASE 语句</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//例子 查询年龄,如果是20岁,显示&apos;小青年&apos; ,如果是28岁,显示&apos;老家伙&apos; 其他显示 &apos;中等家伙&apos;</span><br><span class="line">select fname,</span><br><span class="line">(</span><br><span class="line">CASE fage</span><br><span class="line">	WHEN 20 then &apos;小青年&apos;</span><br><span class="line">	when 28 then &apos;老家伙&apos;</span><br><span class="line">	else &apos;中等家伙&apos;</span><br><span class="line">END</span><br><span class="line">) as &apos;等级划分&apos;</span><br><span class="line">from t_employee</span><br><span class="line"></span><br><span class="line">//例子  如果收费大于等于1000,则显示&apos;乱收费&apos; ,如果小于等于700,显示&apos;低收费&apos;,其他显示&apos;可疑收费&apos;</span><br><span class="line">create table Fee (feeName varchar(50),amount int)</span><br><span class="line">   </span><br><span class="line">  insert into Fee(feeName,amount)  values (&apos;水费&apos;, 200);</span><br><span class="line">  insert into Fee(feeName,amount)  values (&apos;电费&apos;, 700);</span><br><span class="line">  insert into Fee(feeName,amount)  values (&apos;取暧费&apos;, 800);</span><br><span class="line">  insert into Fee(feeName,amount)  values (&apos;个人所得税&apos;, 1000);</span><br><span class="line">  insert into Fee(feeName,amount)  values (&apos;物业费&apos;, 1200);</span><br><span class="line">  </span><br><span class="line">  SELECT </span><br><span class="line">	feeName,</span><br><span class="line">	(</span><br><span class="line">	CASE</span><br><span class="line">		when amount&gt;=1000 then &apos;乱收费&apos;</span><br><span class="line">		when amount&lt;=700 then &apos;低收费&apos;</span><br><span class="line">		else &apos;可疑收费&apos;</span><br><span class="line">	END) as &apos;收费&apos;</span><br><span class="line">	FROM fee;</span><br></pre></td></tr></table></figure>
+<h1 id="4-外键"><a href="#4-外键" class="headerlink" title="4 外键"></a>4 外键</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">为了保护数据的安全性和完整性</span><br><span class="line"></span><br><span class="line">学生  学校</span><br><span class="line"></span><br><span class="line">create table t_school(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	name varchar(20)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">create table t_student(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	name varchar(20),</span><br><span class="line">	schoolId int</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">添加外键</span><br><span class="line">alter table t_student add constraint fk_xxxx foreign key(schoolId) references t_school(id)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除外键</span><br><span class="line">alter table t_student drop foreign key fk_xxxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">也可以在图形化界面中直接创建</span><br><span class="line"></span><br><span class="line">RESTRICT   //默认值 拒接删除(除非没有人引用这个值,才可以删除),比较安全</span><br><span class="line">NO ACTION  //和上面一样</span><br><span class="line">CASCADE    //级联删除,非常不安全</span><br><span class="line">SET NULL   //删除时,会把引用这个外键的栏目设置为null</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">==创建表的时候就可以指定外键</span><br><span class="line">create table t_school(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	name varchar(20)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">create table t_student(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	name varchar(20),</span><br><span class="line">	schoolId int,</span><br><span class="line">	constraint fK_dasdas foreign key(schoolId) references t_school(id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>​<br>​<br>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">附: 引擎</span><br><span class="line">mysql中的数据用各种不同的技术存储在文件中或者内存中</span><br><span class="line">而这些技术使用了不同的存储机制,就是引擎赋予的</span><br><span class="line"></span><br><span class="line">InnoDB 在5版本之后自动默认支持的,他支持事务 表级别锁 行级别锁</span><br><span class="line">MyISAM 支持表级别锁,不支持事务,外键等</span><br><span class="line"></span><br><span class="line">现在比较常用InnoDB,因为MyISAM 支持表级别锁,那么并发性就会差</span><br><span class="line">而InnoDB支持行级别锁,并发性就会好,但是存在的隐患就是容易死锁</span><br></pre></td></tr></table></figure></p>
+<p>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​        </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/02/mysql第一天/" rel="next" title="mysql第一天">
+                <i class="fa fa-chevron-left"></i> mysql第一天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/02/mysql第三天/" rel="prev" title="mysql第三天">
+                mysql第三天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数据查询"><span class="nav-number">1.</span> <span class="nav-text">1 数据查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-函数"><span class="nav-number">2.</span> <span class="nav-text">2 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-CASE-语句"><span class="nav-number">3.</span> <span class="nav-text">3 CASE 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-外键"><span class="nav-number">4.</span> <span class="nav-text">4 外键</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1.字符编码1234567891011===ASCII		单字节   00000000    01111111		   美国(国家)信息交换标准(代)码  计算机中只有数字,一切都是用数字表示,屏幕上显示的一个一个的字符也不例外  一个字节可表示的数字为0-255,足以显示键盘上的所有的字符 例如. a 为97 b为 98  这种数字与字符对应的编码规则,称为 ASCII  码,  使用7 位二进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第十九天">
+<meta property="og:url" content="http://yoursite.com/2019/08/02/第十九天/index.html">
+<meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
+<meta property="og:description" content="1.字符编码1234567891011===ASCII		单字节   00000000    01111111		   美国(国家)信息交换标准(代)码  计算机中只有数字,一切都是用数字表示,屏幕上显示的一个一个的字符也不例外  一个字节可表示的数字为0-255,足以显示键盘上的所有的字符 例如. a 为97 b为 98  这种数字与字符对应的编码规则,称为 ASCII  码,  使用7 位二进">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-02T11:36:17.050Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第十九天">
+<meta name="twitter:description" content="1.字符编码1234567891011===ASCII		单字节   00000000    01111111		   美国(国家)信息交换标准(代)码  计算机中只有数字,一切都是用数字表示,屏幕上显示的一个一个的字符也不例外  一个字节可表示的数字为0-255,足以显示键盘上的所有的字符 例如. a 为97 b为 98  这种数字与字符对应的编码规则,称为 ASCII  码,  使用7 位二进">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/02/第十九天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>第十九天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">生活不止眼前的苟且，还有诗和远方。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/第十九天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第十九天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-02 19:32:51 / 修改时间：19:36:17" itemprop="dateCreated datePublished" datetime="2019-08-02T19:32:51+08:00">2019-08-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-字符编码"><a href="#1-字符编码" class="headerlink" title="1.字符编码"></a>1.字符编码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">===ASCII</span><br><span class="line">		单字节   <span class="number">00000000</span>    <span class="number">01111111</span></span><br><span class="line">		</span><br><span class="line">   美国(国家)信息交换标准(代)码</span><br><span class="line">  计算机中只有数字,一切都是用数字表示,屏幕上显示的一个一个的字符也不例外</span><br><span class="line">  一个字节可表示的数字为<span class="number">0</span>-<span class="number">255</span>,足以显示键盘上的所有的字符 例如. a 为<span class="number">97</span> b为 <span class="number">98</span></span><br><span class="line">  这种数字与字符对应的编码规则,称为 ASCII  码,</span><br><span class="line">  使用<span class="number">7</span> 位二进制数（此时还剩下一个最高位）用来表示所有的大写和小写字母，数字<span class="number">0</span> 到<span class="number">9</span>、标点符号， </span><br><span class="line">  以及在美式英语中使用的特殊控制字符。</span><br><span class="line">  ASC11 码的最高bit位都是<span class="number">0</span>,标志位</span><br><span class="line">  也就是说,ASC11码的值都在<span class="number">0</span>-<span class="number">127</span>之间</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">===GB2312和GBK</span><br><span class="line">两个字节   <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line">中国大陆将每个中文字符都用<span class="number">2</span>个字节表示,中文字符每个字节最高bit位都是<span class="number">1</span></span><br><span class="line">这种编码格式称为 (gb2312) 国标码 虽然GB2312包含了绝大部分的常用简体汉字，但是由于中文的复杂性</span><br><span class="line">   在此gb2312基础上,又增了一些,比如繁体字 ,称为GBK</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">===ANSI</span><br><span class="line">为了扩充ASCII编码，以用于显示本国的语言，不同的国家和地区制定了不同的标准，由此产生了 GB2312, BIG5, JIS </span><br><span class="line">   等各自的编码标准。这些使用 <span class="number">2</span> 个字节来代表一个字符的各种汉字延伸编码方式，称为 ANSI 编码，</span><br><span class="line">   又称为<span class="string">"MBCS（Muilti-Bytes Charecter Set，多字节字符集）"</span>。在简体中文系统下，ANSI 编码代表 GB2312 编码，</span><br><span class="line">   在日文操作系统下，ANSI 编码代表 JIS 编码，所以在中文 windows下要转码成gb2312,gbk</span><br><span class="line">   只需要把文本保存为ANSI 编码即可。 </span><br><span class="line">   不同 ANSI 编码之间互不兼容</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">===本地字符集</span><br><span class="line">在中国大陆使用的计算机系统上, GBK和GB2312就被称为该系统的本地字符集</span><br><span class="line">   <span class="string">"中国 "</span> 的中字,在中国大陆的编码是<span class="number">16</span>进制的D6D0,在台湾是 A4A4 台湾的编码称为BIG5 大五码</span><br><span class="line">	 在一个国家的本地化系统中出现的一个字符,通过电子邮件传到另外一个国家的本地化系统中,</span><br><span class="line">	 看到的就不是那个原始字符了,而是另外一个国家的字符或乱码</span><br></pre></td></tr></table></figure>
+<p>​<br>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">===Unicode编码</span><br><span class="line">	<span class="number">2</span>个字节</span><br><span class="line"></span><br><span class="line">ISO 组织将全世界的符号进行了统一,称之为Unicode编码</span><br><span class="line"> 中这个符号,在全世界都是<span class="number">16</span>进制的 <span class="number">4e2</span>d</span><br><span class="line">   如果所有的计算机都使用Unicode编码,则<span class="string">"中"</span>这个字,在全世界上的计算机上都能显示为<span class="string">"中"</span></span><br><span class="line">   Unicode 编码的字符占用   两个字节  大小</span><br><span class="line"></span><br><span class="line">   unicode 一统天下的局面还没有形成,在相当长时间内,本地化字符编码将与Unicode编码共存</span><br><span class="line">   java中系统编码的字符使用的都是Unicode编码用来管理内部变量等信息的 </span><br><span class="line">   java在通过Unicode保证跨平台的特性前提下,也支持本地平台字符集</span><br><span class="line"></span><br><span class="line">   <span class="number">35535</span></span><br></pre></td></tr></table></figure></p>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">===ISO-<span class="number">8859</span>-<span class="number">1</span>编码</span><br><span class="line">	(单字节)</span><br><span class="line">	是单字节编码，向下兼容ASCII，其编码范围是<span class="number">0x00</span>-<span class="number">0xFF</span>，<span class="number">0x00</span>-<span class="number">0x7F</span>之间完全和ASCII一致，<span class="number">0x80</span>-<span class="number">0x9F</span>之间是控制字符，</span><br><span class="line">	<span class="number">0xA0</span>-<span class="number">0xFF</span>之间是文字符号。</span><br><span class="line">	收录的字符除ASCII收录的字符外，还包括西欧语言、希腊语、泰语、阿拉伯语、希伯来语对应的文字符号。</span><br><span class="line">	欧元符号出现的比较晚，没有被收录在ISO-<span class="number">8859</span>-<span class="number">1</span>当中。</span><br><span class="line"></span><br><span class="line">	因为ISO-<span class="number">8859</span>-<span class="number">1</span>编码范围使用了单字节内的所有空间，</span><br><span class="line">	在支持ISO-<span class="number">8859</span>-<span class="number">1</span>的系统中传输和存储其他任何编码的字节流都不会被抛弃。（也就是无损）</span><br><span class="line">	换言之，把其他任何编码的字节流当作ISO-<span class="number">8859</span>-<span class="number">1</span>编码看待都没有问题。</span><br><span class="line">	这是个很重要的特性，MySQL数据库默认编码是Latin1就是利用了这个特性。</span><br><span class="line">	ASCII编码是一个<span class="number">7</span>位的容器，ISO-<span class="number">8859</span>-<span class="number">1</span>编码是一个<span class="number">8</span>位的容器。</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Latin1 就是 ISO-8859-1</span></span><br></pre></td></tr></table></figure></p>
+<p>​<br>​<br>    ===UTF-8</p>
+<pre><code> UTF-8（8-bit Unicode Transformation Format）是一种针对Unicode的可变长度字符编码，又称万国码。
+由Ken Thompson于1992年创建。现在已经标准化为RFC 3629。
+UTF-8用一至四个字节为每个字符编码
+
+互联网的普及，强烈要求出现一种统一的编码方式。
+UTF-8就是在互联网上使用最广的一种unicode的实现方式。
+其他实现方式还包括UTF-16和UTF-32，不过在互联网上基本不用。
+
+
+===UTF-8和unicode编码之间的关系
+    互联网的普及，强烈要求出现一种统一的编码方式。
+UTF-8就是在互联网上使用最广的一种Unicode的实现方式。
+其他实现方式还包括UTF-16（字符用两个字节或四个字节表示）和UTF-32（字符用四个字节表示），
+不过在互联网上基本不用。重复一遍，这里的关系是，UTF-8是Unicode的实现方式之一。
+
+
+）UTF-8字节说明
+    -- 0001-007f  (一个字节) 
+        0xxxxxx 
+    -- 0080 到  07ff之间的字符, （两个字节）
+        110xxxxx  10xxxxxx (11个有效bit位) 
+        实际上只有11个有效位,其余都是标志位
+
+    -- 0800 到 ffff 之间的字符,（三个字节）
+        1110xxxx  10xxxxxx 10xxxxxx  (16有效比特位)
+
+    --0001 0000 到 0010 FFFF 之间的字符,（四个字节）
+        11110xxx 10xxxxxx 10xxxxxx 10xxxxxx  （21有效比特位
+
+    通过上图,可以看到.软件很容易根据UTF-8 编码中那些固定不变的bit值,
+    来确定一个字符占用的是一个字节,还是两个字节,还是三个字节，还是四个字节
+
+    附:utf-8+bom编码比utf-8编码最前方多出三个字节  0XEF 0XBB 0XBF
+
+===UTF-8的优点
+     很多的使用UTF-8编码唯一的好处是，国外的用户如果使用Windows XP英文版，
+     浏览UTF-8编码的任何网页，无论是中文、还是日文、韩文、阿拉伯文，都可以正常显示，
+     UTF-8是世界通用的语言编码。
+     UTF8 是(UNICODE八位交换格式）的简称，UNICODE是国际标准。
+     UNICODE编码的文件中可以同时对几乎所有地球上已知的文字字符进行书写和表示，
+     在中国大陆简体中文版非常常用的GB2312/GB18030/GBK系列标准是我国的国家标准，
+     但只能对中文和多数西方文字进行编码。
+     为了网站的通用性起见，用UTF-8编码是更好的选择。
+
+
+===联通,联想和联
+
+      联通  C1AA  CDA8
+
+      联  11000001 10101010
+      通  11001101 10101000
+
+      而电脑默认使用ANSI保存也就是gbk/gb2312
+
+      所以电脑在翻译过来时,因为符合utf-8标准,所以认为是utf-8编的码,所以就会乱码
+</code></pre><p>​<br>​<br>​<br>​<br>    ===用程序查看字符的编码</p>
+<pre><code>查看中文字符的GB2312/GBK 编码
+查看中文字符的UTF-8 码
+查看中文字符的 Unicode 码
+
+public static void main(String[] args) throws Exception {
+    //查看Unicode
+    String str=&quot;中国&quot;;
+    for(int i=0;i&lt;str.length();i++){
+        int unicode=str.charAt(i);
+        System.out.println(unicode);
+        System.out.println(Integer.toHexString(unicode));
+    }
+
+    //查看GB2312
+    byte[] bArray=&quot;中国&quot;.getBytes(&quot;gb2312&quot;);
+    for(byte b:bArray){
+        System.out.println(b);
+        System.out.println(Integer.toHexString(b));
+    }
+
+    //查看UTF-8
+    byte[] utf_Array=&quot;中国&quot;.getBytes(&quot;utf-8&quot;);
+    for(byte b:utf_Array){
+        System.out.println(b);
+        System.out.println(Integer.toHexString(b));
+    }
+}
+</code></pre><h1 id="2-网络编程的基础知识"><a href="#2-网络编程的基础知识" class="headerlink" title="2 网络编程的基础知识"></a>2 网络编程的基础知识</h1><p>​        2.1  网络协议<br>                规定了计算机之间连接的机械,电器等特性,及计算机间的相互寻址规则,和<br>                以数据发送冲突的解决办法,分段传输与解决大数据包的传输方式等等<br>                —机械特性,比如网线和网卡<br>                —电器特性,比如电平3伏为1,一3为0<br>                //比如:网线头线的颜色,以及位置都是规定好的,这就是协议<br>                . HTTP1.1(Hypertext Transfer Protocol Vertion 1.1)超文本传输协议-版本1.1<br>                . ARP(Address Resolution Protocol)地址解析协议<br>                . SNMP(Simple Network Management Protocol)网络管理协议<br>                . CMIP(Common Management Information Protocol)通用管理信息协议<br>                . DHCP(Dynamic Host Configuration Protocol)动态主机配置协议<br>                . FTP(File Transfer Protocol)文件传输协议<br>                . IPv6(Internet Protocol Version 6)Internet协议-版本6<br>                . IPX/SPX(Internetwork Packet Exchange/Sequential PacketExchange)互连网包交换/顺序包交换<br>                . POP3(Post Office Protocol Version 3)邮局协议-版本3<br>                . PPP(Point to Point Protocol)点对点协议<br>                . SMTP(Simple Mail Transfer Protocol)简单邮件传送协议<br>                . TELNET Protocol虚拟终端协议<br>                . UDP(User Datagram Protocol)用户数据报协议<br>                . TCP（Transmission Control Protocol 传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议。<br>                . https 超文本传输安全协议    是以安全为目标的http通道，简单来说就是http安全版<br>                                            HTTPS=HTTP+SSL/TLS  //SSL/TLS 安全套接层</p>
+<p>​                                            </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">		“计算机网络体系结构”将这些网络协议进行了系统的归纳；TCP/IP就是这些协议的集合</span><br><span class="line">		</span><br><span class="line"><span class="number">2.2</span>  tcp /ip</span><br><span class="line">		网络协议有多种 ，TCP /IP 只是一族</span><br><span class="line">		大多数网络程序,都是以这个协议为基础的</span><br><span class="line">		TCP/IP协议族中包括上百个互为关联的协议</span><br><span class="line">		几个常用协议如下：</span><br><span class="line">		<span class="number">1</span>、Telnet（Remote Login）：提供远程登录功能，一台计算机用户可以登录到远程的另一台计算机上，如同在远程主机上直接操作一样。</span><br><span class="line">		<span class="number">2</span>、FTP（File Transfer Protocol）：远程文件传输协议，允许用户将远程主机上的文件拷贝到自己的计算机上。</span><br><span class="line">		<span class="number">3</span>、SMTP（Simple Mail transfer Protocol）：简单邮件传输协议，用于传输电子邮件。</span><br><span class="line">		<span class="number">4</span>、NFS（Network File Server）：网络文件服务器，可使多台计算机透明地访问彼此的目录。</span><br><span class="line">		<span class="number">5</span>、UDP（User Datagram Protocol）：用户数据报协议，它和TCP一样位于传输层，和IP协议配合使用，在传输数据时省去包头，</span><br><span class="line">		   但它不能提供数据包的重传，所以适合传输较短的文件。</span><br><span class="line"><span class="number">2.3</span>  IP地址</span><br><span class="line">		</span><br><span class="line">		每个internet上的 主机和路由器都由一个ip地址表示,它包扩网络号和主机号,所有ip地址, 都是<span class="number">32</span>位的,按国际标准,</span><br><span class="line">		分为a b c d e 五类</span><br><span class="line">		</span><br><span class="line">		  a   <span class="number">0</span>+<span class="number">7</span>位网络号 +主机号  <span class="number">1.0</span>.0.0 到  <span class="number">127.255</span>.255.255 之间</span><br><span class="line">		  b   <span class="number">10</span>+<span class="number">14</span>位网络号 +主机号 <span class="number">127.0</span>.0.0 到<span class="number">191.255</span>.255.255之间</span><br><span class="line">		  c   <span class="number">110</span>+<span class="number">21</span>位网络号 +主机号 <span class="number">192.0</span>.0.0 到 <span class="number">223.255</span>.255.255</span><br><span class="line">		  d   <span class="number">1110</span>+多点播送地址    <span class="number">224.0</span>.0.0 到 <span class="number">239.255</span>.255.255</span><br><span class="line">		  e   <span class="number">11110</span>+留做将来使用 <span class="number">240.0</span>.0.0+ <span class="number">247.255</span>.255.255</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">====本地回路地址  <span class="number">127.0</span>.0.9</span><br><span class="line">	计算机中正确安装TCP/IP协议后,计算机中都会有一个称做本地回路的地址 发往 <span class="number">127.0</span>.0.1 的数据不经过网卡传递,</span><br><span class="line">	而是直接被本地计算机中Tcp/ip协议栈中的几个上层协议接收,是一个用于本地计算机上使用的特殊地址,使用Ping</span><br><span class="line">	就可以检查TCP/IP协议是否正确安装,	它没有和网卡绑定,	</span><br><span class="line">	网卡没有正确连接或是没有网线的情况下,仍可使用该地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.4</span>  Port(端口号)</span><br><span class="line">		</span><br><span class="line">		因为一个计算机上同时可运行多个网络程序,而IP地址只能保证把数据送到某个计算机上,</span><br><span class="line">		但不能保证把数据交给计算机上的每个程序,因此每个发送的网络数据包的头部,</span><br><span class="line">		都包含有一个称为端口号的整数 即Port, 是一个占用两个字节的整数,用于表示这个数据包该交由哪个应用程序</span><br><span class="line">		来处理,与数据包中的端口号相对应,必须为计算机上的网络程序也指定一个端口号,告诉网络程序应该接收哪个端口号的程序</span><br><span class="line">		一台计算机上不能有两个使用同一端口号的程序</span><br><span class="line">		</span><br><span class="line">		当计算机接收到一个网络程序发送的数据包后,驱动程序会根据数据包中指定的端口号,知道该交给哪个应用程序</span><br><span class="line">		</span><br><span class="line">		网络通迅,确切的说,不是两台计算机之间在收发数据,而是两个网络程序之间在收发数据</span><br><span class="line">		</span><br><span class="line">		<span class="number">0</span>-<span class="number">65535</span> 范围的</span><br><span class="line">		<span class="number">0</span>-<span class="number">1023</span> 被称为有名端口</span><br><span class="line">		</span><br><span class="line">		查看端口使用情况</span><br><span class="line">		netstat -noa</span><br></pre></td></tr></table></figure>
+<h1 id="3-UDP-Tcp"><a href="#3-UDP-Tcp" class="headerlink" title="3 UDP/Tcp"></a>3 UDP/Tcp</h1><p>​        </p>
+<pre><code>---TCP 传输控制协议,是面向连接的通信协议,提供两台计算机之间的可靠和无差错的数据传输
+         数据源和目标之间或建立一个虚拟的连接,建立后,计算机之间就会把数据,当作双向字节流进行交换
+---UDP 用户数据报协议,是无连接的通信协议,不保证数据的可靠传输,
+           能够向若干个目标发送和接收数据,数据包会有丢失的时候
+
+        每一帧包含以下内容
+            协议类型  源IP    目标IP    源端口    目标端口   帧序号  帧数据
+</code></pre><h1 id="4-OSI参考模型"><a href="#4-OSI参考模型" class="headerlink" title="4 OSI参考模型"></a>4 OSI参考模型</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">概念：ISO提出了作为通信协议设计指标的OSI参考模型，将协议分为七层，使得原来复杂的网络协议更加简单化</span><br><span class="line"></span><br><span class="line">定义：在七层模型中，每个分层都接受由它下一层所提供的特定服务，</span><br><span class="line">	  并且负责为自己的上一层提供特定的服务，上下层之间进行交互所遵循的约定叫做“接口”，</span><br><span class="line">	  同一层之间的交互所遵循的约定叫做“协议”</span><br><span class="line">  OSI参考模型之七层网络模型</span><br><span class="line">层数 名字	主要功能						对应的典型设备										传输单位</span><br><span class="line"><span class="number">7</span>	应用层	提供应用程序间通信				计算机：应用程序，如FTP、SMTP、HTTP等				程序级数据</span><br><span class="line"><span class="number">6</span>	表示层	处理数据格式、数据加密等		计算机：编码方式，如图像编解码、URL字段传输编码等	程序级数据</span><br><span class="line"><span class="number">5</span>	会话层	建立、维护和管理会话			计算机：建立会话，如session认证、断点续传			程序级数据</span><br><span class="line"><span class="number">4</span>	传输层	为端到端连接提供传输服务		计算机：进程和端口	tcp和udp就在这层次				数据段（segment）</span><br><span class="line"><span class="number">3</span>	网络层	将数据传输到目标地址，主要责任：寻址和路由选择 网络：路由器、防火墙、多层交换机 ip协议在这					数据包（packet）</span><br><span class="line"><span class="number">2</span>	数据链路层	物理地址寻址、数据的成帧、流量控制、数据的检错、重发等	网络：网卡、网桥、交换机							帧（frame）</span><br><span class="line"><span class="number">1</span>	物理层	比特流传输						网络：中继器、集线器、网线等					比特（bit）</span><br><span class="line"></span><br><span class="line"> 一般这样考</span><br><span class="line">  在OSI七层模型中，网络层的功能有（B）</span><br><span class="line">	A、确保数据的传输正确无误</span><br><span class="line">	B、确定数据包如何转发与路由</span><br><span class="line">	C、在信道上传送比特流</span><br><span class="line">	D、纠错与流控</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">上面是理想情况,下面是实际情况 <span class="number">4</span>层模型 还有<span class="number">5</span>层模式</span><br><span class="line"> 第四层，应用层　</span><br><span class="line"> 第三层，传输层</span><br><span class="line"> 第二层，网间层</span><br><span class="line"> 第一层，网络接口层</span><br></pre></td></tr></table></figure>
+<h1 id="5-套接字简介"><a href="#5-套接字简介" class="headerlink" title="5 套接字简介"></a>5 套接字简介</h1><p>​        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">应用层通过传输层进行数据通信时，TCP和UDP会遇到同时为多个应用程序提供并发服务的问题。</span><br><span class="line">多个TCP连接或多个应用程序可能需要 通过同一个TCP协议端口传输数据。</span><br><span class="line">为了区别不同的应用程序和连接，许多计算机操作系统为应用程序与TCP／IP协议交互提供了称为</span><br><span class="line">套接字（Socket）的接口，区分不同应用程序间的网络通信和连接。</span><br><span class="line">应用层就可以和传输 层通过套接字接口，区分来自不同应用程序或网络连接的通信，实现数据传输的并发服务。</span><br><span class="line"></span><br><span class="line">说白了讲:套接字就是网络通信和应用程序交互的接口,提供了一种通信机制</span><br><span class="line"></span><br><span class="line">java中关于网络通信的包都在 java.net 包下</span><br><span class="line"></span><br><span class="line">UDP通信    DatagramSocket</span><br><span class="line"></span><br><span class="line">TCP通信    Socket 客户端</span><br><span class="line">		ServletSocket 服务端</span><br></pre></td></tr></table></figure>
+<h1 id="6-UDP-网络程序"><a href="#6-UDP-网络程序" class="headerlink" title="6 UDP 网络程序"></a>6 UDP 网络程序</h1><pre><code>6.1 InetAddress 类  代表互联网协议,就是ip地址
+
+      public static void main(String[] args) throws Exception {
+            InetAddress localHost=InetAddress.getLocalHost();
+            System.out.println(localHost.getHostAddress());  //100.100.255.211
+            System.out.println(localHost.getHostName());  //admin-1c32882f6
+
+            InetAddress otherHost=InetAddress.getByName(&quot;100.100.255.89&quot;);
+            System.out.println(otherHost.getHostAddress());  //100.100.255.89
+            System.out.println(otherHost.getHostName());     //JYZKQ3DK9YCN4D3
+
+            InetAddress[] baiduHost=InetAddress.getAllByName(&quot;www.baidu.com&quot;);
+            for(InetAddress net:baiduHost){
+                System.out.println(net.getHostAddress());  
+                System.out.println(net.getHostName()); 
+                //www.baidu.com/111.13.100.92
+                //www.baidu.com/111.13.100.91
+            }
+        }
+</code></pre><p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6.2</span> UDP发送和接收</span><br><span class="line">		</span><br><span class="line">	  <span class="comment">//例一</span></span><br><span class="line">	  发送端</span><br><span class="line">	  <span class="number">1</span>) 建立套接字 DatagramSocket</span><br><span class="line">	  <span class="number">2</span>) 准备数据</span><br><span class="line">	  <span class="number">3</span>) 调用套接字服务,进行发送</span><br><span class="line">	  <span class="number">4</span>) 关闭资源</span><br><span class="line">	  </span><br><span class="line">			<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">					<span class="comment">//1) 建立套接字 DatagramSocket</span></span><br><span class="line">					DatagramSocket scoket=<span class="keyword">new</span> DatagramSocket();<span class="comment">//可以指定发送端的端口号,在这里,指定没有多大意义</span></span><br><span class="line">					</span><br><span class="line">					<span class="comment">//2) 准备发送数据</span></span><br><span class="line">					String str=<span class="string">"你好,这是我发送过去的数据!"</span>;</span><br><span class="line">					<span class="keyword">byte</span>[] buff=str.getBytes();</span><br><span class="line">					DatagramPacket packet=<span class="keyword">new</span> DatagramPacket(buff, buff.length, InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">9000</span>);</span><br><span class="line">					</span><br><span class="line">					scoket.send(packet);  <span class="comment">//数据发送</span></span><br><span class="line">					</span><br><span class="line">					scoket.close();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		接收端</span><br><span class="line">		<span class="number">1</span>) 建立套接字 DatagramSocket</span><br><span class="line">		<span class="number">2</span>) 准备DatagramPacket用来接受数据</span><br><span class="line">		<span class="number">3</span>) 调用套接字的方法进行接受</span><br><span class="line">		<span class="number">4</span>) 从包裹中得到想要的数据</span><br><span class="line">		<span class="number">5</span>) 关闭资源</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">			<span class="comment">//1) DatagramSocket</span></span><br><span class="line">			DatagramSocket scoket=<span class="keyword">new</span> DatagramSocket(<span class="number">9000</span>);<span class="comment">//对于接受者,不要忘记指定端口号</span></span><br><span class="line">			<span class="keyword">byte</span>[] buff=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">//如果对方超过1024,显然是接受不到的,但是这是代表每次发送的帧数大小,尽量不要大</span></span><br><span class="line">			DatagramPacket packet=<span class="keyword">new</span> DatagramPacket(buff, buff.length);</span><br><span class="line">			</span><br><span class="line">			scoket.receive(packet);  <span class="comment">//接受数据  阻塞方法</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">int</span> sendPort=packet.getPort();</span><br><span class="line">			String sendIp=packet.getAddress().getHostAddress();</span><br><span class="line">			String sendMsg=<span class="keyword">new</span> String(packet.getData(), <span class="number">0</span>, packet.getLength());<span class="comment">//这个地方应该接受包裹里的数据,和包裹的大小,如果接受byte数据的数据,可能会有空白</span></span><br><span class="line">			</span><br><span class="line">			System.out.println(sendIp+<span class="string">":"</span>+sendPort+<span class="string">"--&gt;"</span>+sendMsg);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//关闭资源</span></span><br><span class="line">			scoket.close();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	  java.net.BindException: <span class="function">Address <span class="title">already</span><span class="params">(早已)</span> in use: Cannot <span class="title">bind</span> <span class="params">(绑定)</span></span></span><br><span class="line"><span class="function">	  端口重复运行</span></span><br></pre></td></tr></table></figure></p>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子 循环的发送和接受</span></span><br><span class="line">		</span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sender</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">			DatagramSocket scoket=<span class="keyword">new</span> DatagramSocket();</span><br><span class="line">			</span><br><span class="line">			BufferedReader br=<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">			String msg=<span class="string">""</span>;</span><br><span class="line">			<span class="keyword">while</span>((msg=br.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">byte</span>[] buff=msg.getBytes();</span><br><span class="line">				DatagramPacket packet=<span class="keyword">new</span> DatagramPacket(buff, buff.length, InetAddress.getByName(<span class="string">"127.0.0.1"</span>), <span class="number">6000</span>);</span><br><span class="line">				scoket.send(packet);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Receiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		DatagramSocket scoket=<span class="keyword">new</span> DatagramSocket(<span class="number">6000</span>);</span><br><span class="line">		System.out.println(<span class="string">"接收端启动了"</span>);</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">			<span class="keyword">byte</span>[] buff=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">			DatagramPacket packet=<span class="keyword">new</span> DatagramPacket(buff, buff.length);</span><br><span class="line">			scoket.receive(packet);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">int</span> sendPort=packet.getPort();</span><br><span class="line">			String sendIp=packet.getAddress().getHostAddress();</span><br><span class="line">			String msg=<span class="keyword">new</span> String(packet.getData(), <span class="number">0</span>, packet.getLength());</span><br><span class="line">			System.out.println(sendIp+<span class="string">":"</span>+sendPort+<span class="string">" :说-&gt;"</span>+msg);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">		  </span><br><span class="line">把ip改成.<span class="number">255</span>段内的</span><br><span class="line">比如<span class="number">100.100</span>.255.255</span><br><span class="line">所有当前局域网内,都可以被接受到,这是广播地址</span><br></pre></td></tr></table></figure></p>
+<h1 id="7-多线程聊天室程序"><a href="#7-多线程聊天室程序" class="headerlink" title="7 多线程聊天室程序"></a>7 多线程聊天室程序</h1><h1 id="8-域名解析"><a href="#8-域名解析" class="headerlink" title="8 域名解析"></a>8 域名解析</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">域名解析是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站一种服务。</span><br><span class="line">IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。</span><br><span class="line">域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。</span><br><span class="line">域名解析也叫域名指向、服务器设置、域名配置以及反向IP登记等等。说得简单点就是将好记的域名解析成IP，</span><br><span class="line">域名解析需要由专门的域名解析服务器(DNS)来完成。</span><br><span class="line">是把域名解析到一个IP地址，然后在此IP地址的主机上将一个子目录与域名绑定。</span><br><span class="line">一个域名对应一个IP地址，一个IP地址可以对应多个域名；所以多个域名可以同时被解析到一个IP地址。</span><br><span class="line"></span><br><span class="line">就要进行解析，首先在域名注册商那里通过专门的DNS服务器解析到一个WEB服务器的一个固定IP上：<span class="number">211.214</span>.1.***，</span><br><span class="line">然后，通过WEB服务器来接收这个域名，把***.com这个域名映射到这台服务器上。那么，</span><br><span class="line">输入***.com这个域名就可以实现访问网站内容了.即实现了域名解析的全过程；</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hosts文件是Windows系统中一个负责IP地址与域名快递解析的文件，以ASCLL格式保存。计算机在键入域名（比如www.baidu.com）的时候，</span><br><span class="line">首先会去看看hosts文件汇总有没有关于此域名IP地址的记录。如果有，就直接登陆该网站；如果没有再查询DNS服务器</span><br><span class="line">，在Windows <span class="number">2000</span>/XP系统中位于C:\Windows\System32\Drivers\Etc目录中。</span><br><span class="line">该文件其实是一个纯文本的文件，用普通的文本编辑软件如记事本等都能打开。 用记事本打开hosts文件，首先看见了微软对这个文件的说明。</span><br><span class="line">这个文件是根据TCP/IP <span class="keyword">for</span> Windows 的标准来工作的，它的作用是包含IP地址和Host name?主机名?的映射关系，是一个映射IP地址和Host name?主机名?的规定，</span><br><span class="line">规定要求每段只能包括一个映射关系，IP地址要放在每段的最前面，空格后再写上映射的Host name?主机名?。 </span><br><span class="line">现在有很多网站不经过用户同意就将各种各样的插件安装到你的计算机中，有些说不定就是木马或病毒。</span><br><span class="line">对于这些网站我们可以利用Hosts把该网站的域名映射到错误的IP或自己计算机的IP，这样就不用访问了。</span><br><span class="line">比如不想访问http:<span class="comment">//www.163.com，</span></span><br><span class="line">那我们在Hosts写上以下内容： <span class="number">127.0</span>.0.1 http:<span class="comment">//www.baidu.com/或者实际ip即可</span></span><br><span class="line">这样计算机解析域名就解析到本机或错误的IP，达到了屏蔽的目的。</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当进行访问网站时,首先会访问自己本地的Hosts文件</span><br><span class="line">然后寻找有没有,如果没有就去域名服务器寻找,一定有</span><br><span class="line">最后发送返回的实际ip地址</span><br></pre></td></tr></table></figure></p>
+<p>​<br>​    </p>
+<p>​<br>​    </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/02/第十八天/" rel="next" title="第十八天">
+                <i class="fa fa-chevron-left"></i> 第十八天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/02/第二十天/" rel="prev" title="第二十天">
+                第二十天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-字符编码"><span class="nav-number">1.</span> <span class="nav-text">1.字符编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-网络编程的基础知识"><span class="nav-number">2.</span> <span class="nav-text">2 网络编程的基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-UDP-Tcp"><span class="nav-number">3.</span> <span class="nav-text">3 UDP/Tcp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-OSI参考模型"><span class="nav-number">4.</span> <span class="nav-text">4 OSI参考模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-套接字简介"><span class="nav-number">5.</span> <span class="nav-text">5 套接字简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-UDP-网络程序"><span class="nav-number">6.</span> <span class="nav-text">6 UDP 网络程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-多线程聊天室程序"><span class="nav-number">7.</span> <span class="nav-text">7 多线程聊天室程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-域名解析"><span class="nav-number">8.</span> <span class="nav-text">8 域名解析</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
