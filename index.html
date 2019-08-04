@@ -365,7 +365,7 @@
                 
               
 
-              <time title="创建时间：2019-08-04 13:55:33 / 修改时间：13:55:51" itemprop="dateCreated datePublished" datetime="2019-08-04T13:55:33+08:00">2019-08-04</time>
+              <time title="创建时间：2019-08-04 15:05:20 / 修改时间：15:05:39" itemprop="dateCreated datePublished" datetime="2019-08-04T15:05:20+08:00">2019-08-04</time>
             
 
             
@@ -407,6 +407,175 @@
         
           
             <h1 id="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱。"><a href="#一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱。" class="headerlink" title="一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱。"></a>一辈子很短，努力的做好两件事就好；第一件事是热爱生活，好好的去爱身边的人；第二件事是努力学习，在工作中取得不一样的成绩，实现自己的价值，而不是仅仅为了赚钱。</h1>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/接口详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/04/接口详解/" class="post-title-link" itemprop="url">接口详解</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-04 15:03:54 / 修改时间：15:04:39" itemprop="dateCreated datePublished" datetime="2019-08-04T15:03:54+08:00">2019-08-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Java接口的修饰符可以为（）<br>A private B protected C final D abstract</p>
+<p>解析:<br>答案：D<br>解析：接口很重要，为了说明情况，这里稍微啰嗦点：</p>
+<p>（1）<strong>接口用于描述系统对外提供的所有服务,因此接口中的成员常量和方法都必须是公开(public)类型的,确保外部使用者能访问它们</strong>；</p>
+<p>（2）<strong>接口仅仅描述系统能做什么,但不指明如何去做,所以接口中的方法都是抽象(abstract)方法；</strong></p>
+<p>（3）<strong>接口不涉及和任何具体实例相关的细节,因此接口没有构造方法,不能被实例化,没有实例变量，只有静态（static）变量</strong>；</p>
+<p>（4）<strong>接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，也就是常量了。</strong></p>
+<p>（5） 接口中不可以定义变量？如果接口可以定义变量，但是接口中的方法又都是抽象的，在接口中无法通过行为来修改属性。有的人会说了，没有关系，可以通过 实现接口的对象的行为来修改接口中的属性。这当然没有问题，但是考虑这样的情况。如果接口 A 中有一个public 访问权限的静态变量 a。按照 Java 的语义，我们可以不通过实现接口的对象来访问变量 a，通过 A.a = xxx; 就可以改变接口中的变量 a 的值了。正如抽象类中是可以这样做的，那么实现接口 A 的所有对象也都会自动拥有这一改变后的 a 的值了，也就是说一个地方改变了 a，所有这些对象中 a 的值也都跟着变了。这和抽象类有什么区别呢，怎么体现接口更高的抽象级别呢，怎么体现接口提供的统一的协议呢，那还要接口这种抽象来做什么呢？所以接口中 不能出现变量，如果有变量，就和接口提供的统一的抽象这种思想是抵触的。所以接口中的属性必然是常量，只能读不能改，这样才能为实现接口的对象提供一个统 一的属性。<br>通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。</p>
+<p>所以：<br><strong>接口的方法默认是public abstract；<br>接口中不可以定义变量即只能定义常量(加上final修饰就会变成常量)。所以接口的属性默认是public static final 常量，且必须赋初值。</strong></p>
+<p><strong>注意：final和abstract不能同时出现。</strong></p>
+
           
         
       
@@ -2498,682 +2667,6 @@ public class Test01 {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/第十六天/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/02/第十六天/" class="post-title-link" itemprop="url">java的IO流</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-02 19:25:08" itemprop="dateCreated datePublished" datetime="2019-08-02T19:25:08+08:00">2019-08-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-04 12:45:43" itemprop="dateModified" datetime="2019-08-04T12:45:43+08:00">2019-08-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-IO流的概述"><a href="#1-IO流的概述" class="headerlink" title="1 IO流的概述"></a>1 IO流的概述</h1><p>​        </p>
-<pre><code>---什么是IO   (Input  Output)  输入输出
----什么是流:流是一组有顺序,有起点,有终点的字节集合,是对数据传输的抽象描述,它的特征是进行数据传输,比如文件流,网络流
----与文件的区别:文件是数据的静态存储方式,而流是数据在传输过程中的一种形态
-
-其实io流就是以流的形式进行输入和输出
-
-java对数据的操作都是以流的方式进行的
-java对流操作的对象都在IO包下
-
-流按照数据类型分为两种
-          ---输入流
---字节流
-          ---输出流
-
-          ---输入流 
---字符流
-          ---输出流
-
-两者的区别就是读写的时候一个是按字节读写，一个是按字符。
-
-在java中io流,共分为四个抽象类
-
-          ---输入流  InputStream
---字节流
-          ---输出流  OutputStream
-
-          ---输入流  Reader
---字符流
-          ---输出流  Writer
-
-其他所有的IO操作的类都是由它们派生出去的
-凡事属于字节流的, 都是以InputStream或者OutputStream为结尾的,比如 FileInputStream,FileOutputStream
-凡事属于字符流的, 都是以Reader或者Writer为结尾的,比如:FileReader FileWriter
-</code></pre><h1 id="2-字符流-输出流"><a href="#2-字符流-输出流" class="headerlink" title="2 字符流 输出流"></a>2 字符流 输出流</h1><p>​        </p>
-<pre><code>字符流:是以字符为单位进行处理的io流,本质其实都是基于字节流进行读取的,然后去查询码表执行字符
-
- 字符流的结构(只以输出流为例)
- Writer  
-        --BufferedWriter  //缓冲流
-        --CharArrayWriter
-        --FileWriter
-        --OutputStreamWriter  //转换流
-        --FilterWriter  //过滤流
-        --PipedWriter  //管道流
-        --StringWriter
-
-    public class Test02{
-        public static void main(String[] args) throws Exception {
-            writeFile();
-            writeFileTrue();
-        }
-        public static void writeFile() throws Exception{
-            Writer wr=new FileWriter(&quot;c:\\1.txt&quot;); //创建一个输出流对象
-            wr.write(&quot;这是一行文本&quot;);  
-            wr.write(&quot;\r\n&quot;);
-            wr.write(&quot;这个第二行文本&quot;); //注意,每一次都会清空文件中的内容
-            //wr.flush();  //刷新缓冲区,写入磁盘,缓冲区的目的,是为了加快操作速度
-            wr.close();  //使用完这种系统资源,一定要关闭,隐含刷新缓冲区
-
-        }
-        public static void writeFileTrue() throws Exception{
-            Writer wr=new FileWriter(&quot;c:\\1.txt&quot;, true); //追加方式
-            wr.write(&quot;\r\n&quot;);
-            wr.write(&quot;这是追加的方式&quot;);
-            wr.flush();
-            wr.close();
-        }
-    }
-
-    //标准的io处理异常
-    public static void main(String[] args) {
-        List&lt;String&gt; nameList=new ArrayList&lt;String&gt;();
-        nameList.add(&quot;张三&quot;);
-        nameList.add(&quot;李四&quot;);
-        nameList.add(&quot;王五&quot;);
-        nameList.add(&quot;麻子&quot;);
-        Writer wr=null;
-        try {
-            wr=new FileWriter(&quot;1.txt&quot;);
-            for(String name:nameList){
-                wr.write(name);
-                wr.write(&quot;\r\n&quot;);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally{
-            if(wr!=null){
-                try {
-                    wr.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-</code></pre><h1 id="3-字符流-输入流"><a href="#3-字符流-输入流" class="headerlink" title="3 字符流 输入流"></a>3 字符流 输入流</h1><p>​            </p>
-<pre><code>Reader   --FileReader()
-
-三个方法
-int read()  读取单字符  //返回值int代表这个字符的编码值,如果读到末尾,返回-1
-int read(char[] buff)  //将字符读入到数组中,如果读到末尾,返回-1,返回值代表读了多少个字符
-int read(char[] cbuf, int off, int len)  //将字符读入数组的某一部分。可以控制取文本中的多少个字符
-</code></pre><p>​<br>            //例子 一个字符一个字符的去读<br>            public static void main(String[] args) {<br>                Reader r=null;<br>                try {<br>                    r=new FileReader(“1.txt”);<br>                    int ch=0;<br>                    while((ch=r.read())!=-1){<br>                        System.out.println((char)ch);<br>                    }<br>                } catch (Exception e) {<br>                    e.printStackTrace();<br>                }finally{<br>                    if(r!=null){<br>                        try {<br>                            r.close();<br>                        } catch (IOException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }<br>                }<br>            }</p>
-<pre><code>    //例子
-    public static void main(String[] args) {
-        Reader r=null;
-        try {
-            r=new FileReader(&quot;1.txt&quot;);
-            char[] cbuf=new char[1024];
-            int len=0;  //len 代表每次读取多少个有效字符长度
-            while((len=r.read(cbuf))!=-1){  //把读取的内容会放入数组中
-                System.out.println(new String(cbuf, 0, len));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally{
-            if(r!=null){
-                try {
-                    r.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    //例子
-    r=new FileReader(&quot;1.txt&quot;);
-    char[] cbuf=new char[1024];
-    int len=0;
-    len=r.read(cbuf, 0, 1);  //最后的参数代表字符的长度
-    System.out.println(len);
-    System.out.println(new String(cbuf, 0, len)); //取的是一个字符
-
-//例子 写一个复制,用int read(char[] buff)方式
-    public static void main(String[] args) {
-            Writer wr=null;
-            Reader r=null;
-            try {
-                wr=new FileWriter(&quot;2.txt&quot;);
-                r=new FileReader(&quot;1.txt&quot;);
-                char[] cbuf=new char[1024];
-                int len=0;
-                while((len=r.read(cbuf))!=-1){
-                    wr.write(cbuf, 0, len);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally{
-                if(wr!=null){
-                    try {
-                        wr.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if(r!=null){
-                    try {
-                        r.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-        }
-</code></pre><p>​<br>            public static void main(String[] args) {<br>                Writer wr=null;<br>                Reader r=null;<br>                try {<br>                    wr=new FileWriter(“2.txt”);<br>                    r=new FileReader(“1.txt”);<br>                    int len=0;<br>                    while((len=r.read())!=-1){<br>                        wr.write(len);//或者wr.write((char)len);<br>                    }<br>                } catch (IOException e) {<br>                    e.printStackTrace();<br>                }finally{<br>                    if(wr!=null){<br>                        try {<br>                            wr.close();<br>                        } catch (IOException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }<br>                    if(r!=null){<br>                        try {<br>                            r.close();<br>                        } catch (IOException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }<br>                }</p>
-<pre><code>}
-</code></pre><p>​            </p>
-<h1 id="4-缓冲流和装饰模式"><a href="#4-缓冲流和装饰模式" class="headerlink" title="4 缓冲流和装饰模式"></a>4 缓冲流和装饰模式</h1><pre><code>//传统模式
-interface A{
-    public void a1();
-    public void a2();
-    public void a3();
-    .......100
-}
-class B 实现  A{
-    public void a1{
-
-    }
-    public void a2{
-
-    }
-    public void a3
-        System.out.println(&quot;........&quot;);
-    }
-}
-
-//适配器模式
-interface A{
-    public void a1();
-    public void a2();
-    public void a3();
-    .......100
-}
-class Temp 实现 A{
-    public void a1{
-
-    }
-    public void a2{
-
-    }
-    public void a3(){
-
-    }
-}
-
-class B extends Temp{
-    public void a3(){
-        System.out.println(&quot;........&quot;);
-    }
-}
-//将来所有类都可以继承Temp,就可以选择性的完成某些方法
-</code></pre><p>​<br>            //装饰模式  包装模式<br>            装饰设计模式：动态将职责附加到对象上，<br>            若要扩展功能，装饰者提供了比继承更具弹性的代替方案<br>            当要对已有的对象进行功能增强时，可以定义类，将已有对象传入，<br>            基于已有对象的功能，并提供加强功能。那么自定义的该类就称为装饰类。<br>            装饰类通常会通过构造方法接收被装饰的对象，并基于被装饰的对象的功能，提供更强的功能<br>            public class Test01 {</p>
-<pre><code>            public static void main(String[] args) {
-                Japan j=new Japan();
-                增强Japan qj=new 增强Japan(j);
-                qj.speak();
-            }
-
-        }
-        class Japan{
-            void speak(){
-                System.out.println(&quot;我地,小日本的干活&quot;);
-            }
-        }
-        class 增强Japan{
-            private Japan j;
-            public 增强Japan(Japan j){
-                this.j=j;
-            }
-            void speak(){
-                System.out.println(&quot;我是好人&quot;);
-                j.speak();
-                System.out.println(&quot;晃荡脑袋一下&quot;);
-                System.out.println(&quot;摇摇手&quot;);
-            }
-        }
-
-/*缓冲流是一个包装类，也就是用包装模式设计的，
-缓冲流的出现提高了对数据读写的效率
-
-其中分为字符缓冲流和字节缓冲流
-BufferedReader, BufferedWriter
-用来对流进行包装
-在流的基础上对流的功能进行了增强*/ 
-
- BufferedReader : 从字符输入流中读取文本，缓冲各个字符，从而实现字符、数组和行的高效读取
-        构造函数有两个:
-        ---- BufferedReader(Reader in)         
-        ---- BufferedReader(Reader in, int sz) 创建一个使用默认大小输入缓冲区的缓冲字符输入流。
-
- BufferedWriter    ：将文本写入字符输出流，缓冲各个字符，从而提供单个字符、数组和字符串的高效写入。
-        构造函数有两个:
-        ---- BufferedWriter(Writer out)  创建一个使用默认大小输出缓冲区的缓冲字符输出流。 
-        ---- BufferedWriter(Writer out, int sz) 创建一个使用给定大小输出缓冲区的新缓冲字符输出流。
-
-//BufferedWriter
-FileWriter w=new FileWriter(&quot;2.txt&quot;);
-BufferedWriter bw=new BufferedWriter(w);
-bw.write(&quot;这是一行内容&quot;);
-bw.newLine();
-bw.write(&quot;这是一行内容&quot;);
-bw.flush();  //不要忘记刷新
-bw.close();  //关闭包装类,被包装的也相当于关闭了
-
-//BufferedReader
-    public static void main(String[] args) throws Exception {
-        List&lt;String&gt; nameList=test();
-        for(String name:nameList){
-            System.out.println(name);
-        }
-    }
-    public static List&lt;String&gt; test() throws Exception{
-        List&lt;String&gt; nameList=new ArrayList&lt;String&gt;();
-        FileReader r=new FileReader(&quot;1.txt&quot;);
-        BufferedReader br=new BufferedReader(r);
-        String str=&quot;&quot;;
-        while((str=br.readLine())!=null){
-            nameList.add(str);
-        }
-        br.close();
-        return nameList;
-    }
-</code></pre><p>​            </p>
-<h1 id="5-字节流概述"><a href="#5-字节流概述" class="headerlink" title="5 字节流概述"></a>5 字节流概述</h1><p>​            </p>
-<pre><code>   字节流：InputStream和OutputStream是java中可以按照最小字节单位读取的流，
-           即每次读写一个字节。
-
-   字节流与字符流之间的区别：
-       1.读写单位不同：字节流是以字节（8位2进制）为单位，字符流是以字符为单位，
-                       根据码表映射字符，一次可能读多个字节。
-       2.处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。
-       3.一次读入或读出是8位二进制。
-       4.字符流：一次读入或读出是16位或者更多二进制。
-
-       结论：只要是纯文本数据优先使用字符流，除此之外都使用字节流。
-
- ----所有字节输入流类都是抽象类InputStream的子类
-       int read() 从源中读取一个字节的数据，返回字节值
-       int read(byte b[])从源中试图读取b.length个字节到b中，返回实际读取的字节数。
-       int read(byte[] b, int off, int len)  从此输入流中将最多 len 个字节的数据读入一个 byte 数组中。
-       void close()关闭输入流
-
-----所有字节输出流类都是抽象类OutputStream的子类
-       void write(int n) 向输出流写入单个字节。
-       void write(byte b[])向输出流写入一个字节数组
-       void write(byte[] b,  int off,  int len)
-       void flush()把缓冲区中内容输出并清空缓冲区（刷新）
-       void close()关闭输出流
-
-   //例子
-   public static void main(String[] args) throws Exception {
-       InputStream in=new FileInputStream(&quot;c://xiaoji.jpg&quot;);
-       OutputStream out=new FileOutputStream(&quot;c://newxiaoji.gif&quot;);
-       int b=0;
-       while((b=in.read())!=-1){
-           out.write(b);
-       }
-       out.close();
-       in.close();
-   }
-   //也可以操作字符文件
-   public static void main(String[] args) throws Exception {
-       InputStream in=new FileInputStream(&quot;1.txt&quot;);
-       OutputStream out=new FileOutputStream(&quot;2.txt&quot;);
-       out.write(&quot;我是捣乱的&quot;.getBytes(&quot;utf-8&quot;)); //按照什么方式进行转码
-       int b=0;
-       while((b=in.read())!=-1){
-           out.write(b);
-       }
-       out.close();
-       in.close();
-   }
-
-   //使用 read(byte b[])
-   public static void main(String[] args) throws Exception {
-       InputStream in=new FileInputStream(&quot;c://huluobo.JPG&quot;);
-       OutputStream out=new FileOutputStream(&quot;c://hlb.gif&quot;);
-       int b=0;
-       byte[] bbuf=new byte[1024];
-       while((b=in.read(bbuf))!=-1){  //一勺一勺去读,速度快
-           out.write(bbuf, 0, b);
-       }
-       out.close();
-       in.close();
-   }
-
-   //使用avaliable()进行
-   public static void main(String[] args) throws Exception {
-       InputStream in=new FileInputStream(&quot;c://huluobo.JPG&quot;);
-       //System.out.println(in.available());  //会得到文件的字节数,适合用与小文件,大文件会很慢
-       OutputStream out=new FileOutputStream(&quot;c://hlb.gif&quot;);
-       byte[] bbuf=new byte[in.available()];
-       out.write(bbuf);
-       out.close();
-       in.close();
-   }
-
-   //图片的复制 ,使用标准的异常处理
-   public static void main(String[] args){
-       InputStream in=null;
-       OutputStream out=null;
-       try {
-           in=new FileInputStream(&quot;c://xiaoji.jpg&quot;);
-           out=new FileOutputStream(&quot;c://xiaoji11.jpg&quot;);
-           byte[] buf=new byte[1024];
-           int len=0;
-           while((len=in.read(buf))!=-1){
-               out.write(buf, 0, len);
-           }
-       } catch (Exception e) {
-           e.printStackTrace();
-       }finally{
-           if(in!=null){
-               try {
-                   in.close();
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-           if(out!=null){
-               try {
-                   out.close();
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-       }
-   }
-
-   前面,字符流有包装流
-   BufferedReader  BufferedWriter
-   字节流,也有包装流
-   BufferedInputStream BufferedOutputStream
-
-   public static void main(String[] args){
-       long start=System.currentTimeMillis();
-       InputStream in=null;
-       OutputStream out=null;
-       BufferedInputStream bis=null;
-       BufferedOutputStream bos=null;
-       try {
-           in=new FileInputStream(&quot;c://当幸福来敲门.MP4&quot;);
-           out=new FileOutputStream(&quot;c://dxflqm.wmv&quot;);
-           bis=new BufferedInputStream(in);
-           bos=new BufferedOutputStream(out);
-           byte[] buf=new byte[1024];
-           int len=0;
-           while((len=bis.read(buf))!=-1){
-               bos.write(buf, 0, len);
-           }
-       } catch (Exception e) {
-           e.printStackTrace();
-       }finally{
-           if(bos!=null){
-               try {
-                   bos.close();
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-           if(bis!=null){
-               try {
-                   bis.close();
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-           long end=System.currentTimeMillis();
-           System.out.println(end-start);  //63984
-       }
-   }
-</code></pre><h1 id="6-转换流"><a href="#6-转换流" class="headerlink" title="6 转换流"></a>6 转换流</h1><p>​        </p>
-<pre><code>InputStreamReader
-        public class InputStreamReader extends Reader
-
-         它有四个构造函数:
-            InputStreamReader(InputStream in) 
-            InputStreamReader(InputStream in, Charset cs) //读取字节并按照指定类型变成字符
-            InputStreamReader(InputStream in, CharsetDecoder dec)  //CharsetDecoder 解码器（实质还是指定字符集
-            InputStreamReader(InputStream in, String charsetName) 
-
-OutputStreamWriter
-        public class OutputStreamWriter extends Writer
-
-          它有四个构造函数:
-            OutputStreamWriter(OutputStream out) //创建使用默认字符编码的 OutputStreamWriter。 
-            OutputStreamWriter(OutputStream out, Charset cs) // 创建使用给定字符集的 OutputStreamWriter。 
-            OutputStreamWriter(OutputStream out, CharsetDecoder dec) // 创建使用给定字符集编码器的 OutputStreamWriter。 
-            OutputStreamWriter(OutputStream out, String charsetName) // 创建使用指定字符集名称的 OutputStreamWriter。  
-
-        //例子
-        public static void main(String[] args) throws Exception{
-            InputStream in=new FileInputStream(&quot;1.txt&quot;);  //使用这种方式,不要试图操作二进制文件,如图片等,会损坏文件
-            InputStreamReader isr=new InputStreamReader(in);
-            BufferedReader br=new BufferedReader(isr);
-            String str=&quot;&quot;;
-            while((str=br.readLine())!=null){
-                System.out.println(str);
-            }
-            br.close();
-        }
-
-        //例子 从键盘录入一些数据,把数据变成大写的输出出来
-        public static void main(String[] args) throws Exception{
-            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-            String str=&quot;&quot;;
-            while((str=br.readLine())!=null){
-                System.out.println(str.toUpperCase());
-            }
-            br.close();
-        }
-
-        public class Test01 {
-                public static void main(String[] args) throws Exception{
-                    Scan s=new Scan(System.in);
-                    System.out.println(s.readLine());
-                    s.close();
-                }
-
-            }
-            class Scan{
-                private InputStream in;
-                public BufferedReader br;
-                public Scan(InputStream in){
-                    this.in=in;
-                }
-                public String readLine() throws Exception{
-                    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-                    return br.readLine();
-                }
-                public void close(){
-                    if(br!=null){
-                        try {
-                            br.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-</code></pre><p>​        </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3220,7 +2713,7 @@ OutputStreamWriter
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
