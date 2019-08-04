@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/08/04/坑人的面试题/123.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/04/坑人的面试题/001.jpg">
-<meta property="og:updated_time" content="2019-08-04T06:19:45.861Z">
+<meta property="og:updated_time" content="2019-08-04T06:21:48.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="坑人的面试题">
 <meta name="twitter:description" content="类加载问题112345678910111213141516171819public class B&amp;#123;    public static B t1 = new B();    public static B t2 = new B();    &amp;#123;        System.out.println(&quot;构造块&quot;);    &amp;#125;    static    &amp;#123;">
@@ -369,7 +369,7 @@
                 
               
 
-              <time title="创建时间：2019-08-04 12:54:00 / 修改时间：14:19:45" itemprop="dateCreated datePublished" datetime="2019-08-04T12:54:00+08:00">2019-08-04</time>
+              <time title="创建时间：2019-08-04 12:54:00 / 修改时间：14:21:48" itemprop="dateCreated datePublished" datetime="2019-08-04T12:54:00+08:00">2019-08-04</time>
             
 
             
@@ -436,6 +436,9 @@
 <h1 id="内部类问题"><a href="#内部类问题" class="headerlink" title="内部类问题"></a>内部类问题</h1><h5 id="1下列说法正确的是（A-B）？"><a href="#1下列说法正确的是（A-B）？" class="headerlink" title="1下列说法正确的是（A B）？"></a>1下列说法正确的是（A B）？</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">A:对于局部内部类，只有在方法的局部变量被标记为<span class="keyword">final</span>或局部变量是effctively <span class="keyword">final</span>的，内部类才能使用它们</span><br><span class="line">B:成员内部类位于外部类内部，可以直接调用外部类的所有方法（静态方法和非静态方法）</span><br><span class="line">C:由于匿名内部类只能用在方法内部，所以匿名内部类的用法与局部内部类是一致的</span><br><span class="line">D:静态内部类可以访问外部类的成员变量</span><br><span class="line"></span><br><span class="line">解析：：</span><br><span class="line"><span class="keyword">static</span>修饰内部类 ， 其内部类不能访问外部的普通成员</span><br><span class="line">不是内部类只能用<span class="keyword">public</span>修饰 或不加<span class="keyword">public</span> ；而<span class="keyword">private</span> 、<span class="keyword">protected</span>可以修饰内部类；</span><br><span class="line"><span class="keyword">static</span>修饰的内部类可以声明静态成员；</span><br><span class="line">非<span class="keyword">static</span>修饰的内部类，不能声明静态成员</span><br><span class="line">接口可以嵌套定义</span><br></pre></td></tr></table></figure>
 <h1 id="多线程问题"><a href="#多线程问题" class="headerlink" title="多线程问题"></a>多线程问题</h1><h5 id="1在Java线程状态转换时，下列转换不可能发生的有（A-C）？"><a href="#1在Java线程状态转换时，下列转换不可能发生的有（A-C）？" class="headerlink" title="1在Java线程状态转换时，下列转换不可能发生的有（A C）？"></a>1在Java线程状态转换时，下列转换不可能发生的有（A C）？</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A:初始态-&gt;运行态</span><br><span class="line">B:就绪态-&gt;运行态</span><br><span class="line">C:阻塞态-&gt;运行态</span><br><span class="line">D:运行态-&gt;就绪态</span><br></pre></td></tr></table></figure>
 <p>解析：：</p>
+<p>1）wait()是Object的实例方法，在synchronized同步环境使用，作用当前对象，会释放对象锁，需要被唤醒。  </p>
+<p>2）sleep()是Thread的静态方法，不用在同步环境使用，作用当前线程，不释放锁。  </p>
+<p>3）yield()是Thread的静态方法，作用当前线程，释放当前线程持有的CPU资源，将CPU让给优先级不低于自己的线程用，调用后进入就绪状态</p>
 <p><img src="/2019/08/04/坑人的面试题/001.jpg" alt="无法显示"></p>
 
       
