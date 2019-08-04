@@ -98,14 +98,14 @@
 
   <meta name="description" content="1 TCP 网络编程​         123--TCP 分为客户端和服务端   它们要进行连接  面向连接--客户端用的套接字是Socket--服务器用的套接字是ServerSocket 1234567891011121314151617181920212223242526==客户端	public class TClinet &amp;#123;		public static void main(Str">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第二十天">
+<meta property="og:title" content="java的TCP编程">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/第二十天/index.html">
 <meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
 <meta property="og:description" content="1 TCP 网络编程​         123--TCP 分为客户端和服务端   它们要进行连接  面向连接--客户端用的套接字是Socket--服务器用的套接字是ServerSocket 1234567891011121314151617181920212223242526==客户端	public class TClinet &amp;#123;		public static void main(Str">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T11:44:22.792Z">
+<meta property="og:updated_time" content="2019-08-04T04:46:58.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第二十天">
+<meta name="twitter:title" content="java的TCP编程">
 <meta name="twitter:description" content="1 TCP 网络编程​         123--TCP 分为客户端和服务端   它们要进行连接  面向连接--客户端用的套接字是Socket--服务器用的套接字是ServerSocket 1234567891011121314151617181920212223242526==客户端	public class TClinet &amp;#123;		public static void main(Str">
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>第二十天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  <title>java的TCP编程 | 生活不止眼前的苟且，还有诗和远方。</title>
   
 
 
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第二十天
+          <h1 class="post-title" itemprop="name headline">java的TCP编程
 
               
             
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="创建时间：2019-08-02 19:36:44 / 修改时间：19:44:22" itemprop="dateCreated datePublished" datetime="2019-08-02T19:36:44+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:36:44" itemprop="dateCreated datePublished" datetime="2019-08-02T19:36:44+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:46:58" itemprop="dateModified" datetime="2019-08-04T12:46:58+08:00">2019-08-04</time>
               
             
           </span>
@@ -435,7 +447,6 @@
         byte[] buff=new byte[1024];
         int len=in.read(buff);
         String msg=new String(buff, 0, len);
-
 
         //接受ip 和端口号
         String clientIp=socket.getInetAddress().getHostAddress();
@@ -538,7 +549,6 @@ public static void main(String[] args) throws Exception {
 <pre><code>将来如果出现  &quot;制造鞋子&quot; 需要编写这样的代理类,来代理鞋子
 长期以往,代理类会越来越多,就会造成类的急剧膨胀,不好
 
-
 //动态代理:一般有两种方式实现
 //一种是使用jdk来实现动态代理
 </code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		NikeMakeCloth nike=<span class="keyword">new</span> NikeMakeCloth();</span><br><span class="line">		MyProxy proxy=<span class="keyword">new</span> MyProxy();</span><br><span class="line">		MakeCloth c=(MakeCloth)proxy.binding(nike);</span><br><span class="line">		c.makeCloth();</span><br><span class="line">		</span><br><span class="line">		AdidasMakeShoes ad=<span class="keyword">new</span> AdidasMakeShoes();</span><br><span class="line">		MakeShoes s=(MakeShoes)proxy.binding(ad);</span><br><span class="line">		s.makeShoes();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//制造衣服的规则</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MakeCloth</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeCloth</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MakeShoes</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeShoes</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nike 品牌  真实对象</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NikeMakeCloth</span> <span class="keyword">implements</span> <span class="title">MakeCloth</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeCloth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Nike工厂生产了一批衣服"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AdidasMakeShoes</span> <span class="keyword">implements</span> <span class="title">MakeShoes</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeShoes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Adidas制造鞋子"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> Object obj;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">binding</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.obj=obj;</span><br><span class="line">		<span class="comment">//返回的代理类,可以理解真实对象的子类</span></span><br><span class="line">		<span class="keyword">return</span> Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), <span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//当代理对象发起对真实对象的方法调用时,就会转化成调用invoke方法</span></span><br><span class="line">	<span class="comment">//proxy代表代理对象, method代表当前方法,args代表方法中的参数</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"代理类收取一定的费用100元"</span>);</span><br><span class="line">		Object result=method.invoke(obj, args);  <span class="comment">//result是真正方法返回值,如果为void,则为null;</span></span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
@@ -574,8 +584,8 @@ public static void main(String[] args) throws Exception {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/02/第十九天/" rel="next" title="第十九天">
-                <i class="fa fa-chevron-left"></i> 第十九天
+              <a href="/2019/08/02/第十九天/" rel="next" title="java的UDP编程">
+                <i class="fa fa-chevron-left"></i> java的UDP编程
               </a>
             
           </div>
@@ -655,7 +665,7 @@ public static void main(String[] args) throws Exception {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

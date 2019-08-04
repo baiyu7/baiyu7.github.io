@@ -98,14 +98,14 @@
 
   <meta name="description" content="1 进制​             常见的进制         十进制 1010         二进制 满二进一  0B10101010 (JDK1.6是可以这样的)         八进制 满8进一,数字在0_7之间  077  078(error)         十六进制 满16进一,数字在0-9 A B C D E F 0x开头,x不区分大小写,0x0010 0XAABB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java学习第二天">
+<meta property="og:title" content="java运算符、流程控制语句">
 <meta property="og:url" content="http://yoursite.com/2019/07/29/第二天/index.html">
 <meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
 <meta property="og:description" content="1 进制​             常见的进制         十进制 1010         二进制 满二进一  0B10101010 (JDK1.6是可以这样的)         八进制 满8进一,数字在0_7之间  077  078(error)         十六进制 满16进一,数字在0-9 A B C D E F 0x开头,x不区分大小写,0x0010 0XAABB">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-01T10:41:27.035Z">
+<meta property="og:updated_time" content="2019-08-04T04:41:01.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java学习第二天">
+<meta name="twitter:title" content="java运算符、流程控制语句">
 <meta name="twitter:description" content="1 进制​             常见的进制         十进制 1010         二进制 满二进一  0B10101010 (JDK1.6是可以这样的)         八进制 满8进一,数字在0_7之间  077  078(error)         十六进制 满16进一,数字在0-9 A B C D E F 0x开头,x不区分大小写,0x0010 0XAABB">
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>java学习第二天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  <title>java运算符、流程控制语句 | 生活不止眼前的苟且，还有诗和远方。</title>
   
 
 
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java学习第二天
+          <h1 class="post-title" itemprop="name headline">java运算符、流程控制语句
 
               
             
@@ -383,7 +383,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-01 18:41:27" itemprop="dateModified" datetime="2019-08-01T18:41:27+08:00">2019-08-01</time>
+                <time title="修改时间：2019-08-04 12:41:01" itemprop="dateModified" datetime="2019-08-04T12:41:01+08:00">2019-08-04</time>
               
             
           </span>
@@ -484,7 +484,6 @@
 
 可以看出,正数的符号是0,负数的符号是1
 
-
    1 把 34 ,32,9,13,26 转成2进制, 8进制,16进制
         32 16 8 4 2 1  0b100010   042   0x22
    2 把 010010 , 10100101 转成  10进制,8进制,16进制
@@ -526,7 +525,6 @@ publicName, public ,name999,#name, L9, 中国
             short a=32769;  //error
 
         int  4个字节  有符号整数  2147483647 到 -2147483648 之间
-
 
         long 8个字节 有符号整数  9223372036854775807 到 -9223372036854775808 之间
             long a=9;  //ok java中整数的默认类型int类型,给long是没有任何问题
@@ -576,7 +574,6 @@ publicName, public ,name999,#name, L9, 中国
          boolean  一个字节
                 只有两个取值范围  true 和 false
 
-
     说明:
         整数的默认类型是int
         90  --&gt;int 90
@@ -601,7 +598,6 @@ publicName, public ,name999,#name, L9, 中国
 </code></pre><h1 id="4-运算符-算数运算符-赋值运算符-逻辑运算符-关系运算符-位运算符-条件运算符"><a href="#4-运算符-算数运算符-赋值运算符-逻辑运算符-关系运算符-位运算符-条件运算符" class="headerlink" title="4 运算符  (算数运算符 赋值运算符 逻辑运算符 关系运算符 位运算符 条件运算符)"></a>4 运算符  (算数运算符 赋值运算符 逻辑运算符 关系运算符 位运算符 条件运算符)</h1><p>​<br>​        </p>
 <pre><code>    ===算数运算符 + - * / % ++ --
     15000/10000*10000  --&gt;10000
-
 
     1) / 使用
     两个整数相除,结果保留整数位
@@ -633,9 +629,7 @@ publicName, public ,name999,#name, L9, 中国
         System.out.println(a);  //11
         System.out.println(b);  //11
 
-
         --和++一个意思,只是做了减去一
-
 
     4) 字符串相加
         String str=&quot;1+2&quot;+&quot;3+4&quot;;  //此时的+是字符串连接符,并不是算数中的+
@@ -676,11 +670,9 @@ publicName, public ,name999,#name, L9, 中国
     a=a+5;  //error ,第一点:a是变量,编译器不认识变量,认为a+5很可以超过byte,所以java不让
                      第二点:a是byte,5是int,所以a+5最后是int类型,赋值给byte,不行
 
-
     //例四
     short a=10;
     a=a+5;  //不行,和上面原因一样
-
 
     //例五
     int a=10;
@@ -689,14 +681,12 @@ publicName, public ,name999,#name, L9, 中国
     实验发现:上例子对byte和short都会报错,只有int没有,因为byte和short类型结果容易越界,所以
             java中规定对含有它们的变量进行计算的时候,不能再用byte和short去接受
 
-
     //例六 类型转换
     byte a=90;
     int b=a;  //ok
 
     int a=10;
     byte b=a;  //不行,如果非得行,就要强制类型转换
-
 
     int a=10;
     byte b=(byte)a;   //强制类型转换,当byte型可以装下的时候
@@ -709,7 +699,6 @@ publicName, public ,name999,#name, L9, 中国
     System.out.println(b);  //-128
 
     问:有没有那么一种可能,原数值+1&lt;原数值,存在,原数值是此类型最大值
-
 
     //例七  关于+=的操作
 
@@ -738,13 +727,11 @@ publicName, public ,name999,#name, L9, 中国
 
     ||  短路或
 
-
         &amp;和&amp;&amp;有什么区别?  !!!!
         前者左边不成立,右边还是会继续判断,
         后者左边不成立,右边就不会再进行判断了
 
         1&gt;2 || 2&gt;1 &amp;&amp; 3&gt;2  true
-
 
     &amp;&amp;优先级||
 
@@ -835,7 +822,6 @@ publicName, public ,name999,#name, L9, 中国
     多重if
     嵌套if
 
-
     //例子 if
     int age=12;
     if(age&gt;20){
@@ -890,7 +876,6 @@ public static void main(String[] args){
         System.out.println(&quot;上班&quot;);
     }
 }
-
 
 ======switch 选择语句
 格式
@@ -1031,7 +1016,6 @@ public static void main(String[] args){
             61-80 之间：祖国的希望
             81-100 之间：开什么玩笑，一定是抄的
 
-
         public static void main(String[] args) {
             /*
              * 输入一个成绩 0-20 分之间：这孩子完蛋了 21-40 之间：这孩子太操心了 41-60 之间：赶紧救救吧 61-80 之间：祖国的希望
@@ -1055,7 +1039,6 @@ public static void main(String[] args){
             }
             scan.close();
         }
-
 
         3.输入两个整数,一个符号
         然后进行加减乘除操作
@@ -1159,8 +1142,8 @@ public static void main(String[] args){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/29/第一天/" rel="next" title="java学习第一天">
-                <i class="fa fa-chevron-left"></i> java学习第一天
+              <a href="/2019/07/29/第一天/" rel="next" title="java学习前置知识">
+                <i class="fa fa-chevron-left"></i> java学习前置知识
               </a>
             
           </div>
@@ -1169,8 +1152,8 @@ public static void main(String[] args){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/01/第三天/" rel="prev" title="java学习第三天">
-                java学习第三天 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/01/第三天/" rel="prev" title="java循环语句、函数">
+                java循环语句、函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1240,7 +1223,7 @@ public static void main(String[] args){
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

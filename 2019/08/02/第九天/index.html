@@ -98,14 +98,14 @@
 
   <meta name="description" content="1 异常的概念12345678异常在java中是以对象的形式来看待也就是每一种异常都是一个特定的异常类				Throwable	|				|Exception(异常)		Error(错误)|			|非运行时异常   RuntimeException(运行时异常) 123456789101112131415public static void main(String[] args) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第九天">
+<meta property="og:title" content="java异常">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/第九天/index.html">
 <meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
 <meta property="og:description" content="1 异常的概念12345678异常在java中是以对象的形式来看待也就是每一种异常都是一个特定的异常类				Throwable	|				|Exception(异常)		Error(错误)|			|非运行时异常   RuntimeException(运行时异常) 123456789101112131415public static void main(String[] args) &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T10:40:48.752Z">
+<meta property="og:updated_time" content="2019-08-04T04:43:25.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第九天">
+<meta name="twitter:title" content="java异常">
 <meta name="twitter:description" content="1 异常的概念12345678异常在java中是以对象的形式来看待也就是每一种异常都是一个特定的异常类				Throwable	|				|Exception(异常)		Error(错误)|			|非运行时异常   RuntimeException(运行时异常) 123456789101112131415public static void main(String[] args) &amp;#123;">
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>第九天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  <title>java异常 | 生活不止眼前的苟且，还有诗和远方。</title>
   
 
 
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第九天
+          <h1 class="post-title" itemprop="name headline">java异常
 
               
             
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="创建时间：2019-08-02 18:28:46 / 修改时间：18:40:48" itemprop="dateCreated datePublished" datetime="2019-08-02T18:28:46+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 18:28:46" itemprop="dateCreated datePublished" datetime="2019-08-02T18:28:46+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:43:25" itemprop="dateModified" datetime="2019-08-04T12:43:25+08:00">2019-08-04</time>
               
             
           </span>
@@ -491,11 +503,9 @@ public static void 计算() throws Exception{
 }
 注意,此时调用  计算()  方法的位置,也会报错
 
-
 注意注意!
 如果抛出的异常是  运行时异常也就是 RuntimeException下面的所有子类  都是可以不用声明的,但是也可以声明,不强制
 如果抛出的异常是  非运行时异常,必须声明,强制作用
-
 
 注意:如果一个方法抛出一个异常,则调用者只能抛出此异常,或者父异常
 </code></pre><h1 id="5-自定义异常"><a href="#5-自定义异常" class="headerlink" title="5 自定义异常"></a>5 自定义异常</h1><p>​        </p>
@@ -564,77 +574,8 @@ public class GoodStudent extends Student{
 <p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一段话"</span>);</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		String str=scan.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"长度:"</span>+str.length());</span><br><span class="line">		<span class="keyword">int</span> a=<span class="number">90</span>/<span class="number">0</span>;</span><br><span class="line">		System.out.println(<span class="string">"A"</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"B"</span>);</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		scan.close();</span><br><span class="line">		System.out.println(<span class="string">"C"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"D"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">B C D</span><br></pre></td></tr></table></figure></p>
 <p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一段话"</span>);</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		String str=scan.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"长度:"</span>+str.length());</span><br><span class="line">		System.out.println(<span class="string">"A"</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"B"</span>);</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		scan.close();</span><br><span class="line">		System.out.println(<span class="string">"C"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"D"</span>);</span><br><span class="line">&#125;</span><br><span class="line">A C D</span><br></pre></td></tr></table></figure></p>
 <p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一段话"</span>);</span><br><span class="line">	System.out.println(<span class="string">"F"</span>);</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">90</span>/<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		String str=scan.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"长度:"</span>+str.length());</span><br><span class="line">		System.out.println(<span class="string">"A"</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"B"</span>);</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		scan.close();</span><br><span class="line">		System.out.println(<span class="string">"C"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"D"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">F</span><br><span class="line"></span><br><span class="line"><span class="keyword">finally</span>语句,在什么情况下不执行</span><br><span class="line"><span class="number">1</span>.程序根本没有进入到<span class="keyword">try</span>块中,就发生了异常,执行不了</span><br><span class="line"><span class="number">2</span>.程序遇到System.exit(<span class="number">0</span>); 退出java虚拟机</span><br><span class="line">	exit(<span class="number">0</span>)有两种参数,一个是<span class="number">0</span>,一个非零</span><br><span class="line">	结果是一样的</span><br><span class="line">	不同是这样的,如果是<span class="number">0</span>,表示程序正常退出</span><br><span class="line">	如果非<span class="number">0</span>,代表程序非正常退出</span><br></pre></td></tr></table></figure></p>
-<pre><code>异常处理练习题 
-一、选择题 
-1.java中用来抛出异常的关键字是()
-A、try
-B、catch
-C、throw
-D、finally
-2.关于异常，下列说法正确的是()
-A、异常是一种对象 
-B、一旦程序运行，异常将被创建 
-C、为了保证程序运行速度，要尽量避免异常控制
-D、以上说法都丌对 
-3.（）类是所有异常类的父类。
-A、Throwable
-B、Error
-C、Exception 
-D、AWTError 
-4.java语言中，下列哪一子句是异常处理的出口()
-A、try{…}子句
-B、catch{…}子句
-C、finally{…}子句
-D、以上说法都丌对 
-5.下列程序的执行，说法错误的是()
-public class MultiCatch{ 
-    public static void main(String args[]){
-        try { 
-              int a=args.length;
-              int b=42/a;
-              int c[]={1};
-              c[42]=99; 
-              System.out.println(“b=”+b);
-          } catch(ArithmeticExceptione) { 
-            System.out.println(“除0异常：”+e);
-          } catch(ArrayIndexOutOfBoundsExceptione){ 
-            System.out.println(“数组超越边界异常：”+e);
-          }
-     }
-} 
-  A、程序将输出第15行的异常信息
-  B、程序第10行出错
-  C、程序将输出“b=42”
-  D、程序将输出第15和19行的异常信息
-6.下列程序的执行，说法正确的是（）
-class ExMulti{
-    static void procedure(){
-    try{
-      int c[]={1};
-      c[42]=99;
-      }
-    catch(ArrayIndexOutOfBoundsExceptione){
-      System.out.println(“数组超越界限异常：”+e);
-      }
-    }
-    public static void main(String args[]){
-        try{
-            procedure();
-            int a=args.length;
-            int b=42/a;
-            System.out.println(“b=”+b);
-            }
-            catch(ArithmeticExceptione){
-                System.out.println(“除0异常：”+e);
-                }
-        }
-}
-A、程序只输出第12行的异常信息
-B、程序只输出第26行的异常信息
-C、程序将不输出异常信息
-D、程序将输出第12行和第26行的异常信息
-
-7.对于catch子句的排列，下列哪种是正确的()
+<p>​<br>​<br>        异常处理练习题<br>        一、选择题<br>        1.java中用来抛出异常的关键字是()<br>        A、try<br>        B、catch<br>        C、throw<br>        D、finally<br>        2.关于异常，下列说法正确的是()<br>        A、异常是一种对象<br>        B、一旦程序运行，异常将被创建<br>        C、为了保证程序运行速度，要尽量避免异常控制<br>        D、以上说法都丌对<br>        3.（）类是所有异常类的父类。<br>        A、Throwable<br>        B、Error<br>        C、Exception<br>        D、AWTError<br>        4.java语言中，下列哪一子句是异常处理的出口()<br>        A、try{…}子句<br>        B、catch{…}子句<br>        C、finally{…}子句<br>        D、以上说法都丌对<br>        5.下列程序的执行，说法错误的是()<br>        public class MultiCatch{<br>            public static void main(String args[]){<br>                try {<br>                      int a=args.length;<br>                      int b=42/a;<br>                      int c[]={1};<br>                      c[42]=99;<br>                      System.out.println(“b=”+b);<br>                  } catch(ArithmeticExceptione) {<br>                    System.out.println(“除0异常：”+e);<br>                  } catch(ArrayIndexOutOfBoundsExceptione){<br>                    System.out.println(“数组超越边界异常：”+e);<br>                  }<br>             }<br>        }<br>          A、程序将输出第15行的异常信息<br>          B、程序第10行出错<br>          C、程序将输出“b=42”<br>          D、程序将输出第15和19行的异常信息<br>        6.下列程序的执行，说法正确的是（）<br>        class ExMulti{<br>            static void procedure(){<br>            try{<br>              int c[]={1};<br>              c[42]=99;<br>              }<br>            catch(ArrayIndexOutOfBoundsExceptione){<br>              System.out.println(“数组超越界限异常：”+e);<br>              }<br>            }<br>            public static void main(String args[]){<br>                try{<br>                    procedure();<br>                    int a=args.length;<br>                    int b=42/a;<br>                    System.out.println(“b=”+b);<br>                    }<br>                    catch(ArithmeticExceptione){<br>                        System.out.println(“除0异常：”+e);<br>                        }<br>                }<br>        }<br>        A、程序只输出第12行的异常信息<br>        B、程序只输出第26行的异常信息<br>        C、程序将不输出异常信息<br>        D、程序将输出第12行和第26行的异常信息</p>
+<pre><code>7.对于catch子句的排列，下列哪种是正确的()
 A、父类在先，子类在后
 B、子类在先，父类在后 
 C、有继承关系的异常不能在同一个try程序段内
@@ -748,7 +689,6 @@ public class StringIndexOutOf{
 finally语句被执行了 1  对
 finally语句被执行了 2  错
 
-
 public  class Test {
     public static void main(String[] args) {
         System.out.println(new Test().test());
@@ -816,8 +756,8 @@ finally语句被执行了 2
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/02/第十天/" rel="prev" title="第十天">
-                第十天 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/02/第十天/" rel="prev" title="java的String类">
+                java的String类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -887,7 +827,7 @@ finally语句被执行了 2
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

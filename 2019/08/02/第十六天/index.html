@@ -98,14 +98,14 @@
 
   <meta name="description" content="1 IO流的概述​         ---什么是IO   (Input  Output)  输入输出 ---什么是流:流是一组有顺序,有起点,有终点的字节集合,是对数据传输的抽象描述,它的特征是进行数据传输,比如文件流,网络流 ---与文件的区别:文件是数据的静态存储方式,而流是数据在传输过程中的一种形态  其实io流就是以流的形式进行输入和输出  java对数据的操作都是以流的方式进行的 jav">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第十六天">
+<meta property="og:title" content="java的IO流">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/第十六天/index.html">
 <meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
 <meta property="og:description" content="1 IO流的概述​         ---什么是IO   (Input  Output)  输入输出 ---什么是流:流是一组有顺序,有起点,有终点的字节集合,是对数据传输的抽象描述,它的特征是进行数据传输,比如文件流,网络流 ---与文件的区别:文件是数据的静态存储方式,而流是数据在传输过程中的一种形态  其实io流就是以流的形式进行输入和输出  java对数据的操作都是以流的方式进行的 jav">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T11:26:40.000Z">
+<meta property="og:updated_time" content="2019-08-04T04:45:43.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第十六天">
+<meta name="twitter:title" content="java的IO流">
 <meta name="twitter:description" content="1 IO流的概述​         ---什么是IO   (Input  Output)  输入输出 ---什么是流:流是一组有顺序,有起点,有终点的字节集合,是对数据传输的抽象描述,它的特征是进行数据传输,比如文件流,网络流 ---与文件的区别:文件是数据的静态存储方式,而流是数据在传输过程中的一种形态  其实io流就是以流的形式进行输入和输出  java对数据的操作都是以流的方式进行的 jav">
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>第十六天 | 生活不止眼前的苟且，还有诗和远方。</title>
+  <title>java的IO流 | 生活不止眼前的苟且，还有诗和远方。</title>
   
 
 
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第十六天
+          <h1 class="post-title" itemprop="name headline">java的IO流
 
               
             
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="创建时间：2019-08-02 19:25:08 / 修改时间：19:26:40" itemprop="dateCreated datePublished" datetime="2019-08-02T19:25:08+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:25:08" itemprop="dateCreated datePublished" datetime="2019-08-02T19:25:08+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:45:43" itemprop="dateModified" datetime="2019-08-04T12:45:43+08:00">2019-08-04</time>
               
             
           </span>
@@ -442,11 +454,9 @@ java对流操作的对象都在IO包下
 --字符流
           ---输出流
 
-
 两者的区别就是读写的时候一个是按字节读写，一个是按字符。
 
 在java中io流,共分为四个抽象类
-
 
           ---输入流  InputStream
 --字节流
@@ -472,7 +482,6 @@ java对流操作的对象都在IO包下
         --PipedWriter  //管道流
         --StringWriter
 
-
     public class Test02{
         public static void main(String[] args) throws Exception {
             writeFile();
@@ -495,7 +504,6 @@ java对流操作的对象都在IO包下
             wr.close();
         }
     }
-
 
     //标准的io处理异常
     public static void main(String[] args) {
@@ -561,7 +569,6 @@ int read(char[] cbuf, int off, int len)  //将字符读入数组的某一部分�
     len=r.read(cbuf, 0, 1);  //最后的参数代表字符的长度
     System.out.println(len);
     System.out.println(new String(cbuf, 0, len)); //取的是一个字符
-
 
 //例子 写一个复制,用int read(char[] buff)方式
     public static void main(String[] args) {
@@ -740,7 +747,6 @@ bw.close();  //关闭包装类,被包装的也相当于关闭了
        void flush()把缓冲区中内容输出并清空缓冲区（刷新）
        void close()关闭输出流
 
-
    //例子
    public static void main(String[] args) throws Exception {
        InputStream in=new FileInputStream(&quot;c://xiaoji.jpg&quot;);
@@ -788,7 +794,6 @@ bw.close();  //关闭包装类,被包装的也相当于关闭了
        out.close();
        in.close();
    }
-
 
    //图片的复制 ,使用标准的异常处理
    public static void main(String[] args){
@@ -905,7 +910,6 @@ OutputStreamWriter
             br.close();
         }
 
-
         public class Test01 {
                 public static void main(String[] args) throws Exception{
                     Scan s=new Scan(System.in);
@@ -965,8 +969,8 @@ OutputStreamWriter
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/02/第十五天/" rel="next" title="第十五天">
-                <i class="fa fa-chevron-left"></i> 第十五天
+              <a href="/2019/08/02/第十五天/" rel="next" title="java多线程">
+                <i class="fa fa-chevron-left"></i> java多线程
               </a>
             
           </div>
@@ -975,8 +979,8 @@ OutputStreamWriter
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/02/第十七天/" rel="prev" title="第十七天">
-                第十七天 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/02/第十七天/" rel="prev" title="java的File类">
+                java的File类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1046,7 +1050,7 @@ OutputStreamWriter
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

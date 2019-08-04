@@ -1141,7 +1141,7 @@ group by Name
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/02/第二十天/" class="post-title-link" itemprop="url">第二十天</a>
+                <a href="/2019/08/02/第二十天/" class="post-title-link" itemprop="url">java的TCP编程</a>
               
             
           </h1>
@@ -1166,12 +1166,24 @@ group by Name
                 
               
 
-              <time title="创建时间：2019-08-02 19:36:44 / 修改时间：19:44:22" itemprop="dateCreated datePublished" datetime="2019-08-02T19:36:44+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:36:44" itemprop="dateCreated datePublished" datetime="2019-08-02T19:36:44+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:46:58" itemprop="dateModified" datetime="2019-08-04T12:46:58+08:00">2019-08-04</time>
               
             
           </span>
@@ -1237,7 +1249,6 @@ group by Name
         byte[] buff=new byte[1024];
         int len=in.read(buff);
         String msg=new String(buff, 0, len);
-
 
         //接受ip 和端口号
         String clientIp=socket.getInetAddress().getHostAddress();
@@ -1340,7 +1351,6 @@ public static void main(String[] args) throws Exception {
 <pre><code>将来如果出现  &quot;制造鞋子&quot; 需要编写这样的代理类,来代理鞋子
 长期以往,代理类会越来越多,就会造成类的急剧膨胀,不好
 
-
 //动态代理:一般有两种方式实现
 //一种是使用jdk来实现动态代理
 </code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		NikeMakeCloth nike=<span class="keyword">new</span> NikeMakeCloth();</span><br><span class="line">		MyProxy proxy=<span class="keyword">new</span> MyProxy();</span><br><span class="line">		MakeCloth c=(MakeCloth)proxy.binding(nike);</span><br><span class="line">		c.makeCloth();</span><br><span class="line">		</span><br><span class="line">		AdidasMakeShoes ad=<span class="keyword">new</span> AdidasMakeShoes();</span><br><span class="line">		MakeShoes s=(MakeShoes)proxy.binding(ad);</span><br><span class="line">		s.makeShoes();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//制造衣服的规则</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MakeCloth</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeCloth</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MakeShoes</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeShoes</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nike 品牌  真实对象</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NikeMakeCloth</span> <span class="keyword">implements</span> <span class="title">MakeCloth</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeCloth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Nike工厂生产了一批衣服"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AdidasMakeShoes</span> <span class="keyword">implements</span> <span class="title">MakeShoes</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeShoes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Adidas制造鞋子"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> Object obj;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">binding</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.obj=obj;</span><br><span class="line">		<span class="comment">//返回的代理类,可以理解真实对象的子类</span></span><br><span class="line">		<span class="keyword">return</span> Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), <span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//当代理对象发起对真实对象的方法调用时,就会转化成调用invoke方法</span></span><br><span class="line">	<span class="comment">//proxy代表代理对象, method代表当前方法,args代表方法中的参数</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"代理类收取一定的费用100元"</span>);</span><br><span class="line">		Object result=method.invoke(obj, args);  <span class="comment">//result是真正方法返回值,如果为void,则为null;</span></span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
@@ -1422,7 +1432,7 @@ public static void main(String[] args) throws Exception {
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/02/第十九天/" class="post-title-link" itemprop="url">第十九天</a>
+                <a href="/2019/08/02/第十九天/" class="post-title-link" itemprop="url">java的UDP编程</a>
               
             
           </h1>
@@ -1447,12 +1457,24 @@ public static void main(String[] args) throws Exception {
                 
               
 
-              <time title="创建时间：2019-08-02 19:32:51 / 修改时间：19:36:17" itemprop="dateCreated datePublished" datetime="2019-08-02T19:32:51+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:32:51" itemprop="dateCreated datePublished" datetime="2019-08-02T19:32:51+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:46:39" itemprop="dateModified" datetime="2019-08-04T12:46:39+08:00">2019-08-04</time>
               
             
           </span>
@@ -1521,13 +1543,11 @@ UTF-8用一至四个字节为每个字符编码
 UTF-8就是在互联网上使用最广的一种unicode的实现方式。
 其他实现方式还包括UTF-16和UTF-32，不过在互联网上基本不用。
 
-
 ===UTF-8和unicode编码之间的关系
     互联网的普及，强烈要求出现一种统一的编码方式。
 UTF-8就是在互联网上使用最广的一种Unicode的实现方式。
 其他实现方式还包括UTF-16（字符用两个字节或四个字节表示）和UTF-32（字符用四个字节表示），
 不过在互联网上基本不用。重复一遍，这里的关系是，UTF-8是Unicode的实现方式之一。
-
 
 ）UTF-8字节说明
     -- 0001-007f  (一个字节) 
@@ -1556,7 +1576,6 @@ UTF-8就是在互联网上使用最广的一种Unicode的实现方式。
      在中国大陆简体中文版非常常用的GB2312/GB18030/GBK系列标准是我国的国家标准，
      但只能对中文和多数西方文字进行编码。
      为了网站的通用性起见，用UTF-8编码是更好的选择。
-
 
 ===联通,联想和联
 
@@ -1717,7 +1736,7 @@ public static void main(String[] args) throws Exception {
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/02/第十八天/" class="post-title-link" itemprop="url">第十八天</a>
+                <a href="/2019/08/02/第十八天/" class="post-title-link" itemprop="url">java设计模式、内部类</a>
               
             
           </h1>
@@ -1742,12 +1761,24 @@ public static void main(String[] args) throws Exception {
                 
               
 
-              <time title="创建时间：2019-08-02 19:30:15 / 修改时间：19:32:27" itemprop="dateCreated datePublished" datetime="2019-08-02T19:30:15+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:30:15" itemprop="dateCreated datePublished" datetime="2019-08-02T19:30:15+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:46:18" itemprop="dateModified" datetime="2019-08-04T12:46:18+08:00">2019-08-04</time>
               
             
           </span>
@@ -1978,7 +2009,7 @@ public class Test01{
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/02/第十七天/" class="post-title-link" itemprop="url">第十七天</a>
+                <a href="/2019/08/02/第十七天/" class="post-title-link" itemprop="url">java的File类</a>
               
             
           </h1>
@@ -2003,12 +2034,24 @@ public class Test01{
                 
               
 
-              <time title="创建时间：2019-08-02 19:27:07 / 修改时间：19:30:00" itemprop="dateCreated datePublished" datetime="2019-08-02T19:27:07+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:27:07" itemprop="dateCreated datePublished" datetime="2019-08-02T19:27:07+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:46:00" itemprop="dateModified" datetime="2019-08-04T12:46:00+08:00">2019-08-04</time>
               
             
           </span>
@@ -2327,7 +2370,7 @@ public class Test01 {
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/02/第十六天/" class="post-title-link" itemprop="url">第十六天</a>
+                <a href="/2019/08/02/第十六天/" class="post-title-link" itemprop="url">java的IO流</a>
               
             
           </h1>
@@ -2352,12 +2395,24 @@ public class Test01 {
                 
               
 
-              <time title="创建时间：2019-08-02 19:25:08 / 修改时间：19:26:40" itemprop="dateCreated datePublished" datetime="2019-08-02T19:25:08+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 19:25:08" itemprop="dateCreated datePublished" datetime="2019-08-02T19:25:08+08:00">2019-08-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 12:45:43" itemprop="dateModified" datetime="2019-08-04T12:45:43+08:00">2019-08-04</time>
               
             
           </span>
@@ -2430,11 +2485,9 @@ java对流操作的对象都在IO包下
 --字符流
           ---输出流
 
-
 两者的区别就是读写的时候一个是按字节读写，一个是按字符。
 
 在java中io流,共分为四个抽象类
-
 
           ---输入流  InputStream
 --字节流
@@ -2460,7 +2513,6 @@ java对流操作的对象都在IO包下
         --PipedWriter  //管道流
         --StringWriter
 
-
     public class Test02{
         public static void main(String[] args) throws Exception {
             writeFile();
@@ -2483,7 +2535,6 @@ java对流操作的对象都在IO包下
             wr.close();
         }
     }
-
 
     //标准的io处理异常
     public static void main(String[] args) {
@@ -2549,7 +2600,6 @@ int read(char[] cbuf, int off, int len)  //将字符读入数组的某一部分�
     len=r.read(cbuf, 0, 1);  //最后的参数代表字符的长度
     System.out.println(len);
     System.out.println(new String(cbuf, 0, len)); //取的是一个字符
-
 
 //例子 写一个复制,用int read(char[] buff)方式
     public static void main(String[] args) {
@@ -2728,7 +2778,6 @@ bw.close();  //关闭包装类,被包装的也相当于关闭了
        void flush()把缓冲区中内容输出并清空缓冲区（刷新）
        void close()关闭输出流
 
-
    //例子
    public static void main(String[] args) throws Exception {
        InputStream in=new FileInputStream(&quot;c://xiaoji.jpg&quot;);
@@ -2776,7 +2825,6 @@ bw.close();  //关闭包装类,被包装的也相当于关闭了
        out.close();
        in.close();
    }
-
 
    //图片的复制 ,使用标准的异常处理
    public static void main(String[] args){
@@ -2893,7 +2941,6 @@ OutputStreamWriter
             br.close();
         }
 
-
         public class Test01 {
                 public static void main(String[] args) throws Exception{
                     Scan s=new Scan(System.in);
@@ -2999,7 +3046,7 @@ OutputStreamWriter
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/02/第十五天/" class="post-title-link" itemprop="url">第十五天</a>
+                <a href="/2019/08/02/第十五天/" class="post-title-link" itemprop="url">java多线程</a>
               
             
           </h1>
@@ -3041,7 +3088,7 @@ OutputStreamWriter
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-03 13:20:33" itemprop="dateModified" datetime="2019-08-03T13:20:33+08:00">2019-08-03</time>
+                <time title="修改时间：2019-08-04 12:47:17" itemprop="dateModified" datetime="2019-08-04T12:47:17+08:00">2019-08-04</time>
               
             
           </span>
@@ -3255,7 +3302,7 @@ OutputStreamWriter
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
