@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="生活不止眼前的苟且，还有诗和远方。">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="Java 子类 继承 父类 所有属性、方法从书中看到子类继承父类，子类拥有父类所有的属性和方法，于是使用程序去验证，发现父类的私有属性和私有方法，子类是不能访问的，当然一些父类的私有属性可能可以通过相应的方法访问到，但是私有的方法似乎不能简单的访问，这里暂不考虑Java反射机制，于是我分析，子类不能继承父类私有的属性及方法，但是分析了内存后，我发现我是错的，在一个子类被创建的时候，首先会在内存中创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 子类 继承 父类 所有属性、方法">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/java继承问题/index.html">
 <meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
+<meta property="og:description" content="Java 子类 继承 父类 所有属性、方法从书中看到子类继承父类，子类拥有父类所有的属性和方法，于是使用程序去验证，发现父类的私有属性和私有方法，子类是不能访问的，当然一些父类的私有属性可能可以通过相应的方法访问到，但是私有的方法似乎不能简单的访问，这里暂不考虑Java反射机制，于是我分析，子类不能继承父类私有的属性及方法，但是分析了内存后，我发现我是错的，在一个子类被创建的时候，首先会在内存中创">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-04T07:57:13.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生活不止眼前的苟且，还有诗和远方。">
+<meta name="twitter:title" content="Java 子类 继承 父类 所有属性、方法">
+<meta name="twitter:description" content="Java 子类 继承 父类 所有属性、方法从书中看到子类继承父类，子类拥有父类所有的属性和方法，于是使用程序去验证，发现父类的私有属性和私有方法，子类是不能访问的，当然一些父类的私有属性可能可以通过相应的方法访问到，但是私有的方法似乎不能简单的访问，这里暂不考虑Java反射机制，于是我分析，子类不能继承父类私有的属性及方法，但是分析了内存后，我发现我是错的，在一个子类被创建的时候，首先会在内存中创">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2019/05/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/03/java继承问题/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>归档 | 生活不止眼前的苟且，还有诗和远方。</title>
+  <title>Java 子类 继承 父类 所有属性、方法 | 生活不止眼前的苟且，还有诗和远方。</title>
   
 
 
@@ -168,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,7 +261,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -278,25 +282,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -322,287 +307,202 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        还行! 目前共计 46 篇日志。 继续努力。
-      </span>
-      
+  
 
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/java继承问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">Java 子类 继承 父类 所有属性、方法
+
+              
+            
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-03 15:55:44" itemprop="dateCreated datePublished" datetime="2019-08-03T15:55:44+08:00">2019-08-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 15:57:13" itemprop="dateModified" datetime="2019-08-04T15:57:13+08:00">2019-08-04</time>
+              
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/26/06-String练习/" itemprop="url">
+            <span class="post-category">
             
-              <span itemprop="name">String练习</span>
+              <span class="post-meta-divider">|</span>
             
-          </a>
-        
-      </h2>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-26T11:10:05+08:00" content="2019-05-26">
-          05-26
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/24/05-final关键字/" itemprop="url">
-            
-              <span itemprop="name">final关键字</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-24T20:05:47+08:00" content="2019-05-24">
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/22/04-java一个小案例/" itemprop="url">
-            
-              <span itemprop="name">java一个小案例</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-22T13:31:07+08:00" content="2019-05-22">
-          05-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="Java-子类-继承-父类-所有属性、方法"><a href="#Java-子类-继承-父类-所有属性、方法" class="headerlink" title="Java 子类 继承 父类 所有属性、方法"></a>Java 子类 继承 父类 所有属性、方法</h1><p>从书中看到子类继承父类，子类拥有父类所有的属性和方法，于是使用程序去验证，发现父类的私有属性和私有方法，子类是不能访问的，当然一些父类的私有属性可能可以通过相应的方法访问到，但是私有的方法似乎不能简单的访问，这里暂不考虑Java反射机制，于是我分析，子类不能继承父类私有的属性及方法，但是分析了内存后，我发现我是错的，在一个子类被创建的时候，首先会在内存中创建一个父类对象，然后在父类对象外部放上子类独有的属性，两者合起来形成一个子类的对象。所以所谓的继承使子类拥有父类所有的属性和方法其实可以这样理解，子类对象确实拥有父类对象中所有的属性和方法，但是父类对象中的私有属性和方法，子类是无法访问到的，只是拥有，但不能使用。就像有些东西你可能拥有，但是你并不能使用。所以子类对象是绝对大于父类对象的，所谓的子类对象只能继承父类非私有的属性及方法的说法是错误的。可以继承，只是无法访问到而已。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/21/03-java数组的复制/" itemprop="url">
-            
-              <span itemprop="name">java数组的复制</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-21T21:08:12+08:00" content="2019-05-21">
-          05-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/17/java的抽象类与接口的实现/" itemprop="url">
-            
-              <span itemprop="name">java的抽象类与接口的实现</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-17T16:53:20+08:00" content="2019-05-17">
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/12/02-java的封装/" itemprop="url">
-            
-              <span itemprop="name">java的封装</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-12T20:09:13+08:00" content="2019-05-12">
-          05-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/12/百钱白鸡问题/" itemprop="url">
-            
-              <span itemprop="name">公鸡5元一个，母鸡3元一个，小鸡1元三个，问拿100元买100只鸡，公鸡、母鸡、小鸡各买多少只才可以买到?﻿</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-12T15:39:24+08:00" content="2019-05-12">
-          05-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/02/mysql第三天/" rel="next" title="mysql第三天">
+                <i class="fa fa-chevron-left"></i> mysql第三天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/04/坑人的面试题/" rel="prev" title="坑人的面试题">
+                坑人的面试题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -622,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -698,6 +607,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-子类-继承-父类-所有属性、方法"><span class="nav-number">1.</span> <span class="nav-text">Java 子类 继承 父类 所有属性、方法</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -826,6 +752,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -841,6 +771,8 @@
 
   
 
+
+  
 
 
   

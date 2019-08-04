@@ -320,6 +320,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/kaipai/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/06/19/kaipai/" class="post-title-link" itemprop="url">JavaScript 实现快速排序</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 11:30:30" itemprop="dateCreated datePublished" datetime="2018-06-19T11:30:30+08:00">2018-06-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-27 16:21:23" itemprop="dateModified" datetime="2019-06-27T16:21:23+08:00">2019-06-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JavaScript快速排序"><a href="#JavaScript快速排序" class="headerlink" title="JavaScript快速排序"></a>JavaScript快速排序</h3><p>基本思想就是取中间值作为一个衡量标准，循环该数组大于中间值的元素放到左面数组大于放到右面数组，</p>
+<p>然后左右数组并没有次序，只需要用地递归在左右数组进行排序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">		  <span class="keyword">if</span> (a.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> a;</span><br><span class="line">		  <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor(a.length/<span class="number">2</span>)</span><br><span class="line">		    <span class="keyword">var</span>  midItem = a.splice(mid, <span class="number">1</span>)</span><br><span class="line">		    <span class="keyword">var</span>  left = []</span><br><span class="line">		    <span class="keyword">var</span>  right = [];</span><br><span class="line">		  a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">		    <span class="keyword">if</span> (item &lt;= midItem)</span><br><span class="line">		      left.push(item);</span><br><span class="line">		    <span class="keyword">else</span> </span><br><span class="line">		      right.push(item);</span><br><span class="line">		  &#125;);</span><br><span class="line">		  <span class="keyword">var</span> _left = quickSort(left)</span><br><span class="line">		    <span class="keyword">var</span>  _right = quickSort(right);</span><br><span class="line">		  <span class="keyword">return</span> _left.concat(midItem, _right);</span><br><span class="line">&#125;</span><br><span class="line">		<span class="keyword">var</span> a = quickSort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>])</span><br><span class="line">		<span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/callback/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1252,7 +1427,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
