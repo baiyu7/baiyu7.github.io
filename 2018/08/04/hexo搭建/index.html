@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="生活不止眼前的苟且，还有诗和远方。">
 <meta property="og:description" content="1.基于node2.npm包管理工具3.npm install -g hexo(hexo-cli)4.下载的资源是国外的可能比较慢5.淘宝镜像（代理的仓库）6.npm install -g hexo –registry=https://registry.npm.taobao.org7.在一个空目录（hexo init）博客系统的初始化8.hexo\source_posts md文档就是博客文档9.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-04T05:34:12.592Z">
+<meta property="og:updated_time" content="2019-08-04T05:58:49.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建">
 <meta name="twitter:description" content="1.基于node2.npm包管理工具3.npm install -g hexo(hexo-cli)4.下载的资源是国外的可能比较慢5.淘宝镜像（代理的仓库）6.npm install -g hexo –registry=https://registry.npm.taobao.org7.在一个空目录（hexo init）博客系统的初始化8.hexo\source_posts md文档就是博客文档9.">
@@ -383,7 +383,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-04 13:34:12" itemprop="dateModified" datetime="2019-08-04T13:34:12+08:00">2019-08-04</time>
+                <time title="修改时间：2019-08-04 13:58:49" itemprop="dateModified" datetime="2019-08-04T13:58:49+08:00">2019-08-04</time>
               
             
           </span>
@@ -444,6 +444,14 @@
 <li>配置当前仓库可以通过网络访问页面</li>
 <li>在仓库的首页  settings—&gt;GitHub Pages–&gt;改选项 Source（none—master branch）</li>
 <li>通过 用户名.github.io 访问你的博客</li>
+</ol>
+<h3 id="配置和插件安装"><a href="#配置和插件安装" class="headerlink" title="配置和插件安装"></a>配置和插件安装</h3><ol>
+<li>设置<code>post_asset_folder</code>值<br>配置hexo根目录下_config.yml里面的<code>post_asset_folder:false</code>属性为<code>true</code></li>
+<li>安装扩展插件<code>hexo-asset-image</code><br>hexo根目录下执行<code>npm install hexo-asset-image --save</code></li>
+</ol>
+<p>安装完该插件后，使用<code>hexo n &quot;xxxx&quot;</code>生成新博客时候，<code>/source/_posts</code>文件夹内除了xxx.md文件外还会生成一个与之对应的同名文件夹。</p>
+<ol>
+<li>引入图片在xxx.md中引入图片的时候，先把图片复制到对应的文件夹中，然后使用markdown语法引入图片即可</li>
 </ol>
 <p>如果遇见以下内容的错误请跳转以下链接转发他人<a href="https://blog.csdn.net/lvonve/article/details/79393511" target="_blank" rel="noopener">https://blog.csdn.net/lvonve/article/details/79393511</a></p>
 
@@ -532,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,6 +625,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置和插件安装"><span class="nav-number">1.</span> <span class="nav-text">配置和插件安装</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

@@ -1414,7 +1414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-04 13:34:12" itemprop="dateModified" datetime="2019-08-04T13:34:12+08:00">2019-08-04</time>
+                <time title="修改时间：2019-08-04 13:58:49" itemprop="dateModified" datetime="2019-08-04T13:58:49+08:00">2019-08-04</time>
               
             
           </span>
@@ -1477,6 +1477,14 @@
 <li>配置当前仓库可以通过网络访问页面</li>
 <li>在仓库的首页  settings—&gt;GitHub Pages–&gt;改选项 Source（none—master branch）</li>
 <li>通过 用户名.github.io 访问你的博客</li>
+</ol>
+<h3 id="配置和插件安装"><a href="#配置和插件安装" class="headerlink" title="配置和插件安装"></a>配置和插件安装</h3><ol>
+<li>设置<code>post_asset_folder</code>值<br>配置hexo根目录下_config.yml里面的<code>post_asset_folder:false</code>属性为<code>true</code></li>
+<li>安装扩展插件<code>hexo-asset-image</code><br>hexo根目录下执行<code>npm install hexo-asset-image --save</code></li>
+</ol>
+<p>安装完该插件后，使用<code>hexo n &quot;xxxx&quot;</code>生成新博客时候，<code>/source/_posts</code>文件夹内除了xxx.md文件外还会生成一个与之对应的同名文件夹。</p>
+<ol>
+<li>引入图片在xxx.md中引入图片的时候，先把图片复制到对应的文件夹中，然后使用markdown语法引入图片即可</li>
 </ol>
 <p>如果遇见以下内容的错误请跳转以下链接转发他人<a href="https://blog.csdn.net/lvonve/article/details/79393511" target="_blank" rel="noopener">https://blog.csdn.net/lvonve/article/details/79393511</a></p>
 
