@@ -327,6 +327,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/mysql第一天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/02/mysql第一天/" class="post-title-link" itemprop="url">mysql第一天</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-02 19:44:58 / 修改时间：19:48:12" itemprop="dateCreated datePublished" datetime="2019-08-02T19:44:58+08:00">2019-08-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-数据库的基本概念"><a href="#1-数据库的基本概念" class="headerlink" title="1 数据库的基本概念"></a>1 数据库的基本概念</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数据库:数据库主要是储存大量数据而发展出来，一开始由于数据量大所以无法高效的管理数据，</span><br><span class="line">       所以发展出来了数据库这个管理软件。</span><br><span class="line">       它是以一定方式储存在一起,能为多个用户共享,具有尽可能小的冗余度的特点,是与应用程序彼此独立的数据集合</span><br><span class="line">       数据库大体分为：关系型数据库和非关系型，关系型数据库是建立在关系模型基础上的数据库</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql就是关系型数据库,在关系型数据库中存在 库 表 字段 的概念</span><br><span class="line">mysql服务中存在多个库</span><br><span class="line">一个库中存在多张表,表依赖于库而存在的</span><br><span class="line">一个表中存在多个字段,字段依赖于表而存在</span><br><span class="line"></span><br><span class="line">几种常见的术语</span><br><span class="line">===DB (DataBase)  数据库</span><br><span class="line">===DBMS  (DataBase Management System) 数据库管理系统</span><br><span class="line">===DBA 数据库管理员</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">各种数据库的比较</span><br><span class="line">-- Access  //微软</span><br><span class="line">	是一种桌面数据库，只适合数据量少的应用，在处理少量数据和单机访问的数据库时是很好的，效率也很高。</span><br><span class="line">	但是它同时访问客户端不能多于4个。Access数据库有一定的极限，</span><br><span class="line">	如果数据达到100M左右，很容易造成服</span><br><span class="line">	务器假死，或者消耗掉服务器的内存导致服务器崩溃</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">--SQL Server  //微软重型数据库  mssql是SQL Server简称</span><br><span class="line">	是基于服务器端的中型的数据库，可以适合大容量数据的应用，在功能上管理上也要比Microsoft Access要强得多。</span><br><span class="line">	在处理海量数据的效率，后台开发的灵活性，可扩展性等方面强大。因为现在数据库都使用标准的SQL语言对数据库进行</span><br><span class="line">	管理，所以如果是标准SQL	语言，两者基本上都可以通用的。Microsoft SQL Server还有更多的扩展，可以用存储过程，</span><br><span class="line">	数据库大小无极限限制</span><br><span class="line">	  </span><br><span class="line">	//不跨平台 </span><br><span class="line">	</span><br><span class="line">--MySql  //MariaDB</span><br><span class="line">	是个开源的数据库 server，可运行在多种平台，如windows，unix/linux; 他的体积很小</span><br><span class="line">       是专为WEB 数据库设计的，特点是响应速度特别快，主要面向中小企业，对于海量数据库</span><br><span class="line">    就显得力不从心了，它是真正的多用户多任务的数据库系统，他占用系统资源很少但功能</span><br><span class="line">    很强大，可以作为大型数据库系统使用，最主要是其标准版是免费的。</span><br><span class="line">	</span><br><span class="line">-- Oracle</span><br><span class="line">	各方面都比较成熟,但对硬件要求高，用于数据完整性、安全性要求较高的场合，能在所有主流平台上运行，完</span><br><span class="line">	全支持所有的工业标准，采用完全开放策略。可以使客户选择最适合的解决方案，对开发商全力支持。平行服务器通过使</span><br><span class="line">	一组结点共享同一簇中的工作来扩展服务器的能力,提供高可用性和高伸缩性的簇的解决方案，获得最高认证级别的iso</span><br><span class="line">	标准认证，多层次网络计算，支持多种工业标准，可以用odbc,jdbc,oci等网络客户连接，较复杂，同时提供gui</span><br><span class="line">	和命令行，在windows和unix下操作相同，如果windows不能满足需要,用户可以把数据库移到unix中。其操作和设置比较复杂，</span><br><span class="line">	适用于有一定操作经验的用户</span><br><span class="line">	</span><br><span class="line">--IBM DB2 </span><br><span class="line">   DB2是IBM一种分布式数据库解决方案。</span><br><span class="line">   说简单点：DB2就是IBM开发的一种大型关系型数据库平台。</span><br><span class="line">   它支持多用户或应用程序在同一条SQL 语句中查询不同database甚至不同DBMS中的数据</span><br><span class="line"></span><br><span class="line">--MangoDB	</span><br><span class="line">    MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。</span><br><span class="line"> 旨在为WEB应用提供可扩展的高性能数据存储解决方案。</span><br><span class="line"> MongoDB是一个介于关系数据库和非关系数据库之间的产品，</span><br><span class="line"> 是非关系数据库当中功能最丰富，最像关系数据库的。</span><br><span class="line"> 它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。</span><br><span class="line"> MangoDB最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，</span><br><span class="line"> 几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。</span><br></pre></td></tr></table></figure>
+<h1 id="2-MySql数据库的安装和维护"><a href="#2-MySql数据库的安装和维护" class="headerlink" title="2 MySql数据库的安装和维护"></a>2 MySql数据库的安装和维护</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">安装略.....</span><br><span class="line"></span><br><span class="line">然后可以运行</span><br><span class="line">cmd--&gt;输入 mysql -uroot -p密码 回车</span><br><span class="line">或者在所有程序中找到mysql直接进入mysql窗口客户端,输入密码,回车 即可</span><br><span class="line"></span><br><span class="line">1) 查看所有数据库</span><br><span class="line">	mysql&gt; show databases;</span><br><span class="line">	</span><br><span class="line">2) 选择某个数据库</span><br><span class="line">	mysql&gt; use shop;</span><br><span class="line">	Database changed</span><br><span class="line">	</span><br><span class="line">3) 查看库中所有表</span><br><span class="line">	mysql&gt; show tables;</span><br><span class="line">	</span><br><span class="line">4) 显示当前用户</span><br><span class="line">	 select user();</span><br><span class="line">	 </span><br><span class="line">5) 退出</span><br><span class="line">	quit;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修改密码</span><br><span class="line">update mysql.user set password=password(&apos;新密码&apos;) where user=&apos;用户名&apos;;</span><br><span class="line">刷新权限</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<h1 id="3-MySQL数据类型"><a href="#3-MySQL数据类型" class="headerlink" title="3 MySQL数据类型"></a>3 MySQL数据类型</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-----数值型</span><br><span class="line">       SMALLINT: 2个字节</span><br><span class="line">	INT: 4个字节      //age int</span><br><span class="line">	INTEGER:INT的同义词 </span><br><span class="line">	BIGINT : 8个字节</span><br><span class="line">	FLOAT : 4个字节   //score float(10,2)  </span><br><span class="line">	DOUBLE : 8个字节 </span><br><span class="line"></span><br><span class="line"> -----字符串类型</span><br><span class="line">    </span><br><span class="line">    CHAR:固定长度字符串  sex char(2)  //  2指的是字符</span><br><span class="line">    VARCHAR:可变长度字符串 name varchar(20)  //  20指的是字符</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    虽然VARCHAR使用起来较为灵活,但是从整个系统的性能角度来说,CHAR数据类型的处理速度更快</span><br><span class="line">    有时甚至可以超过VARCHAR处理速度的50%</span><br><span class="line">	</span><br><span class="line">-----日期/时间类型</span><br><span class="line"> </span><br><span class="line">     DATE: YYYY-MM-DD</span><br><span class="line">     DATETIME:YYYY-MM-DD HH:MM:SS</span><br><span class="line">     TIMESTAMP:YYYY-MM-DD HH:MM:SS    // TIMESTAMP 时间戳</span><br><span class="line">     TIME:HH:MM:SS</span><br><span class="line">     YEAR:YYYY</span><br><span class="line">		</span><br><span class="line">	时间戳特点:此数据类型常用于记载日期和时间,当数据进行更改操作时,会自定更新时间</span><br><span class="line">	</span><br><span class="line">-----其他</span><br><span class="line">  </span><br><span class="line">  BLOB和TEXT </span><br><span class="line">  用于存储大文本的数据</span><br><span class="line">  </span><br><span class="line">  不同:</span><br><span class="line">	 1. BLOB 类型区分大小写</span><br><span class="line">		TEXT 不区分大小写</span><br><span class="line">	 2. BLOB被视为二进制字符串(例如 图片等);</span><br><span class="line">		Text被视为非二进制字符串</span><br><span class="line">	 3. BLOB 可以储存图片,TEXT不行，TEXT只能储存纯文本文件。4个TEXT类型TINYTEXT、TEXT、MEDIUMTEXT和LONGTEXT对应于4个BLOB类型，并且有同样的最大长度和存储需求。</span><br><span class="line">		一个BLOB是一个能保存可变数量的数据的二进制的大对象。4个BLOB类型TINYBLOB、BLOB、MEDIUMBLOB和LONGBLOB仅仅在他们能保存值的最大长度方面有所不同。</span><br><span class="line">		TinyBlob 最大 255 </span><br><span class="line">	　　Blob 最大 65K </span><br><span class="line">	　　MediumBlob 最大 16M </span><br><span class="line">	　　LongBlob 最大 4G</span><br></pre></td></tr></table></figure>
+<h1 id="4-SQL语言简介-sql-结构化查询语句"><a href="#4-SQL语言简介-sql-结构化查询语句" class="headerlink" title="4 SQL语言简介  (sql:结构化查询语句)"></a>4 SQL语言简介  (sql:结构化查询语句)</h1><p>​<br>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">===SQL 语句中的字符串用单引号</span><br><span class="line">===SQL 语句大小写不敏感,不敏感的是关键字</span><br><span class="line">===SQL 语言主要分为几类</span><br><span class="line">       DDL(数据定义语言) Create Table, Drop Table,Alter Table等操作</span><br><span class="line">       DML(数据操作语言) Select, Insert , Update , Delete 等操作</span><br><span class="line">       DCL(数据控制语言) 存储权限,访问权限</span><br></pre></td></tr></table></figure>
+<h1 id="5-创建表-和管理表-DDL"><a href="#5-创建表-和管理表-DDL" class="headerlink" title="5 创建表,和管理表 (DDL)"></a>5 创建表,和管理表 (DDL)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">--创建数据库</span><br><span class="line">	create database 库名;</span><br><span class="line">	</span><br><span class="line">--创建表</span><br><span class="line">	create table student(</span><br><span class="line">		id int primary key auto_increment,</span><br><span class="line">		stuName varchar(20) not null,  //可以添加约束条件 非空</span><br><span class="line">		school varchar(20) comment &apos;字段的注释,是学校&apos;,</span><br><span class="line">		score float(5,2),  //最长5位,小数点后2位</span><br><span class="line">		birthday date,</span><br><span class="line">		sex char(2) default &apos;女&apos;   //最后一行不要加逗号</span><br><span class="line">	)comment=&apos;表的注释,学生&apos;</span><br><span class="line"></span><br><span class="line">	primary key: 主键</span><br><span class="line">	主键的目的可以确定唯一 一行数据</span><br><span class="line">	auto_increment:设置主键自增,对于自增主键是有自增这个属性的</span><br><span class="line">	</span><br><span class="line">	单独设置的主键,叫做单列主键</span><br><span class="line">	可以多个列来设置主键,叫复合主键</span><br><span class="line">	//例如</span><br><span class="line">	create table student(</span><br><span class="line">		学号 int(10),</span><br><span class="line">		班级 varchar(20),  </span><br><span class="line">		姓名 varchar(20),</span><br><span class="line">		sex char(2), </span><br><span class="line">		primary key(学号,班级)		</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">--显示表的详情</span><br><span class="line">	&gt; desc student;</span><br><span class="line">--显示表的创建语句</span><br><span class="line">	show create table student</span><br><span class="line">	</span><br><span class="line">	CREATE TABLE `student` (</span><br><span class="line">	  `id` int(10) NOT NULL auto_increment,</span><br><span class="line">	  `stuName` varchar(20) NOT NULL,</span><br><span class="line">	  `school` varchar(20) default NULL COMMENT &apos;字段的注释,是学校&apos;,</span><br><span class="line">	  `score` float(5,2) default NULL,</span><br><span class="line">	  `birthday` date default NULL,</span><br><span class="line">	  `sex` char(2) default &apos;女&apos;,</span><br><span class="line">	  PRIMARY KEY  (`id`)</span><br><span class="line">	) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT=&apos;表的注释,学生&apos;</span><br><span class="line">	</span><br><span class="line">--删除表</span><br><span class="line">	drop table student;</span><br><span class="line">	</span><br><span class="line">--删除数据库</span><br><span class="line">	drop database java90;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">附:utf8和utf-8区别</span><br><span class="line">   utf8支持每个字符三个字节,而真正的utf-8每个字符四个字节</span><br><span class="line">   在后期版本中出现了utf8mb4字符</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  ======表的修改语句</span><br><span class="line">	</span><br><span class="line">//给表增加一列</span><br><span class="line">	alter table student add aa int;</span><br><span class="line">	</span><br><span class="line">//修改表中的列名</span><br><span class="line">	 alter table student change aa age int;</span><br><span class="line">	 </span><br><span class="line">//修改表,设置某列添加约束</span><br><span class="line">	 alter table student modify sex char(1) not null;</span><br><span class="line">	 </span><br><span class="line">//修改表的名称</span><br><span class="line">	  alter table student rename as t_student; </span><br><span class="line">	  </span><br><span class="line">// 修改表的注释</span><br><span class="line">	 alter table t_student comment &apos;修改之后的注释&apos;;</span><br><span class="line"></span><br><span class="line">// 修改字段的注释</span><br><span class="line">	  alter table t_student modify shcool varchar(30) comment &apos;修改字段注释&apos;;</span><br><span class="line">	  注意:字段名要一致,其中字段类型可以修改,但是注意表中的数据类型,而且类型大小也可以改</span><br><span class="line">	  </span><br><span class="line">//修改字段的默认值</span><br><span class="line">	  alter table t_student alter sex set default &apos;&apos;</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-数据插入"><a href="#6-数据插入" class="headerlink" title="6 数据插入"></a>6 数据插入</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">insert into 语句	</span><br><span class="line">insert into t_student(stuName,sex,score,school) values(&apos;张三&apos;,&apos;男&apos;,90,&apos;理工&apos;);</span><br><span class="line"></span><br><span class="line">//字符串类型用 &apos;&apos;引起来</span><br><span class="line">//数值型不可以用单引号</span><br><span class="line">//日期类型也要用单引号引起来</span><br><span class="line">//字段列表,和后面的值列表要匹配</span><br><span class="line">//通常,对于自增主键可以不指定id</span><br><span class="line"></span><br><span class="line">//多条记录插入</span><br><span class="line">insert into t_student(stuName) VALUES</span><br><span class="line">(&apos;a&apos;),</span><br><span class="line">(&apos;b&apos;),</span><br><span class="line">(&apos;c&apos;);</span><br><span class="line"></span><br><span class="line">//复制表记录</span><br><span class="line">insert into student_backup select id,stuName,school from t_student</span><br><span class="line">student_backup表里的字段要和后面查询的字段保持一致,就算是id自动递增也不会放过</span><br></pre></td></tr></table></figure>
+<h1 id="7-数据更新"><a href="#7-数据更新" class="headerlink" title="7 数据更新"></a>7 数据更新</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">update 表名 set 字段=新值</span><br><span class="line"></span><br><span class="line">update t_student set score=100  //更新表中score所以字段数组</span><br><span class="line"></span><br><span class="line">update t_student set score=60 where id=5  //修改id为5的成绩</span><br><span class="line"></span><br><span class="line">update t_student set score=70,stuName=&apos;王五&apos; where id=5 //修改id为5的成绩和名字</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update t_student set score=score+10,stuName=&apos;王五&apos; where id=5 //修改id为5的名字,成绩为原来的成绩+10分</span><br><span class="line"></span><br><span class="line">更新条件符号</span><br><span class="line">and  or &gt; &lt; &gt;= &lt;= &lt;&gt; !=  //&lt;&gt; 不等于</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update t_student set stuName=&apos;王麻子&apos; where school=&apos;理工&apos; AND score&lt;100</span><br></pre></td></tr></table></figure>
+<h1 id="8-数据删除"><a href="#8-数据删除" class="headerlink" title="8 数据删除"></a>8 数据删除</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名  删除表中所有记录</span><br><span class="line"></span><br><span class="line">delete from 表名 where id=3  //删除id为3的记录</span><br><span class="line"></span><br><span class="line">truncate table 表名  删除表中所有记录</span><br><span class="line">==&gt;delete from 表名</span><br><span class="line"></span><br><span class="line">1) truncate table 速度快</span><br><span class="line">2) 自动把自增主键id从1开始重置</span><br></pre></td></tr></table></figure>
+<h1 id="9-查询数据"><a href="#9-查询数据" class="headerlink" title="9 查询数据"></a>9 查询数据</h1><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select 字段1,字段2....字段n from 表名 [where 条件]</span><br><span class="line"></span><br><span class="line">//例子</span><br><span class="line">select stuName,score from t_student where id=1</span><br><span class="line"></span><br><span class="line">select * from t_student where id=1  // * 代表所有字段</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select stuName as &apos;姓名&apos;,score as &apos;成绩&apos; from t_student  //把字段加别名</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">select stuName &apos;姓名&apos;,score  &apos;成绩&apos; from t_student</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select stu1.stuName &apos;姓名&apos;,stu1.score &apos;成绩&apos; from t_student stu1  //把表起别名,目的为了区分字段归属</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">客户端软件的快捷键</span><br><span class="line">	</span><br><span class="line">	1. ctrl+q   打开查询界面</span><br><span class="line">	2. ctrl+w   关闭查询界面</span><br><span class="line">	3. ctrl+/   注释</span><br><span class="line">	4. ctrl+shift+/   解开注释</span><br><span class="line">	5. F6     命令提示附窗口</span><br><span class="line">	6. ctrl+shift+r   选中位置执行</span><br><span class="line">	7. ctrl+l  删除一行</span><br><span class="line">	8. ctrl+r  运行窗口中所有的命令</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window快捷键选中一行</span><br><span class="line">shift+end  从头到尾</span><br><span class="line">shift+home/start   从尾到头</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">附:可以管理事务</span><br><span class="line">事务具备几个特点</span><br><span class="line">1.原子性 2.一致性 3.持续性 4.隔离性</span><br><span class="line"></span><br><span class="line">START TRANSACTION;  开启事务</span><br><span class="line">insert into t_student(stuName,sex,score,school) values(&apos;张三&apos;,&apos;男&apos;,90,&apos;理工&apos;);</span><br><span class="line">update t_student set score=60 where id=5;</span><br><span class="line">commit;  提交事务</span><br><span class="line"></span><br><span class="line">如果在开启和提交中间发生任何错误问题,都不会成功</span><br><span class="line">只要添加成功,那么修改必须成功</span><br></pre></td></tr></table></figure></p>
+<p>​<br>练习:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">	 </span><br><span class="line">有某个学生运动会比赛信息的数据库，保存了如下的表：</span><br><span class="line"></span><br><span class="line">1、  建表，并在相应字段上增加约束；</span><br><span class="line"></span><br><span class="line">运动员sporter</span><br><span class="line">（</span><br><span class="line">	运动员编号sporterid int(10) 主键 不许为空，</span><br><span class="line">	运动员姓名name varchar(20) 可以为空，</span><br><span class="line">	运动员性别（1男，2女）sex char(1)可以为空，</span><br><span class="line">	所属系号department int(10) 可以为空</span><br><span class="line">）</span><br><span class="line">项目item</span><br><span class="line">（</span><br><span class="line">	项目编号itemid int(10) 主键 不许为空，</span><br><span class="line">	项目名称itemname varchar(20) 可以为空，</span><br><span class="line">	项目比赛地点location varchar(30) 可以为空</span><br><span class="line">）</span><br><span class="line">成绩grade（</span><br><span class="line">	运动员编号id int(10) 主键 不许为空，</span><br><span class="line">	项目编号itemid int(10) 不许为空，</span><br><span class="line">	积分mark int(12) 可以为空</span><br><span class="line">）</span><br><span class="line">create table sporter(</span><br><span class="line">	sporterid int(10) primary key not null,</span><br><span class="line">	name varchar(20),</span><br><span class="line">	sex char(1),</span><br><span class="line">	dapartment int(10)</span><br><span class="line">	</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">3 对表操作</span><br><span class="line">(1)为sporter表增加一个新属性，生日属性:s_birth 类型：Date,可以为空</span><br><span class="line">	年龄属性：age 类型： int(10),可以为空</span><br><span class="line"></span><br><span class="line">(2)修改item表中的属性，将location的长度增加到200</span><br><span class="line">alter table item modify location varchar(200);</span><br><span class="line">(3)把grade表名改成grades</span><br><span class="line">alter table grade rename as grades</span><br><span class="line">(4)把sporter表，grade表和item表分别注释运动员表，成绩表和项目表</span><br><span class="line">alter table sporter comment &apos;&apos;;</span><br><span class="line">(5)清空表item中所有数据</span><br><span class="line">delete from item;</span><br><span class="line">truncate  table item;</span><br><span class="line">(6)删除sporter中的department 字段</span><br><span class="line">alter table sporter drop department;</span><br><span class="line">(7)注释grade表中 itemid  mark 字段不可用，然后删除</span><br><span class="line">alter table grade modify itemid int(10) comment &apos;不可用&apos;;</span><br><span class="line">alter table grade drop itemid;</span><br><span class="line">(8)删除grade表</span><br><span class="line">drop table grade ;</span><br><span class="line"></span><br><span class="line">执行提供的sql文件 employees.sql</span><br><span class="line">完成以下题:</span><br><span class="line">#--1.查询员工表所有数据</span><br><span class="line">	select * from employees;</span><br><span class="line"></span><br><span class="line">#--2.打印公司里所有的manager_id</span><br><span class="line">	select manager_id as &apos;ID&apos; from employees;</span><br><span class="line">#--3.查询80号部门的所有员工</span><br><span class="line"></span><br><span class="line">Select * from employees where DEPARTMENT_ID = 80;</span><br><span class="line">#--4.查询50号部门每人增长1000元工资之后的人员姓名及工资(2个问题)</span><br><span class="line"></span><br><span class="line">select SALARY+1000 as &apos;工资涨1000&apos;,LAST_NAME as &apos;姓名&apos; from employees </span><br><span class="line"></span><br><span class="line">#--5.查询80号部门工资大于7000的员工的名字与工资</span><br><span class="line"></span><br><span class="line">select  LAST_NAME  as &apos;名字&apos;,SALARY as &apos;工资&apos; from employees where SALARY&gt;7000 and DEPARTMENT_ID=80 ;</span><br><span class="line">#--6.查询80号部门工资大于8000并且提成()高于0.3的员工姓名,工资以及提成  </span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">#--7.查询职位(job_id)为&apos;AD_PRES&apos;的员工的工资 </span><br><span class="line">Select SALARY from employees where JOB_ID in(&apos;AD_PRES&apos;);</span><br><span class="line">#--8.查询佣金(commission_pct)为0或为null的员工信息</span><br><span class="line">SELECT *from employees where COMMISSION_PCT is NULL or  COMMISSION_PCT  = 0;</span><br><span class="line"></span><br><span class="line">#--9.查询入职日期在1997-5-1到1997-12-31之间的所有员工信息</span><br><span class="line"></span><br><span class="line">Select * from employees where HIRE_DATE between &apos;1997-5-1&apos;and &apos;1997-12-31&apos;;</span><br><span class="line">#--10.修改EMAIL为IMIKKILI 的工资增加为1000元</span><br><span class="line"></span><br><span class="line">update employees set SALARY = SALARY+1000 where EMALL = &apos;IMIKKILI &apos;;</span><br><span class="line"></span><br><span class="line">#--11.修改部门编号为80的并且工资大于5000的员工手机号(PHONE_NUMBER)为123456789</span><br><span class="line">update  employees set PHONE_NUMBER = &apos;123456789&apos; where  DEPARTMENT_ID  = 80 and SALARY&gt;5000;</span><br><span class="line"></span><br><span class="line">#--12.添加一条自己名字的简称的信息到部门为50的部门下</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#--13.删除1998到1999年并且工资小于4000的员工</span><br><span class="line">DELETE FROM employees WHERE SALARY&lt;4000 AND HIRE_DATE BETWEEN &apos;1998-01-01&apos; AND &apos;1998-12-30&apos;</span><br><span class="line"></span><br><span class="line">#--14.查询工作为SA_REP并且工资大于7000的员工,显示LAST_NAME为&apos;名字&apos;,EMAIL为&apos;邮箱&apos;,SALARY为&apos;工资&apos; </span><br><span class="line">SELECT LAST_NAME as &apos;名字&apos;,EMAIL as &apos;邮箱&apos;,SALARY as &apos;工资&apos; from employees where JOB_ID = &apos;SA_REP&apos;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+
+    <div>
+  
+</div>
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/第二十天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3102,464 +3301,6 @@ OutputStreamWriter
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/第九天/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/02/第九天/" class="post-title-link" itemprop="url">java异常</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-02 18:28:46" itemprop="dateCreated datePublished" datetime="2019-08-02T18:28:46+08:00">2019-08-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-04 12:43:25" itemprop="dateModified" datetime="2019-08-04T12:43:25+08:00">2019-08-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java基础/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-异常的概念"><a href="#1-异常的概念" class="headerlink" title="1 异常的概念"></a>1 异常的概念</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">异常在java中是以对象的形式来看待</span><br><span class="line">也就是每一种异常都是一个特定的异常类</span><br><span class="line">		</span><br><span class="line">		Throwable</span><br><span class="line">	|				|</span><br><span class="line">Exception(异常)		Error(错误)</span><br><span class="line">|			|</span><br><span class="line">非运行时异常   RuntimeException(运行时异常)</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> [] x=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">	<span class="comment">//System.out.println(x[3]);//java.lang.ArrayIndexOutBoundsException</span></span><br><span class="line">	</span><br><span class="line">	String xxx=<span class="keyword">null</span>;</span><br><span class="line">	System.out.println(xxx.length());  <span class="comment">//java.lang.NullPointerException</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Error（错误）表示系统级的错误和程序不必处理的异常，是java运行环境中的内部错误或者硬件问题。</span><br><span class="line">		比如：内存资源不足等。对于这种错误，程序基本无能为力，除了退出运行外别无选择，它是由Java虚拟机抛出的。</span><br><span class="line">Exception（异常）表示需要捕捉或者需要程序进行处理的异常，它处理的是因为程序设计的瑕疵而引起的问题或者在外的输入等引起的一般性问题，是程序必须处理的。</span><br><span class="line">Exception又分为不可查异常（运行时异常），受检查异常(非运行时异常)。</span><br><span class="line">			运行时异常，表示无法让程序恢复的异常，导致的原因通常是因为执行了错误的操作，建议终止程序，</span><br><span class="line">因此，编译器不检查这些异常。</span><br><span class="line">		   非运行时异常，是表示程序可以处理的异常，也即表示程序可以修复（由程序自己接受异常并且做出处理）， 所以称之为受检查异常。</span><br></pre></td></tr></table></figure>
-<p>​    </p>
-<h1 id="2-try-catch-语句"><a href="#2-try-catch-语句" class="headerlink" title="2 try catch 语句"></a>2 try catch 语句</h1><p>​<br>​        </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 甲设计的计算器类</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cy</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calc</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 加法</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a+b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 除法</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a/b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 乙来使用甲设计的计算器</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">			计算();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> 计算()&#123;</span><br><span class="line">			<span class="keyword">int</span> a=<span class="number">90</span>;</span><br><span class="line">			<span class="keyword">int</span> b=<span class="number">0</span>;</span><br><span class="line">			</span><br><span class="line">			Calc c=<span class="keyword">new</span> Calc();</span><br><span class="line">			<span class="keyword">int</span> addResult=c.add(a, b);</span><br><span class="line">			System.out.println(<span class="string">"加法得:"</span>+addResult);</span><br><span class="line">			<span class="keyword">try</span>&#123;</span><br><span class="line">				<span class="keyword">int</span> divResult=c.divide(a, b);</span><br><span class="line">				System.out.println(<span class="string">"除法得:"</span>+divResult);</span><br><span class="line">			&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">				<span class="comment">/*e.printStackTrace(); //ArithmeticException: / by zero</span></span><br><span class="line"><span class="comment">				System.out.println("你傻呀,除数不能为0");*/</span></span><br><span class="line">				<span class="comment">//通常将来会调用公司的邮箱服务器,或者记录到hdfs</span></span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">"老板,你让我们做的工作完成了"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">           &#125;</span><br><span class="line">	</span><br><span class="line">	加法得:<span class="number">90</span></span><br><span class="line">	你傻呀,除数不能为<span class="number">0</span></span><br><span class="line">	老板,你让我们做的工作完成了</span><br><span class="line">	java.lang.NullPointerException</span><br><span class="line">		at com.Test01.计算(Test01.java:<span class="number">26</span>)</span><br><span class="line">		at com.Test01.main(Test01.java:<span class="number">15</span>)</span><br><span class="line">		</span><br><span class="line">	会发现确实程序正常结束,但是异常并没有真正的处理掉,这就是<span class="keyword">try</span> Catch</span><br></pre></td></tr></table></figure>
-<pre><code>try{
-    int divResult=c.divide(a, b);
-    System.out.println(&quot;除法得:&quot;+divResult);
-}
-//中间不要放任何东西
-catch (Exception e) {
-    /*e.printStackTrace(); //ArithmeticException: / by zero
-    System.out.println(&quot;你傻呀,除数不能为0&quot;);*/
-    //通常将来会调用公司的邮箱服务器,或者记录到hdfs
-}
-</code></pre><p>​        </p>
-<h1 id="3-throw-关键字"><a href="#3-throw-关键字" class="headerlink" title="3 throw 关键字"></a>3 throw 关键字</h1><p>​        </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span>关键字是为了抛出一个异常</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 乙来使用甲设计的计算器</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			计算();</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"我能执行吗?"</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> 计算()&#123;</span><br><span class="line">		<span class="keyword">int</span> a=<span class="number">90</span>;</span><br><span class="line">		<span class="keyword">int</span> b=<span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		Calc c=<span class="keyword">new</span> Calc();</span><br><span class="line">		<span class="keyword">int</span> addResult=c.add(a, b);</span><br><span class="line">		System.out.println(<span class="string">"加法得:"</span>+addResult);</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> divResult=c.divide(a, b);</span><br><span class="line">			System.out.println(<span class="string">"除法得:"</span>+divResult);</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">/*e.printStackTrace(); //ArithmeticException: / by zero</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			<span class="comment">//通常将来会调用公司的邮箱服务器,或者记录到hdfs</span></span><br><span class="line">			System.out.println(<span class="string">"你傻呀,除数不能为0"</span>);</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"诶呀,不好了,你快来看看呀"</span>);  <span class="comment">//可以手动的抛出一个异常,而且很可恶的可以抛出任意异常</span></span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"老板,你让我们做的工作完成了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="4-throws-关键字"><a href="#4-throws-关键字" class="headerlink" title="4 throws 关键字"></a>4 throws 关键字</h1><pre><code>throws为了用来声明方法可能有异常
-
-//甲改动
-/**
- * 除法
- * @throws Exception 
- */
-public int divide(int a,int b) throws Exception{
-    if(b==0){
-        throw new Exception(&quot;你傻呀,你家除数能为0呀!&quot;);
-    }
-    return a/b;
-}
-
-//乙来使用甲设计的计算器
-public static void 计算(){
-    int a=90;
-    int b=0;
-
-    Calc c=new Calc();
-    int addResult=c.add(a, b);
-    System.out.println(&quot;加法得:&quot;+addResult);
-
-    c.divide(a, b);  //会发现这个地方有问题,不让编译通过,这是强制机制,必须处理,两种处理方式,一:要不try,二,要不抛
-    System.out.println(&quot;老板,你让我们做的工作完成了&quot;);
-}
-
-方式一: try
-int divResult=0;
-try {
-    divResult=c.divide(a, b);
-} catch (Exception e) {
-    e.printStackTrace();
-}
-System.out.println(&quot;除法得:&quot;+divResult);
-System.out.println(&quot;老板,你让我们做的工作完成了&quot;);
-
-方式二:throw并且需要声明throws
-public static void 计算() throws Exception{
-    int a=90;
-    int b=0;
-
-    Calc c=new Calc();
-    int addResult=c.add(a, b);
-    System.out.println(&quot;加法得:&quot;+addResult);
-    int divResult=c.divide(a, b);
-    System.out.println(&quot;老板,你让我们做的工作完成了&quot;);
-}
-注意,此时调用  计算()  方法的位置,也会报错
-
-注意注意!
-如果抛出的异常是  运行时异常也就是 RuntimeException下面的所有子类  都是可以不用声明的,但是也可以声明,不强制
-如果抛出的异常是  非运行时异常,必须声明,强制作用
-
-注意:如果一个方法抛出一个异常,则调用者只能抛出此异常,或者父异常
-</code></pre><h1 id="5-自定义异常"><a href="#5-自定义异常" class="headerlink" title="5 自定义异常"></a>5 自定义异常</h1><p>​        </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String msg;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.msg=msg;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"此异常信息已经被记载下来了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showErrorMsg</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"异常信息如下:"</span>+msg+<span class="string">",发生的时间"</span>+<span class="keyword">new</span> Date());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">如果想实现运行时异常,则可以继承 RuntimeExceptin</span><br><span class="line">如果想实现非运行时异常,则可以继承除了RuntimeExceptin体系外的其他异常类</span><br></pre></td></tr></table></figure>
-<p>​<br>        public int divide(int a,int b)throws MyException{<br>            if(b==0){<br>                throw new MyException(“你傻呀,你家除数能为0呀!”);<br>            }<br>            return a/b;<br>        }</p>
-<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">int</span> divResult = c.divide(a, b);</span><br><span class="line">&#125; <span class="keyword">catch</span> (MyException e) &#123;</span><br><span class="line">	e.log();</span><br><span class="line">	e.showErrorMsg();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="6-运行时异常和check异常"><a href="#6-运行时异常和check异常" class="headerlink" title="6 运行时异常和check异常"></a>6 运行时异常和check异常</h1><p>​        </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			test1();</span><br><span class="line">			test2();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;  <span class="comment">//可以的</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		test3();</span><br><span class="line">		System.out.println(<span class="string">"我执行码?"</span>);  <span class="comment">//运行不了,原因test1和test2虽然处理,但是test3并没有处理</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IOException();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> SQLException();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>​<br>            try {<br>                    test1();<br>                    test2();<br>                } catch (Exception e) {<br>                    e.printStackTrace();<br>                }  catch (IOException e) {  //不可以 将永远执行不到<br>                    e.printStackTrace();<br>                }catch (SQLException e) {  //不可以 将永远执行不到<br>                    e.printStackTrace();<br>                }</p>
-<h1 id="7-在子类中处理异常"><a href="#7-在子类中处理异常" class="headerlink" title="7 在子类中处理异常"></a>7 在子类中处理异常</h1><p>​        </p>
-<pre><code>父类中
-public class Student {
-    void study() throws SQLException{
-        throw new SQLException();
-    }
-}
-
-子类中
-public class GoodStudent extends Student{
-
-    public void study() throws IOException{  //错误
-
-    }
-
-}
-
-如果父类中某个方法抛出了异常,子类有两种方式
-方式一:
-public class GoodStudent extends Student{
-
-    public void study(){
-
-    }
-
-}
-方式二:
-public class GoodStudent extends Student{
-
-    public void study() throws SQLRecoverableException{ //比如是父抛出异常的子异常或者是当前异常
-
-    }
-
-}
-
-如果父类中没有抛出异常,那么子类不许抛异常,只能try处理
-public class Student {
-    void study(){
-
-    }
-}
-
-public class GoodStudent extends Student{
-
-    public void study(){
-        try{
-
-        }catch (Exception e) {
-            // TODO: handle exception
-        }
-    }
-
-}
-</code></pre><h1 id="8-finally-语句"><a href="#8-finally-语句" class="headerlink" title="8 finally 语句"></a>8 finally 语句</h1><p>​        </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">finally</span>:最终的,写在<span class="keyword">finally</span>中的语句,不管发不发生异常,都会执行,通常会放一些资源释放的语句</span><br><span class="line">并且,哪怕前面有<span class="keyword">return</span>子句,也会还行</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">或者</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一段话"</span>);</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		String str=scan.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"长度:"</span>+str.length());</span><br><span class="line">		<span class="keyword">int</span> a=<span class="number">90</span>/<span class="number">0</span>;</span><br><span class="line">		System.out.println(<span class="string">"A"</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"B"</span>);</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		scan.close();</span><br><span class="line">		System.out.println(<span class="string">"C"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"D"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">B C D</span><br></pre></td></tr></table></figure></p>
-<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一段话"</span>);</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		String str=scan.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"长度:"</span>+str.length());</span><br><span class="line">		System.out.println(<span class="string">"A"</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"B"</span>);</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		scan.close();</span><br><span class="line">		System.out.println(<span class="string">"C"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"D"</span>);</span><br><span class="line">&#125;</span><br><span class="line">A C D</span><br></pre></td></tr></table></figure></p>
-<p>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	System.out.println(<span class="string">"请输入一段话"</span>);</span><br><span class="line">	System.out.println(<span class="string">"F"</span>);</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">90</span>/<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		String str=scan.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"长度:"</span>+str.length());</span><br><span class="line">		System.out.println(<span class="string">"A"</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"B"</span>);</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		scan.close();</span><br><span class="line">		System.out.println(<span class="string">"C"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"D"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">F</span><br><span class="line"></span><br><span class="line"><span class="keyword">finally</span>语句,在什么情况下不执行</span><br><span class="line"><span class="number">1</span>.程序根本没有进入到<span class="keyword">try</span>块中,就发生了异常,执行不了</span><br><span class="line"><span class="number">2</span>.程序遇到System.exit(<span class="number">0</span>); 退出java虚拟机</span><br><span class="line">	exit(<span class="number">0</span>)有两种参数,一个是<span class="number">0</span>,一个非零</span><br><span class="line">	结果是一样的</span><br><span class="line">	不同是这样的,如果是<span class="number">0</span>,表示程序正常退出</span><br><span class="line">	如果非<span class="number">0</span>,代表程序非正常退出</span><br></pre></td></tr></table></figure></p>
-<p>​<br>​<br>        异常处理练习题<br>        一、选择题<br>        1.java中用来抛出异常的关键字是()<br>        A、try<br>        B、catch<br>        C、throw<br>        D、finally<br>        2.关于异常，下列说法正确的是()<br>        A、异常是一种对象<br>        B、一旦程序运行，异常将被创建<br>        C、为了保证程序运行速度，要尽量避免异常控制<br>        D、以上说法都丌对<br>        3.（）类是所有异常类的父类。<br>        A、Throwable<br>        B、Error<br>        C、Exception<br>        D、AWTError<br>        4.java语言中，下列哪一子句是异常处理的出口()<br>        A、try{…}子句<br>        B、catch{…}子句<br>        C、finally{…}子句<br>        D、以上说法都丌对<br>        5.下列程序的执行，说法错误的是()<br>        public class MultiCatch{<br>            public static void main(String args[]){<br>                try {<br>                      int a=args.length;<br>                      int b=42/a;<br>                      int c[]={1};<br>                      c[42]=99;<br>                      System.out.println(“b=”+b);<br>                  } catch(ArithmeticExceptione) {<br>                    System.out.println(“除0异常：”+e);<br>                  } catch(ArrayIndexOutOfBoundsExceptione){<br>                    System.out.println(“数组超越边界异常：”+e);<br>                  }<br>             }<br>        }<br>          A、程序将输出第15行的异常信息<br>          B、程序第10行出错<br>          C、程序将输出“b=42”<br>          D、程序将输出第15和19行的异常信息<br>        6.下列程序的执行，说法正确的是（）<br>        class ExMulti{<br>            static void procedure(){<br>            try{<br>              int c[]={1};<br>              c[42]=99;<br>              }<br>            catch(ArrayIndexOutOfBoundsExceptione){<br>              System.out.println(“数组超越界限异常：”+e);<br>              }<br>            }<br>            public static void main(String args[]){<br>                try{<br>                    procedure();<br>                    int a=args.length;<br>                    int b=42/a;<br>                    System.out.println(“b=”+b);<br>                    }<br>                    catch(ArithmeticExceptione){<br>                        System.out.println(“除0异常：”+e);<br>                        }<br>                }<br>        }<br>        A、程序只输出第12行的异常信息<br>        B、程序只输出第26行的异常信息<br>        C、程序将不输出异常信息<br>        D、程序将输出第12行和第26行的异常信息</p>
-<pre><code>7.对于catch子句的排列，下列哪种是正确的()
-A、父类在先，子类在后
-B、子类在先，父类在后 
-C、有继承关系的异常不能在同一个try程序段内
-D、先有子类，其他如何排列都无关 
-8.在异常处理中，如释放资源、关闭文件、关闭数据库等由()来完成。
-A、try子句
-B、catch子句
-C、finally子句
-D、throw子句 
-9.当方法遇到异常又不知如何处理时，下列哪种说法是正确的()
-A、捕获异常
-B、抛出异常
-C、声明异常
-D、嵌套异常
-10.哪个关键字可以抛出异常？（）
-A、transient
-B、finally
-C、throw
-D、static
-11．一个异常将终止()
-A、整个程序
-B、叧终止抛出异常的方法
-C、产生异常的try块
-D、×上面的说法都丌对 
-二、填空题
-1、catch子句都带一个参数，该参数是某个异常的类及其变量名，catch用该参数去与_______对象的类进行匹配。 
-2、java虚拟机能自动处理_______异常。 
-3、捕获异常要求在程序的方法中预先声明，在调用方法时用try-catch-______语句捕获并处理。 
-4、java语言认为那些可预料和不可预料的出错称为_________ 
-5、按异常处理不同可以分为运行异常、捕获异常、声明异常和______几种。
-6、抛出异常的程序代码可以是______或者是JDK中的某个类，还可以是JVM.
-7、抛出异常、生成异常对象都可以通过_________语句实现。
-8、捕获异常的统一出口通过_________语句实现。 
-9、java语言的类库中提供了一个__________类，所有的异常都必须是它的实例或它子类的实例。
-10、对程序语言而言，一般有编译错误和______错误两类。
-11、下面程序定义了一个字符串数组，并打印输出，捕获数组超越界限异常。请在横线处填入适当的内容完成程序。
-public class HelloWorld{
-    int i=0;
-    String greetings[]={“Helloworld!”,“No,Imeanit!”,“HELLOWORLD!!”};
-    while(i&lt;4){
-        try{
-            System.out.println(greeting[i]);}
-        catch(ArrayIndexOutOfBoundsException e){
-            System.out.println(“Re-settingIndexValue”);
-            i=-1;
-            _____________
-        }finally{
-            System.out.println(“Thisisalwaysprinted”);}i++;
-            }
-}
-三、判断题 
-1.()程序中抛出异常时(throw…)，只能抛出自己定义的异常对象。
-2.()一个异常处理中finally语句块只能有一个或者可以没有。
-3.()异常类对象代表当前出现的一个具体异常。 
-4.()java语言中的所有异常类都是java.lang.Throwable的子类。
-5.()如果异常发生时，没有捕获异常的代码，程序会正常执行。
-四、编程题 
-1．参考下面的程序，试修改程序，捕获相关异常，使得程序能正常运行。
-[提示：用错误数据测试，即可得到异常类名，运行时主方法参数输入abc测试]
-public class StringIndexOutOf{
-    public static void main(String args[]){
-        Scanner scan=new Scanner(System.in);
-        String[] arrays=new String[3];
-        for(int i=0;i&lt;3;i++){
-            String s=scan.nextLine();
-            arrays[i]=s;
-        }
-        String str=arrays[0];
-
-        System.out.println(“第四个字符为”+str.charAt(3)); 
-        int aa=Integer.parseInt(arrays[0]);
-        System.out.println(“平方为”+aa*aa);
-    }
-}
-2．从命令行得到5个整数，放入一整型数组，然后打印输出，
-   要求：如果输入数据为整数，要捕获Integer.parseInt()产生的异常，显示“请输入整数”，
-   捕获输入参数不足5个的异常(数组越界)，显示“请输入至少5个整数”。 
-3．写一个方法void sanjiao(int a,int b,int c)，判断三个参数是否能构成一个三角形，
-   如果不能则抛出异常IllegalArgumentException，显示异常信息a,b,c+”不能构成三角形”，
-   如果可以构成则显示三角形三个边长，在主方法中得到命令行输入的三个整数，调用此方法，并捕获异常。 
-4．自定义类Sanj，其中有成员x,y,z,作为三边长，构造方法Sanj(a,b,c)分别给x,y,z赋值,
-   方法求面积getArea和显示三角形信息(三个边长)showInfo，
-   这2个方法中当三条边不能构成一个三角形时要抛出自定义异常NotSanjiaoException，否则显示正确信息。
-   在另外一个类中的主方法中构造一个Sanj对象(三边为命令行输入的三个整数)，
-   显示三角形信息和面积，要求捕获异常。         
-</code></pre><p>=============================<br>面试题<br> try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?<br>        也许你的答案是在return之前，但往更细地说，我的答案是在return中间执行，请看下面程序代码的运行结果： </p>
-<pre><code>public  class Test {
-    public static void main(String[] args) {
-        System.out.println(new Test().test());
-    }
-
-    static int test()
-    {
-        int x = 1;
-        try
-        {
-            return x;
-        }
-        finally
-        {
-            ++x;  
-            System.out.println(&quot;finally语句被执行了&quot;);
-
-        }
-    }
-
-}
-
-2 finally语句被执行了   错
-
-finally语句被执行了 1  对
-finally语句被执行了 2  错
-
-public  class Test {
-    public static void main(String[] args) {
-        System.out.println(new Test().test());
-    }
-
-    static int test()
-    {
-        int x = 1;
-        try
-        {
-            return x;
-        }
-        finally
-        {
-            ++x;  
-            System.out.println(&quot;finally语句被执行了&quot;);
-            return x;
-        }
-    }
-
-}
-finally语句被执行了 2
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span>, <span class="keyword">finally</span>, finalize的区别</span><br><span class="line">		<span class="keyword">final</span> 最终的, 用来修饰变量,方法,类 用它修饰的变量就变成了常量,常量的值不可以改变,修饰的方法		不能被重写,类不能被继承, <span class="keyword">static</span> <span class="keyword">final</span> 修饰的成员要直接初始化</span><br><span class="line">		finalize 来自Object类,对象在内存中的空间被回收的时候,会调用这个方法</span><br><span class="line">		<span class="keyword">finally</span> 用于<span class="keyword">try</span> <span class="keyword">catch</span> 语句块之后,表示这里面的代码一定要被执行,这些代码多用来关闭资源</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">try</span> 语句之后,可不可以没有<span class="keyword">catch</span> ? 可不可以直接接上<span class="keyword">finally</span> ?</span><br><span class="line">	  <span class="comment">//答:可以 例如 下面的写法是可以</span></span><br><span class="line">			<span class="keyword">try</span>&#123;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">finally</span>&#123;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">运行时异常与一般异常有何异同</span><br><span class="line">	异常表示程序运行过程中可能出现的非正常状态，</span><br><span class="line">	运行时异常表示虚拟机的通常操作中可能遇到的异常，是一种常见运行错误。</span><br><span class="line">	java编译器要求方法必须声明抛出可能发生的非运行时异常，但是并不要求必须声明抛出未被捕获的运行时异常。</span><br><span class="line">	</span><br><span class="line">error和exception有什么区别</span><br><span class="line">  error 表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程序能处理这样的情况。</span><br><span class="line">  exception 表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Java中的异常处理机制的简单原理和应用</span><br><span class="line">	异常是指java程序运行时（非编译）所发生的非正常情况或错误，与现实生活中的事件很相似，</span><br><span class="line">	现实生活中的事件可以包含事件发生的时间、地点、人物、情节等信息，可以用一个对象来表示，</span><br><span class="line">	Java使用面向对象的方式来处理异常，它把程序中发生的每个异常也都分别封装到一个对象来表示的，</span><br><span class="line">	该对象中包含有异常的信息。</span><br><span class="line">	Java对异常进行了分类，不同类型的异常分别用不同的Java类表示，</span><br><span class="line">	所有异常的根类为java.lang.Throwable，Throwable下面又派生了两个子类：Error和Exception，</span><br><span class="line">	Error 表示应用程序本身无法克服和恢复的一种严重问题，程序只有死的份了，</span><br><span class="line">	例如，说内存溢出和线程死锁等系统问题。Exception表示程序还能够克服和恢复的问题，</span><br><span class="line">	其中又分为系统异常和普通异常，系统异常是软件本身缺陷所导致的问题，也就是软件开发人员考虑不周所导致的问题，</span><br><span class="line">	软件使用者无法克服和恢复这种问题，但在这种问题下还可以让软件系统继续运行或者让软件死掉，</span><br><span class="line">	例如，数组脚本越界（ArrayIndexOutOfBoundsException），空指针异常（NullPointerException）、</span><br><span class="line">	类转换异常（ClassCastException）；普通异常是运行环境的变化或异常所导致的问题，是用户能够克服的问题，</span><br><span class="line">	例如，网络断线，硬盘空间不够，发生这样的异常后，程序不应该死掉。</span><br><span class="line">	java为系统异常和普通异常提供了不同的解决方案，编译器强制普通异常必须try..catch处理或用throws声明继续抛给上层调用方法处理，</span><br><span class="line">	所以普通异常也称为checked异常，而系统异常可以处理也可以不处理，所以</span><br><span class="line">	，编译器不强制用try..catch处理或用throws声明，所以系统异常也称为unchecked异常。</span><br><span class="line">	提示答题者：就按照三个级别去思考：虚拟机必须宕机的错误，程序可以死掉也可以不死掉的错误，程序不应该死掉的错误；</span><br></pre></td></tr></table></figure>
-<p>​        </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">请写出你最常见到的5个runtimeexception</span><br><span class="line">	NullPointerException、  //空针针</span><br><span class="line">	ArrayIndexOutOfBoundsException、 //数组脚标越界</span><br><span class="line">	ClassCastException   //类转换异常</span><br><span class="line">	ArithmeticException  //算术异常</span><br><span class="line">	IllegalArgumentException  //错误的参数异常</span><br><span class="line">	ArrayStoreException //将错误的对象存诸到一个数组的时候</span><br><span class="line">    ClassNotFoundException  //类找不到异常</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JAVA语言如何进行异常处理，关键字：throws,throw,try,catch,finally分别代表什么意义？在try块中可以抛出异常吗？ </span><br><span class="line">	可以，一般情况下是用try来执行一段程序，如果出现异常，系统会抛出（throws）一个异常，</span><br><span class="line">	这时候你可以通过它的类型来捕捉（catch）它，或最后（finally）由缺省处理器来处理。</span><br><span class="line">	用try来指定一块预防所有“异常”的程序。紧跟在try程序后面，应包含一个catch子句来指定你想要捕捉的“异常”的类型。</span><br><span class="line">	throw语句用来明确地抛出一个“异常”。throws用来标明一个成员函数可能抛出的各种“异常”。</span><br><span class="line">	Finally为确保一段代码不管发生什么“异常”都被执行一段代码。</span><br><span class="line">	try块中可以抛出异常吗 //可以</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-
-    <div>
-  
-</div>
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3606,7 +3347,7 @@ finally语句被执行了 2
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

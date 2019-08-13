@@ -327,6 +327,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/post请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/post请求/" class="post-title-link" itemprop="url">post请求</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 13:20:02" itemprop="dateCreated datePublished" datetime="2019-07-04T13:20:02+08:00">2019-07-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 13:21:58" itemprop="dateModified" datetime="2019-08-04T13:21:58+08:00">2019-08-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">""</span>&gt;</span><br><span class="line">    &lt;script src=<span class="string">"jquery.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;form action="html_submit" method="post" accept-charset="utf-8" id="from1"&gt;</span></span><br><span class="line"><span class="regexp">    姓名：&lt;input type="text" name="username" id="username"&gt;</span></span><br><span class="line"><span class="regexp">    age:&lt;input type="password" name="password" id="password" placeholder="passwords"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;select name="city" &gt;</span></span><br><span class="line"><span class="regexp">        &lt;option value="1"&gt;中国&lt;/</span>option&gt;</span><br><span class="line">        &lt;option value=<span class="string">"3"</span>&gt;日本&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">        &lt;option value="2"&gt;法国&lt;/</span>option&gt;</span><br><span class="line">    &lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;td&gt;</span></span><br><span class="line"><span class="regexp">        &lt;input type="radio" name="sex" value="1"&gt; 男</span></span><br><span class="line"><span class="regexp">        &lt;input type="radio" name="sex" value="0"&gt; 女</span></span><br><span class="line"><span class="regexp">    &lt;/</span>td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">"file"</span> name=<span class="string">"file1"</span> &gt;</span><br><span class="line">    &lt;!-- <span class="number">1</span> --&gt;</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> name=<span class="string">""</span> value=<span class="string">"提交"</span> id=<span class="string">"btn1"</span>&gt;</span><br><span class="line">    &lt;!-- <span class="number">2</span> --&gt;</span><br><span class="line">    &lt;button &gt;button提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!-- 3 --&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="button" name="" value="onclick" onclick="submitFrom()" &gt;</span></span><br><span class="line"><span class="regexp">    &lt;!-- 4 --&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="button" name="" value="ajax提交" placeholder="" id="ajax"&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">&lt;!-<span class="number">-3</span>--&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">submitFrom</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">document</span>.getElementById(<span class="string">"username"</span>)==<span class="string">''</span>) &#123;</span><br><span class="line">            alert(<span class="string">'error'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"from1"</span>).submit()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//4</span></span><br><span class="line"></span><br><span class="line">    $(<span class="string">"#ajax"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> param = $(<span class="string">"#from1"</span>).serialize();</span><br><span class="line">        <span class="built_in">console</span>.log(param)</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url:<span class="string">''</span>,</span><br><span class="line">            data:param,</span><br><span class="line">            type:<span class="string">'post'</span>,</span><br><span class="line">            success:<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">                <span class="comment">// alert(msg)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+
+    <div>
+  
+</div>
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/09-直接插入排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1913,203 +2091,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/代码上传github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="生活不止眼前的苟且，还有诗和远方。">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/10/代码上传github/" class="post-title-link" itemprop="url">代码上传github</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-10 13:28:59" itemprop="dateCreated datePublished" datetime="2018-08-10T13:28:59+08:00">2018-08-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-04 13:32:05" itemprop="dateModified" datetime="2019-08-04T13:32:05+08:00">2019-08-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先进入要上传代码的目录</p>
-<p>执行git命令，此命令会在当前目录下创建一个.git文件夹,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<p>将项目的所有文件添加到仓库中,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-<p>这个命令会把当前路径下的所有文件，添加到待上传的文件列表中。如果想添加某个特定的文件，只需把.换成特定的文件名即可.</p>
-<p>将add的文件commit到仓库,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;注释语句&quot;</span><br></pre></td></tr></table></figure>
-<p>之后,去github上创建自己的Repository，点击NewRepository,</p>
-<p>创建Repository,</p>
-<p>将本地的仓库关联到github上,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin  https://github.com/baiyu7/vue.git</span><br></pre></td></tr></table></figure>
-<p>上传代码到github远程仓库,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<p>输入Username和Password，即输入github的账号和密码就行了.如果没有异常，等待执行完就上传成功了</p>
-<p>如果不小心将git远程地址配错了，再次配置提示以下错误：</p>
-<p>fatal: 远程 origin 已经存在。</p>
-<p>此时只需要将远程配置删除，重新添加即可；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 git remote rm origin</span><br><span class="line">2 git remote add origin  https://github.com/baiyu7/vue.git</span><br><span class="line">3 git push -u origin master</span><br></pre></td></tr></table></figure>
-<p>再次提交文件即可正常使用.</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-
-    <div>
-  
-</div>
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2156,7 +2137,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
